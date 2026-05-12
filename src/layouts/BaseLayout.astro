@@ -1,0 +1,89 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+type Meta = {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+};
+
+type Props = {
+  meta: Meta;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const { meta, schema } = Astro.props;
+const siteUrl = 'https://shambalaholisticandretreatcentre.com';
+const canonical = meta.canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = meta.image ?? `${siteUrl}/og-image.jpg`;
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HealthAndBeautyBusiness',
+  name: 'Shambala Holistic & Retreat Centre',
+  url: siteUrl,
+  telephone: '+447713744589',
+  email: 'shambala108@icloud.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '48 Geaglum Road',
+    addressLocality: 'Derrylin',
+    addressRegion: 'Co. Fermanagh',
+    postalCode: 'BT92 9GN',
+    addressCountry: 'GB'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 54.1869,
+    longitude: -7.7046
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    description: 'By appointment — contact for availability'
+  },
+  sameAs: ['https://www.facebook.com/ShambalaHolisticCentre/']
+};
+
+const pageSchemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Shambala Holistic & Retreat Centre" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)}></script>
+    {pageSchemas.map((item) => <script type="application/ld+json" is:inline set:html={JSON.stringify(item)}></script>)}
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

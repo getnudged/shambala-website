@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/home.css';
+
+const meta = {
+  title: 'Shambala Holistic & Retreat Centre | Wellness Retreat Fermanagh',
+  description: 'Welcome to Shambala — a Lough Erne holistic wellness retreat in Derrylin, Co. Fermanagh for massage, yoga, sound baths and retreats.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/'
+};
+---
+
+<BaseLayout {meta}>
+  <section class="hero" aria-label="Shambala Holistic Retreat Centre, Derrylin, Lough Erne">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-water" aria-hidden="true"></div>
+    <div class="hero-trees" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="label hero-eyebrow">Derrylin · Co. Fermanagh · Upper Lough Erne</p>
+      <h1>Shambala Holistic & Retreat Centre — Wellness Retreat, Derrylin, Co. Fermanagh</h1>
+      <blockquote class="hero-quote">“The natural healing force in each one of us is the greatest force in getting well.”</blockquote>
+      <div class="hero-actions">
+        <a href="/retreats/" class="btn btn-primary">Explore Retreats</a>
+        <a href="/therapies/" class="btn btn-ghost btn-ghost--inverse">Book a Therapy</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60 L0 30 Q180 0 360 20 Q540 40 720 15 Q900 -10 1080 22 Q1260 50 1440 25 L1440 60 Z" fill="currentColor" />
+    </svg>
+  </div>
+
+  <section class="intro section">
+    <div class="section-inner intro-grid">
+      <div>
+        <p class="label">Established 1999 · Northern Ireland</p>
+        <h2>Where the Lake <em>Holds Still</em></h2>
+        <p>Shambala Holistic & Retreat Centre sits alongside the shores of Upper Lough Erne, a sanctuary carved from the landscape of Co. Fermanagh, where the water is calm and the pace of the world slows to match it.</p>
+        <p>Founded by Sukhada Smith-Repass in 1999, Shambala has offered holistic therapies, residential retreats, sound healing and yoga to guests from across Ireland and beyond for over 26 years.</p>
+        <p>Every session and every retreat is rooted in genuine practice, treating people as individuals and welcoming guests from Northern Ireland, the Republic of Ireland, and further afield.</p>
+        <a href="/about/" class="btn btn-dark">Our Story</a>
+        <div class="stat-row" aria-label="Shambala highlights">
+          <div>
+            <strong>26+</strong>
+            <span>Years in practice</span>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Holistic therapies</span>
+          </div>
+          <div>
+            <strong>£ & €</strong>
+            <span>Pricing accepted</span>
+          </div>
+        </div>
+      </div>
+      <figure class="lough-panel" role="img" aria-label="Upper Lough Erne viewed from Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+        <figcaption>The shores of Upper Lough Erne, Derrylin</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="services section" id="therapies">
+    <div class="section-inner">
+      <p class="label">What We Offer</p>
+      <h2>Rooted in <em>Genuine Practice</em></h2>
+      <p class="section-intro">Six ways to restore your natural balance, from a single session to a full residential retreat.</p>
+      <div class="services-grid">
+        <a href="/therapies/holistic/" class="service-card">
+          <span aria-hidden="true">Herbal</span>
+          <h3>Holistic Therapies</h3>
+          <p>Reiki, EFT Tapping, Indian Head Massage, Reflexology, Crystal Healing and more.</p>
+          <b>Explore therapies</b>
+        </a>
+        <a href="/therapies/massage/" class="service-card">
+          <span aria-hidden="true">Hands</span>
+          <h3>Massage</h3>
+          <p>Swedish, Hot Stone, Himalayan Salt Stone and Aromatherapy treatments tailored to you.</p>
+          <b>Book a massage</b>
+        </a>
+        <a href="/therapies/training/" class="service-card">
+          <span aria-hidden="true">Reiki</span>
+          <h3>Reiki Training</h3>
+          <p>Level 1, 2 and Master training with Sukhada, a Reiki Master since 1999.</p>
+          <b>Begin training</b>
+        </a>
+        <a href="/wellness-days/" class="service-card">
+          <span aria-hidden="true">Forest</span>
+          <h3>Wellness Days</h3>
+          <p>Forest bathing, meditation, barefoot grounding and half or full day immersions.</p>
+          <b>Plan your wellness day</b>
+        </a>
+        <a href="/sound-baths-yoga/" class="service-card">
+          <span aria-hidden="true">Sound</span>
+          <h3>Sound Baths & Yoga</h3>
+          <p>Tibetan bowls, crystal bowls, gong, restorative yoga and gentle movement.</p>
+          <b>Book a sound bath</b>
+        </a>
+        <a href="/self-catering/" class="service-card">
+          <span aria-hidden="true">Stay</span>
+          <h3>Stay at Shambala</h3>
+          <p>Self-catering accommodation for guests who want time by the lake.</p>
+          <b>Check availability</b>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="retreats section" id="retreats">
+    <div class="section-inner">
+      <div class="section-heading">
+        <div>
+          <p class="label">2026 Programme</p>
+          <h2>Residential <em>Retreats</em></h2>
+        </div>
+        <a href="/retreats/" class="btn btn-dark">View All Retreats</a>
+      </div>
+      <div class="retreats-grid">
+        <a href="/retreats/touching-the-earth/" class="retreat-card">
+          <div class="retreat-img retreat-img--earth" role="img" aria-label="Touching the Earth yoga and forest bathing retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+            <span>June 2026 · Weekend</span>
+          </div>
+          <div class="retreat-body">
+            <p class="label">Yoga · Forest Bathing · Meditation</p>
+            <h3>Touching the Earth</h3>
+            <p>A weekend of yoga, T’ai Chi Qigong, barefoot grounding and sound bath on the shores of Lough Erne.</p>
+            <strong>£260 <small>/ €300 per person</small></strong>
+          </div>
+        </a>
+        <a href="/retreats/tai-chi-yoga-weekend/" class="retreat-card">
+          <div class="retreat-img retreat-img--warrior" role="img" aria-label="Tai Chi and yoga weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+            <span>July 2026 · Weekend</span>
+          </div>
+          <div class="retreat-body">
+            <p class="label">Tai Chi · Yoga · Cacao Ceremony</p>
+            <h3>The Yoga Warrior</h3>
+            <p>A sacred journey with Hatha yoga, Restorative Reiki Yoga, Qigong and a heart-opening Cacao Ceremony.</p>
+            <strong>£260 <small>/ €300 per person</small></strong>
+          </div>
+        </a>
+        <a href="/retreats/tai-chi-yoga-half-day/" class="retreat-card">
+          <div class="retreat-img retreat-img--stillness" role="img" aria-label="Half day Tai Chi and yoga wellness day at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+            <span>May 2026 · Half Day</span>
+          </div>
+          <div class="retreat-body">
+            <p class="label">Tai Chi · Yoga · Nature Immersion</p>
+            <h3>Half-Day Stillness</h3>
+            <p>A Saturday afternoon for inner balance with Tai Chi, Forest Bathing, Gentle Yoga Flow and shared lunch.</p>
+            <strong>£40 <small>/ €47 per person</small></strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting" aria-label="The Lough Erne setting and cross-border access">
+    <div class="setting-visual" role="img" aria-label="Upper Lough Erne at dusk near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"></div>
+    <div class="setting-text">
+      <p class="label">The Setting</p>
+      <h2>Upper Lough Erne, <em>Co. Fermanagh</em></h2>
+      <p>Shambala sits on the banks of Upper Lough Erne, one of Ireland’s most beautiful and least-visited landscapes. The lake is a constant presence: visible from the yoga space, audible from the treatment rooms, and steps from the front door.</p>
+      <p>We are 20 minutes from Enniskillen, 40 minutes from Cavan, and accessible from Dublin and Belfast within two hours.</p>
+      <blockquote>The border is crossed without formality, guests from the Republic are welcome, and we price in both currencies as a matter of course.</blockquote>
+      <a href="/getting-here/" class="btn btn-ghost btn-ghost--inverse">Plan Your Journey</a>
+    </div>
+  </section>
+
+  <section class="soundbath section">
+    <div class="section-inner soundbath-grid">
+      <div>
+        <p class="label">Sound Healing · Northern Ireland</p>
+        <h2>What Is a <em>Sound Bath?</em></h2>
+        <p>A sound bath is a meditative experience in which you are immersed in the resonant tones of Tibetan singing bowls, crystal bowls and gong. You lie down, close your eyes and let the sound do its work.</p>
+        <p>The vibrations invite a deeply relaxed, meditative state, reducing stress, easing anxiety and restoring the body’s natural equilibrium.</p>
+        <a href="/sound-baths-yoga/" class="btn btn-dark">Book a Sound Bath</a>
+      </div>
+      <div class="soundbath-visual" aria-hidden="true">
+        <div class="bowl-row">
+          <span class="bowl bowl-a"></span>
+          <span class="bowl bowl-b"></span>
+          <span class="bowl bowl-c"></span>
+          <span class="bowl bowl-d"></span>
+        </div>
+        <div class="ripple-wrap">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials section">
+    <div class="section-inner">
+      <p class="label">From Our Guests</p>
+      <h2>What People <em>Say</em></h2>
+      <div class="testimonials-grid">
+        <figure>
+          <blockquote>One of the most restorative weekends of my life. The setting is extraordinary, Sukhada’s energy is calming, and the sound bath was unlike anything I’ve experienced.</blockquote>
+          <figcaption>Sarah M. · Dublin · Touching the Earth Retreat</figcaption>
+        </figure>
+        <figure>
+          <blockquote>I came for a massage and left having booked a retreat. The Himalayan salt stone treatment was exceptional. Sukhada has a gift.</blockquote>
+          <figcaption>Claire B. · Enniskillen · Massage Therapy</figcaption>
+        </figure>
+        <figure>
+          <blockquote>Our corporate team left completely transformed. The combination of yoga, forest bathing and the Lough Erne setting created something no conference room ever could.</blockquote>
+          <figcaption>Mark D. · Belfast · Corporate Wellbeing Day</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="corporate">
+    <div class="section-inner corporate-inner">
+      <div>
+        <p class="label">Corporate Wellbeing</p>
+        <h2>Recharge <em>Your Team</em></h2>
+        <p>Bespoke corporate wellbeing days and events for teams across Northern Ireland and Ireland, tailored to your group and delivered on the shores of Lough Erne.</p>
+      </div>
+      <a href="/corporate-wellness/" class="btn btn-ghost btn-ghost--inverse">Enquire About Corporate Days</a>
+    </div>
+  </section>
+
+  <section class="newsletter section">
+    <div class="section-inner newsletter-inner">
+      <p class="label">Stay Connected</p>
+      <h2>Retreat Updates & <em>Seasonal Offerings</em></h2>
+      <p>Be the first to hear about new retreats, sound baths, wellness days and seasonal offers. We write when we have something worth saying.</p>
+      <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" name="email" type="email" placeholder="Your email address" required />
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
