@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Wellness Retreats Northern Ireland | Shambala Fermanagh',
+  description: 'Explore 2026 wellness retreats at Shambala in Fermanagh, with yoga, sound baths, forest bathing, weekend retreats and half-day retreats by Lough Erne.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/retreats/'
+};
+
+const retreatCards = [
+  {
+    title: 'Touching the Earth: A Grounding Retreat',
+    type: 'Weekend retreat',
+    date: 'Date to confirm',
+    price: 'Typical weekend pricing: £260 / €300',
+    summary: 'Yoga, T\'ai Chi Qigong, forest bathing, meditation, grounding food, sound bath and digital detox beside Upper Lough Erne.',
+    notes: 'Optional therapies and Inis Rath / Hare Krishna Island Sunday extension mentioned on the current site.'
+  },
+  {
+    title: 'Tai Chi & Yoga Half-Day Retreat',
+    type: 'Half-day retreat',
+    date: 'Saturday 9 May, year to confirm',
+    price: '£40',
+    summary: 'Tai Chi, guided relaxation, lunch, forest bathing and Gentle Yoga Flow with Fiona.',
+    notes: 'Time listed as 11.00 am-3.00 pm.'
+  },
+  {
+    title: 'Tai Chi & Yoga Weekend Retreat',
+    type: 'Weekend retreat',
+    date: 'Date to confirm',
+    price: '£260 / €300',
+    summary: 'A restorative weekend with Fiona and Sukhada, including Hatha yoga, Restorative Reiki Yoga, Qigong and cacao ceremony.',
+    notes: 'Friday dinner starts at 6.00 pm.'
+  },
+  {
+    title: 'Slow Flow Rahanni Yoga & Sound Bath',
+    type: 'Sound bath / yoga session',
+    date: 'Select Fridays, year to confirm',
+    price: '£20',
+    summary: 'Slow Flow Rahanni Yoga followed by sound bath meditation for deep relaxation and inner peace.',
+    notes: 'Listed Fridays include 8 May, 26 June, 28 August, 25 September, 2 October and 30 October.'
+  },
+  {
+    title: 'Yoga Warrior Weekend Retreat',
+    type: 'Weekend retreat',
+    date: '28-30 August, year to confirm',
+    price: '£260 / €300',
+    summary: 'A weekend of yoga styles, mindfulness, nature walks, meditation, therapies and sound healing.',
+    notes: 'Facilitators listed as Fiona and Sukhada.'
+  },
+  {
+    title: 'Ikigai Life Purpose Retreat',
+    type: 'Weekend retreat',
+    date: '25-27 September, year to confirm',
+    price: '£260 / €300',
+    summary: 'A reflective weekend inspired by Ikigai, Wabi-Sabi and Kaizen, with yoga, Qigong, Tai Chi, meditation and nature.',
+    notes: 'Includes optional therapies and possible Inis Rath visit.'
+  },
+  {
+    title: 'Samhain & Shamanism Weekend Retreat',
+    type: 'Weekend retreat',
+    date: '30 October-1 November, year to confirm',
+    price: 'Price to confirm',
+    summary: 'Slow Flow Rahanni Yoga, sound bath, shamanic workshop, Fairy Woods walk, cacao ceremony and fire ceremony.',
+    notes: 'Current content says additional therapy costs apply.'
+  },
+  {
+    title: 'Joy Weekend Retreat',
+    type: 'Weekend retreat',
+    date: '2-4 October, year to confirm',
+    price: '£260 / €300',
+    summary: 'A mental and emotional wellbeing weekend with hypnotherapy, life coaching, EFT, CBT, mindfulness, Qigong and forest bathing.',
+    notes: 'One Life Coaching or Holistic Therapy session is included.'
+  },
+  {
+    title: 'Wellness Days and Half-Day Retreats',
+    type: 'Half-day / wellbeing day',
+    date: 'Multiple dates, year to confirm',
+    price: 'Commonly £40',
+    summary: 'Includes Inner Peace, Journey Within Silent Retreat, Energy In Motion, Walking Nature & Adventure, Relax Rewind Reset and Power of Manifestation.',
+    notes: 'Power of Manifestation is listed separately at £50.'
+  }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Wellness Retreats Northern Ireland at Shambala',
+  url: meta.canonical,
+  hasPart: {
+    '@type': 'ItemList',
+    itemListElement: retreatCards.map((retreat, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: retreat.title,
+      description: retreat.summary
+    }))
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--retreats">
+    <div class="inner-hero__content">
+      <p class="label">2026 Retreat Programme · Upper Lough Erne</p>
+      <h1>Wellness Retreats Northern Ireland at Shambala</h1>
+      <p>Step away from daily life with residential weekend retreats, half-day retreats, sound baths and wellness days on the shores of Upper Lough Erne.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Retreat Overview</p>
+        <h2>Time to Rest, Rebalance and Return to Yourself</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala retreats bring together yoga, meditation, sound healing, forest bathing, mindful movement, nourishing food and optional holistic therapies in a peaceful lakeside setting in Derrylin, Co. Fermanagh.</p>
+        <p>The current programme includes residential weekend retreats, half-day retreats, sound bath sessions and focused wellness days. Some dates from the live site need year confirmation before they become individual event pages, so this page keeps those details visible without inventing missing information.</p>
+        <p>For retreat information and booking, contact Sukhada on <a href="tel:+447713744589">+44 7713 744 589</a> or email <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Booking Notes</p>
+      <h2>Deposits and Cancellation Policy</h2>
+    </div>
+    <div class="policy-grid">
+      <article>
+        <h3>Half-Day Retreat Deposit</h3>
+        <p><strong>£20 / €23</strong> per person. Half-day retreats are commonly priced at £40.</p>
+      </article>
+      <article>
+        <h3>Weekend Retreat Deposit</h3>
+        <p><strong>£130 / €150</strong> per person. Weekend retreats are commonly priced at £260 / €300.</p>
+      </article>
+      <article>
+        <h3>Cancellation Policy</h3>
+        <p>Deposits are fully refundable up to 14 days before the retreat start date. After that, deposits can be transferred to a future retreat.</p>
+      </article>
+    </div>
+    <p class="small-note">Deposits are described on the current site as optional, but priority is given to confirmed bookings with a deposit.</p>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading">
+      <div>
+        <p class="label">Current Programme Inventory</p>
+        <h2>Retreats Found on the Current Site</h2>
+      </div>
+      <a class="btn btn-dark" href="mailto:shambala108@icloud.com?subject=Retreat%20Enquiry">Enquire About Retreats</a>
+    </div>
+
+    <div class="retreat-index-grid">
+      {retreatCards.map((retreat) => (
+        <article class="retreat-index-card">
+          <p class="label">{retreat.type}</p>
+          <h3>{retreat.title}</h3>
+          <dl>
+            <div>
+              <dt>Date</dt>
+              <dd>{retreat.date}</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>{retreat.price}</dd>
+            </div>
+          </dl>
+          <p>{retreat.summary}</p>
+          <p class="card-note">{retreat.notes}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">No Modal Content</p>
+      <h2>The Retreat Information Is Visible Here</h2>
+      <p>The old site hides retreat details inside repeated pop-up modals. This index brings the programme into page content while the individual retreat pages are prepared in a later pass.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="tel:+447713744589">Call Sukhada</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="mailto:shambala108@icloud.com?subject=Retreat%20Enquiry">Email Shambala</a>
+    </div>
+  </section>
+</BaseLayout>

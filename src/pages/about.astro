@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'About Sukhada | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Meet Sukhada Smith-Repass of Shambala Holistic & Retreat Centre, offering Reiki, holistic therapies and retreat care by Upper Lough Erne in Fermanagh.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/about/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Sukhada and Shambala Holistic & Retreat Centre',
+  url: meta.canonical,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Sukhada Smith-Repass',
+    worksFor: {
+      '@type': 'HealthAndBeautyBusiness',
+      name: 'Shambala Holistic & Retreat Centre'
+    }
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--about">
+    <div class="inner-hero__content">
+      <p class="label">Upper Lough Erne · Derrylin · Co. Fermanagh</p>
+      <h1>About Sukhada and Shambala Holistic & Retreat Centre</h1>
+      <p>Shambala is a calm lakeside centre for holistic therapies, Reiki teaching, residential retreats and restorative wellness days.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Since 1999</p>
+        <h2>A Long-Practised Holistic Approach</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Sukhada Smith-Repass has been practising holistic therapies since 1999 and teaches Reiki from Shambala Holistic & Retreat Centre in Derrylin, Co. Fermanagh.</p>
+        <p>The centre sits alongside Upper Lough Erne, where the landscape naturally supports the work: quiet water, open sky, and space to slow down. Shambala welcomes people seeking a single therapy session, a Reiki training pathway, a sound bath, a wellness day or a residential retreat.</p>
+        <p>The work is natural, non-invasive and individual. Rather than treating people as symptoms, Shambala takes a whole-person view, helping guests relax, re-energise and reconnect with their own capacity for self-healing and natural balance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="feature-grid">
+      <article>
+        <p class="label">Founder</p>
+        <h2>Sukhada Smith-Repass</h2>
+        <p>Sukhada describes her work simply: she does these therapies because she wants to help people. Her practice continues to evolve through ongoing training, Reiki teaching and hands-on care for guests who come to Shambala for rest, clarity and support.</p>
+      </article>
+      <div class="landscape-card" role="img" aria-label="Upper Lough Erne setting at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+        <span>Lakeside practice in Fermanagh</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">What Shambala Offers</p>
+      <h2>Care That Meets You as an Individual</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Holistic Therapies</h3>
+        <p>Therapies are chosen around the person in front of Sukhada, with a focus on relaxation, self-healing and restoring natural rhythm.</p>
+      </article>
+      <article>
+        <h3>Reiki Teaching</h3>
+        <p>Reiki teaching is part of the centre's long-standing work, supporting people who want to deepen their own practice.</p>
+      </article>
+      <article>
+        <h3>Retreat Care</h3>
+        <p>Residential retreats, half-day retreats and wellness days bring together movement, meditation, nature, sound and nourishing food.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Plan a Visit</p>
+      <h2>Come to the Water, and Take Time to Reset</h2>
+      <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/retreats/">Explore Retreats</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/contact/">Contact Shambala</a>
+    </div>
+  </section>
+</BaseLayout>
