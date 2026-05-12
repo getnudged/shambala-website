@@ -24,7 +24,7 @@ const retreats = defineCollection({
     priceEUR: z.number().optional(),
     includes: z.array(z.string()).default([]),
     facilitators: z.array(z.string()).default([]),
-    slug: z.string()
+    slug: z.string().optional()
   })
 });
 
