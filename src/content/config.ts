@@ -17,8 +17,10 @@ const retreats = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    startDate: z.date(),
-    endDate: z.date(),
+    startDate: z.date().optional(),
+    endDate: z.date().optional(),
+    year: z.number().optional(),
+    dateNote: z.string().optional(),
     price: z.number(),
     currency: z.string().default('GBP'),
     priceEUR: z.number().optional(),
