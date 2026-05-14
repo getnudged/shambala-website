@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/components/inner-pages.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const postSlug = post.id.replace(/\.md$/, '');
+
+const canonical = `https://shambalaholisticandretreatcentre.com/blog/${postSlug}/`;
+
+const meta = {
+  title: post.data.seoTitle ?? `${post.data.title} | Shambala Holistic Retreat Centre | Fermanagh`,
+  description: post.data.description,
+  canonical,
+  image: post.data.image ? `https://shambalaholisticandretreatcentre.com/${post.data.image}` : undefined
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: post.data.pubDate.toISOString(),
+  url: canonical,
+  image: post.data.image ? `https://shambalaholisticandretreatcentre.com/${post.data.image}` : undefined,
+  author: {
+    '@type': 'Organization',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  mainEntityOfPage: canonical
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <article>
+    <header class="inner-hero inner-hero--blog-post">
+      <div class="inner-hero__content">
+        <p class="label">
+          {post.data.pubDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
+        </p>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+      </div>
+    </header>
+
+    <section class="page-section">
+      <div class="article-layout">
+        <aside class="article-meta" aria-label="Article details">
+          <p class="label">Topics</p>
+          <ul>
+            {post.data.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+          <a class="btn btn-dark" href="/blog/">Back to Blog</a>
+        </aside>
+        <div class="article-content">
+          <Content />
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

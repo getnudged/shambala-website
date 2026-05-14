@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const postSlug = (id: string) => id.replace(/\.md$/, '');
+
+const meta = {
+  title: 'Wellness Blog | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Read Shambala wellness blog posts on sound baths, Reiki, yoga and holistic therapies from a retreat centre on Upper Lough Erne in Fermanagh, Northern Ireland.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/blog/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Shambala Wellness Blog',
+  url: meta.canonical,
+  description: meta.description,
+  blogPost: posts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.pubDate.toISOString(),
+    url: `https://shambalaholisticandretreatcentre.com/blog/${postSlug(post.id)}/`
+  }))
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--blog">
+    <div class="inner-hero__content">
+      <p class="label">Sound · Reiki · Yoga · Holistic Therapies</p>
+      <h1>Wellness Blog from Shambala Holistic & Retreat Centre</h1>
+      <p>Practical guidance and quiet reflections from the lakeside: sound baths, Reiki, retreat care and holistic therapies in Fermanagh.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading">
+      <div>
+        <p class="label">Latest Posts</p>
+        <h2>Notes for Rest, Balance and Practice</h2>
+      </div>
+      <a class="btn btn-dark" href="/contact/">Ask About a Session</a>
+    </div>
+
+    <div class="blog-card-grid">
+      {posts.map((post) => (
+        <article class="blog-card">
+          <a href={`/blog/${postSlug(post.id)}/`} aria-label={`Read ${post.data.title}`}>
+            <div class="blog-card__visual" role="img" aria-label={post.data.imageAlt ?? `${post.data.title} at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`}>
+              <span>{post.data.keywords[0] ?? 'Wellness'}</span>
+            </div>
+            <div class="blog-card__body">
+              <p class="label">
+                {post.data.pubDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                })}
+              </p>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <span class="text-link">Read Article</span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="split-layout">
+      <div>
+        <p class="label">From the Centre</p>
+        <h2>Rooted in Practice, Not Trends</h2>
+      </div>
+      <div class="copy-flow">
+        <p>These articles support people considering a sound bath, Reiki session, holistic therapy, yoga class or retreat at Shambala Holistic & Retreat Centre.</p>
+        <p>They are written to answer the practical questions guests often have before visiting: what to expect, how to prepare, and how each practice supports relaxation, self-healing and natural balance.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
