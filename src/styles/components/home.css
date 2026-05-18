@@ -38,13 +38,12 @@
 }
 
 .hero h1 {
-  max-width: min(100%, 18ch);
+  max-width: min(100%, 13.5ch);
   text-shadow: 0 2px 40px var(--overlay-dark);
 }
 
 .hero h1 span {
   display: block;
-  white-space: nowrap;
 }
 
 .hero-quote {
@@ -558,8 +557,8 @@
   }
 
   .hero h1 {
-    max-width: none;
-    font-size: clamp(2rem, 10vw, 2.75rem);
+    max-width: 12ch;
+    font-size: clamp(2.6rem, 12vw, 3.5rem);
   }
 
   .services-grid,
