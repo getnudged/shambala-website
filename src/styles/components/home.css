@@ -8,48 +8,23 @@
   color: var(--text-inv);
 }
 
-.hero-bg,
-.hero-water,
-.hero-trees {
+.hero-image,
+.hero-overlay {
   position: absolute;
   inset: 0;
 }
 
-.hero-bg {
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+.hero-overlay {
   background:
-    radial-gradient(ellipse 120% 60% at 50% 100%, var(--overlay) 0%, transparent 70%),
-    radial-gradient(ellipse 80% 40% at 20% 70%, rgba(74, 103, 65, 0.3) 0%, transparent 60%),
-    linear-gradient(175deg, var(--sky-1) 0%, var(--sky-2) 12%, var(--water-1) 24%, var(--water-2) 34%, var(--lough) 48%, var(--water-3) 58%, var(--night-1) 68%, var(--night-2) 78%, var(--night-3) 92%, var(--night-4) 100%);
-}
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 45% 0 auto;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(168, 197, 216, 0.35) 20%, rgba(168, 197, 216, 0.55) 50%, rgba(168, 197, 216, 0.35) 80%, transparent 100%);
-}
-
-.hero-water {
-  top: 55%;
-  background: linear-gradient(180deg, transparent 0%, rgba(44, 74, 90, 0.15) 30%, rgba(28, 51, 64, 0.4) 70%, rgba(14, 31, 40, 0.7) 100%);
-}
-
-.hero-water::before,
-.setting-visual::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(180deg, transparent 0, transparent 14px, rgba(168, 197, 216, 0.05) 14px, rgba(168, 197, 216, 0.05) 15px);
-  animation: water-shimmer 8s ease-in-out infinite;
-}
-
-.hero-trees {
-  top: auto;
-  bottom: 42%;
-  height: 80px;
-  background: var(--night-3);
-  clip-path: polygon(0% 100%, 0% 70%, 2% 62%, 4% 72%, 5% 55%, 7% 68%, 8% 50%, 9% 62%, 11% 45%, 12% 58%, 13% 40%, 14% 52%, 15% 38%, 16% 50%, 17% 34%, 18% 48%, 19% 32%, 20% 46%, 22% 38%, 24% 52%, 26% 35%, 28% 48%, 30% 30%, 32% 45%, 34% 28%, 36% 42%, 38% 25%, 40% 40%, 42% 22%, 44% 38%, 46% 28%, 48% 42%, 50% 20%, 52% 38%, 54% 25%, 56% 42%, 58% 30%, 60% 48%, 62% 32%, 64% 50%, 66% 35%, 68% 52%, 70% 38%, 72% 55%, 74% 40%, 76% 58%, 78% 42%, 80% 60%, 82% 48%, 84% 65%, 86% 52%, 88% 68%, 90% 55%, 92% 70%, 94% 58%, 96% 72%, 98% 62%, 100% 70%, 100% 100%);
+    linear-gradient(90deg, rgba(14, 31, 40, 0.78) 0%, rgba(14, 31, 40, 0.5) 42%, rgba(14, 31, 40, 0.14) 100%),
+    linear-gradient(180deg, rgba(14, 31, 40, 0.28) 0%, rgba(14, 31, 40, 0.18) 45%, rgba(14, 31, 40, 0.66) 100%);
 }
 
 .hero-content {
@@ -63,8 +38,13 @@
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: min(100%, 18ch);
   text-shadow: 0 2px 40px var(--overlay-dark);
+}
+
+.hero h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-quote {
@@ -340,6 +320,14 @@
   clip-path: polygon(0% 100%, 0% 55%, 3% 40%, 6% 58%, 9% 35%, 12% 52%, 15% 28%, 18% 45%, 21% 22%, 24% 40%, 27% 18%, 30% 38%, 33% 15%, 36% 35%, 39% 18%, 42% 38%, 45% 12%, 48% 32%, 51% 15%, 54% 35%, 57% 22%, 60% 42%, 63% 25%, 66% 45%, 69% 28%, 72% 48%, 75% 35%, 78% 55%, 81% 40%, 84% 58%, 87% 45%, 90% 62%, 93% 50%, 96% 65%, 100% 55%, 100% 100%);
 }
 
+.setting-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(180deg, transparent 0, transparent 14px, rgba(168, 197, 216, 0.05) 14px, rgba(168, 197, 216, 0.05) 15px);
+  animation: water-shimmer 8s ease-in-out infinite;
+}
+
 .setting-text {
   display: flex;
   flex-direction: column;
@@ -570,7 +558,8 @@
   }
 
   .hero h1 {
-    max-width: 10ch;
+    max-width: none;
+    font-size: clamp(2rem, 10vw, 2.75rem);
   }
 
   .services-grid,
