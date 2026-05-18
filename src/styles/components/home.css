@@ -30,7 +30,7 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 860px;
+  max-width: min(980px, 72vw);
 }
 
 .hero-eyebrow {
@@ -38,12 +38,14 @@
 }
 
 .hero h1 {
-  max-width: min(100%, 13.5ch);
+  max-width: 100%;
+  font-size: clamp(3.25rem, 5.4vw, 6rem);
   text-shadow: 0 2px 40px var(--overlay-dark);
 }
 
 .hero h1 span {
   display: block;
+  white-space: nowrap;
 }
 
 .hero-quote {
@@ -559,6 +561,10 @@
   .hero h1 {
     max-width: 12ch;
     font-size: clamp(2.6rem, 12vw, 3.5rem);
+  }
+
+  .hero h1 span {
+    white-space: normal;
   }
 
   .services-grid,
