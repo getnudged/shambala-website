@@ -1,10 +1,10 @@
 .inner-hero {
   position: relative;
-  min-height: 74svh;
+  min-height: 100svh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  padding: 10rem var(--grid-gutter) 7rem;
+  padding: 9rem var(--grid-gutter) 8vh;
   background: var(--lough);
   color: var(--text-inv);
 }
@@ -17,20 +17,21 @@
 }
 
 .inner-hero::before {
-  background:
-    radial-gradient(ellipse 90% 48% at 72% 72%, var(--gold-wash) 0%, transparent 62%),
-    linear-gradient(170deg, var(--sky-2) 0%, var(--lough) 42%, var(--night-1) 72%, var(--night-3) 100%);
+  background-image: url('../../images/Shambala House.jpeg');
+  background-position: center 54%;
+  background-size: cover;
 }
 
 .inner-hero::after {
-  top: 54%;
-  background: repeating-linear-gradient(180deg, transparent 0, transparent 16px, rgba(168, 197, 216, 0.05) 16px, rgba(168, 197, 216, 0.05) 17px);
+  background:
+    linear-gradient(90deg, var(--overlay-dark) 0%, var(--dark-soft) 42%, transparent 100%),
+    linear-gradient(180deg, var(--overlay) 0%, transparent 45%, var(--overlay-dark) 100%);
 }
 
 .inner-hero__content {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: min(980px, 72vw);
 }
 
 .inner-hero .label {
@@ -38,7 +39,8 @@
 }
 
 .inner-hero h1 {
-  max-width: 13ch;
+  max-width: 100%;
+  font-size: clamp(3.25rem, 5.4vw, 6rem);
   text-shadow: 0 2px 40px var(--overlay-dark);
 }
 
@@ -461,11 +463,12 @@
 
 @media (max-width: 640px) {
   .inner-hero {
-    min-height: 700px;
+    min-height: 760px;
   }
 
   .inner-hero h1 {
-    max-width: 10ch;
+    max-width: 12ch;
+    font-size: clamp(2.6rem, 12vw, 3.5rem);
   }
 
   .value-grid,
