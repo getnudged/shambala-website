@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Sound Bath Fermanagh | Shambala Holistic Retreat Centre',
+  description: 'Book sound baths and yoga in Fermanagh at Shambala, with Tibetan bowls, crystal bowls, gong, restorative yoga and meditation beside Upper Lough Erne today.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/sound-baths-yoga/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Sound Baths and Yoga in Fermanagh',
+  serviceType: 'Sound bath and yoga',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--sound">
+    <div class="inner-hero__content">
+      <p class="label">Sound Healing · Restorative Yoga · Meditation</p>
+      <h1>Sound Baths and Yoga in Fermanagh</h1>
+      <p>Immersive sound, gentle movement and deep rest at Shambala Holistic & Retreat Centre near Upper Lough Erne.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Sound and Stillness</p>
+        <h2>Let the Body Settle</h2>
+      </div>
+      <div class="copy-flow">
+        <p>A sound bath is a meditative experience where you rest while resonant tones from instruments such as Tibetan bowls, crystal bowls and gong move through the room.</p>
+        <p>At Shambala, sound baths may be offered as standalone sessions, as part of Slow Flow Rahanni Yoga evenings, during wellness days, or within residential retreats.</p>
+        <p>The practice is simple: lie down, get comfortable, listen, and let the body move towards stillness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Sessions May Include</p>
+      <h2>Sound, Breath and Gentle Movement</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Sound Bath Meditation</h3>
+        <p>Tibetan bowls, crystal bowls and gong tones create a calm field for deep relaxation.</p>
+      </article>
+      <article>
+        <h3>Restorative Yoga</h3>
+        <p>Slow, supportive yoga that helps the body soften before sound meditation.</p>
+      </article>
+      <article>
+        <h3>Slow Flow Rahanni Yoga</h3>
+        <p>A gentle evening practice that may be paired with sound bath meditation on selected dates.</p>
+      </article>
+      <article>
+        <h3>Retreat Sound Baths</h3>
+        <p>Many residential retreats include a sound bath as part of the evening programme.</p>
+      </article>
+      <article>
+        <h3>Private Groups</h3>
+        <p>Sound and yoga sessions can be discussed for small groups and wellbeing days.</p>
+      </article>
+      <article>
+        <h3>First-Time Visitors</h3>
+        <p>No experience is needed. Wear comfortable clothing and arrive ready to rest.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Sound Enquiry</p>
+      <h2>Book a Sound Bath or Yoga Session</h2>
+      <p>Contact Sukhada for upcoming sound bath, yoga and retreat availability.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Book a Sound Bath</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/blog/what-is-a-sound-bath/">Read About Sound Baths</a>
+    </div>
+  </section>
+</BaseLayout>

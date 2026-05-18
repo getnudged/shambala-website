@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Holistic Therapies Fermanagh | Shambala Holistic Retreat Centre',
+  description: 'Explore holistic therapies in Fermanagh at Shambala, including Reiki, massage, reflexology, EFT, crystal healing, sound baths, wellness days and retreats.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/therapies/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Holistic Therapies in Fermanagh',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  areaServed: ['Derrylin', 'Co. Fermanagh', 'Enniskillen', 'Northern Ireland']
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--therapies">
+    <div class="inner-hero__content">
+      <p class="label">Reiki · Massage · Sound · Nature</p>
+      <h1>Holistic Therapies in Fermanagh at Shambala</h1>
+      <p>Natural, non-invasive therapies and restorative sessions with Sukhada on the shores of Upper Lough Erne.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Therapy Overview</p>
+        <h2>Care for the Whole Person</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala offers holistic therapies for people seeking relaxation, balance, stress relief and time to reconnect with themselves in a peaceful Fermanagh setting.</p>
+        <p>Sessions are chosen around the person, not a fixed formula. Sukhada's approach is grounded in long practice, Reiki teaching, massage, sound healing and the natural support of the lakeside centre.</p>
+        <p>Therapies are available by appointment at Shambala Holistic & Retreat Centre, 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Choose a Path</p>
+      <h2>Therapies and Restorative Sessions</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Holistic Therapies</h3>
+        <p>Reiki, EFT Tapping, Indian Head Massage, Reflexology, Crystal Healing and individual support for natural balance.</p>
+        <a class="text-link" href="/therapies/holistic/">Explore holistic therapies</a>
+      </article>
+      <article>
+        <h3>Massage Therapy</h3>
+        <p>Swedish, Hot Stone, Himalayan Salt Stone and Aromatherapy massage tailored to the body in front of Sukhada.</p>
+        <a class="text-link" href="/therapies/massage/">Book a massage</a>
+      </article>
+      <article>
+        <h3>Reiki Training</h3>
+        <p>Reiki Level 1, Level 2 and Master training with Sukhada, who has practised and taught Reiki since 1999.</p>
+        <a class="text-link" href="/therapies/training/">Begin Reiki training</a>
+      </article>
+      <article>
+        <h3>Wellness Days</h3>
+        <p>Half-day and full-day experiences with meditation, forest bathing, grounding practice, movement and lunch.</p>
+        <a class="text-link" href="/wellness-days/">Plan your wellness day</a>
+      </article>
+      <article>
+        <h3>Sound Baths & Yoga</h3>
+        <p>Restorative yoga, gentle movement and immersive sound meditation with bowls, gong and quiet stillness.</p>
+        <a class="text-link" href="/sound-baths-yoga/">Book a sound bath</a>
+      </article>
+      <article>
+        <h3>Retreats</h3>
+        <p>Residential weekends and focused retreat days combine therapies, yoga, nature, food and deep rest.</p>
+        <a class="text-link" href="/retreats/">Explore retreats</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Book by Appointment</p>
+      <h2>Choose the Session That Meets You Where You Are</h2>
+      <p>Contact Sukhada to discuss the right therapy or retreat pathway for your needs.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Book a Session</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/about/">Meet Sukhada</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Reiki Training Fermanagh | Shambala Holistic Retreat Centre',
+  description: 'Begin Reiki training in Fermanagh with Sukhada at Shambala, from Reiki Level 1 and Level 2 through to deeper practice and Master training pathways here.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/therapies/training/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Reiki Training in Fermanagh',
+  description: meta.description,
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--training">
+    <div class="inner-hero__content">
+      <p class="label">Reiki Level 1 · Level 2 · Master Training</p>
+      <h1>Reiki Training in Fermanagh with Sukhada</h1>
+      <p>Learn Reiki in a grounded, supportive setting with Sukhada, a Reiki practitioner and teacher since 1999.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Training Pathway</p>
+        <h2>Practice That Deepens Over Time</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Reiki training at Shambala is for people who want to support their own wellbeing, share Reiki with others, or deepen an existing healing practice.</p>
+        <p>Sukhada teaches from long experience, keeping the learning practical, respectful and rooted in personal practice rather than performance.</p>
+        <p>Training is arranged by enquiry. Dates, group size and progression depend on current availability and student readiness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Reiki Levels</p>
+      <h2>Training Available by Enquiry</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Reiki Level 1</h3>
+        <p>An introduction to Reiki practice for self-care, grounding and beginning to understand energy work.</p>
+      </article>
+      <article>
+        <h3>Reiki Level 2</h3>
+        <p>A deeper stage for people ready to expand their practice and continue their Reiki pathway.</p>
+      </article>
+      <article>
+        <h3>Master Training</h3>
+        <p>Advanced Reiki training for committed students, arranged through direct conversation with Sukhada.</p>
+      </article>
+    </div>
+    <p class="small-note">TODO: Add confirmed course dates, duration and pricing when supplied by Shambala.</p>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Training Enquiry</p>
+      <h2>Begin a Reiki Conversation</h2>
+      <p>Contact Sukhada to ask about the next suitable Reiki training opportunity at Shambala.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Enquire About Reiki Training</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/therapies/holistic/">Explore Reiki Therapy</a>
+    </div>
+  </section>
+</BaseLayout>

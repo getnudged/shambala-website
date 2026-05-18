@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Reiki and Holistic Therapies | Shambala Holistic Retreat Centre',
+  description: 'Book Reiki and holistic therapies in Fermanagh with Sukhada at Shambala, including EFT, reflexology, Indian head massage and crystal healing sessions.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/therapies/holistic/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Reiki and Holistic Therapies in Fermanagh',
+  serviceType: 'Holistic therapy',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--holistic">
+    <div class="inner-hero__content">
+      <p class="label">Reiki · EFT · Reflexology · Crystal Healing</p>
+      <h1>Reiki and Holistic Therapies in Fermanagh</h1>
+      <p>Gentle, individual therapies with Sukhada for relaxation, self-healing and natural balance.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Holistic Care</p>
+        <h2>Natural, Non-Invasive Support</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Holistic therapy at Shambala looks at the whole person. Sessions are calm, individual and designed to support relaxation, confidence, stress reduction and the body's natural capacity for balance.</p>
+        <p>Sukhada has practised holistic therapies since 1999 and welcomes people for one-off support, regular care, retreat add-ons and deeper Reiki pathways.</p>
+        <p>Appointments take place at Shambala Holistic & Retreat Centre in Derrylin, Co. Fermanagh, beside Upper Lough Erne.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Available Therapies</p>
+      <h2>Choose the Right Support</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Reiki</h3>
+        <p>Energy healing for deep rest, emotional ease and reconnection with your own natural rhythm.</p>
+      </article>
+      <article>
+        <h3>EFT Tapping</h3>
+        <p>A gentle tapping practice that can support emotional regulation, stress release and new patterns.</p>
+      </article>
+      <article>
+        <h3>Reflexology</h3>
+        <p>Focused foot therapy to encourage relaxation and whole-body balance through mapped reflex points.</p>
+      </article>
+      <article>
+        <h3>Indian Head Massage</h3>
+        <p>A seated therapy for the head, neck and shoulders, often chosen for tension and mental overload.</p>
+      </article>
+      <article>
+        <h3>Crystal Healing</h3>
+        <p>A quiet restorative session using crystals as part of a meditative, balancing treatment.</p>
+      </article>
+      <article>
+        <h3>Retreat Add-Ons</h3>
+        <p>Optional therapies may be available during selected retreats when booked in advance.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Therapy Enquiry</p>
+      <h2>Ask Sukhada Which Therapy Is Right for You</h2>
+      <p>Use the contact page to enquire about availability and the best session for your needs.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Book a Holistic Therapy</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/therapies/massage/">Explore Massage</a>
+    </div>
+  </section>
+</BaseLayout>

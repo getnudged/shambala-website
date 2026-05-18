@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Corporate Wellness Northern Ireland | Shambala Retreat Centre',
+  description: 'Plan corporate wellness days in Northern Ireland at Shambala, with yoga, forest bathing, sound baths and restorative team wellbeing beside Lough Erne.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/corporate-wellness/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Corporate Wellness Days in Northern Ireland',
+  serviceType: 'Corporate wellness',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  areaServed: ['Northern Ireland', 'Ireland', 'Co. Fermanagh']
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--corporate">
+    <div class="inner-hero__content">
+      <p class="label">Teams · Wellbeing · Lough Erne</p>
+      <h1>Corporate Wellness Days in Northern Ireland</h1>
+      <p>Bespoke wellbeing days for teams who need to step away, breathe, reset and reconnect in a restorative Fermanagh setting.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Team Wellbeing</p>
+        <h2>A Different Kind of Away Day</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Corporate wellness at Shambala moves teams out of meeting rooms and into a quiet lakeside environment where people can slow down properly.</p>
+        <p>Days can combine gentle movement, meditation, sound bath, forest bathing, grounding practice, reflective exercises and shared food, depending on the group's needs.</p>
+        <p>Shambala is based in Derrylin, Co. Fermanagh, accessible from Enniskillen, Cavan, Belfast and Dublin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Programme Options</p>
+      <h2>Built Around Your Group</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Wellbeing Day</h3>
+        <p>A focused day of restorative practices, lunch and time in the Shambala setting.</p>
+      </article>
+      <article>
+        <h3>Sound Bath Session</h3>
+        <p>Deep relaxation through immersive sound meditation, suitable for groups new to wellbeing work.</p>
+      </article>
+      <article>
+        <h3>Forest Bathing</h3>
+        <p>Nature-based practice to support nervous system reset, presence and team decompression.</p>
+      </article>
+      <article>
+        <h3>Yoga and Movement</h3>
+        <p>Gentle, accessible movement designed around the group rather than performance.</p>
+      </article>
+      <article>
+        <h3>Retreat Format</h3>
+        <p>Longer residential or half-day formats can be discussed for deeper team restoration.</p>
+      </article>
+      <article>
+        <h3>Custom Planning</h3>
+        <p>Every corporate enquiry is shaped around group size, timing, goals and accessibility needs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Group Enquiry</p>
+      <h2>Plan a Corporate Wellbeing Day</h2>
+      <p>Contact Shambala to discuss your team size, preferred dates and wellbeing goals.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Enquire About Corporate Days</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore Retreats</a>
+    </div>
+  </section>
+</BaseLayout>

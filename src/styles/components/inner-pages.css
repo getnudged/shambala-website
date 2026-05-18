@@ -358,6 +358,79 @@
   flex: 0 0 auto;
 }
 
+.contact-grid {
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.contact-grid article {
+  background: var(--parchment);
+  padding: 2.2rem;
+}
+
+.contact-grid h2 {
+  color: var(--lough);
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+}
+
+.contact-grid a {
+  color: var(--text);
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.25em;
+}
+
+.enquiry-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-s);
+}
+
+.enquiry-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.enquiry-form span {
+  color: var(--stone);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--parchment);
+  color: var(--text);
+  font: inherit;
+  padding: 0.9rem 1rem;
+}
+
+.enquiry-form textarea {
+  resize: vertical;
+}
+
+.enquiry-form__full,
+.enquiry-form button {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .contact-grid,
+  .enquiry-form {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 980px) {
   .split-layout,
   .feature-grid {

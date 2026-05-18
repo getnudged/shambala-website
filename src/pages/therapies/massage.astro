@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Massage Therapy Fermanagh | Shambala Holistic Retreat Centre',
+  description: 'Book massage therapy in Fermanagh near Enniskillen, including Swedish, hot stone, Himalayan salt stone and aromatherapy massage at Shambala by Lough Erne.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/therapies/massage/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Massage Therapy in Fermanagh',
+  serviceType: 'Massage therapy',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  areaServed: ['Derrylin', 'Enniskillen', 'Co. Fermanagh']
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--massage">
+    <div class="inner-hero__content">
+      <p class="label">Swedish · Hot Stone · Salt Stone · Aromatherapy</p>
+      <h1>Massage Therapy in Fermanagh near Enniskillen</h1>
+      <p>Restorative massage treatments with Sukhada in a quiet lakeside setting near Derrylin and Enniskillen.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Massage at Shambala</p>
+        <h2>Hands-On Rest and Release</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Massage therapy at Shambala is calm, focused and responsive. Each session is chosen around the person, with attention to tension, relaxation, comfort and the need to slow down.</p>
+        <p>The centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, around 20 minutes from Enniskillen and 40 minutes from Cavan.</p>
+        <p>Contact Sukhada directly for current massage availability and the best treatment for your needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Treatment Options</p>
+      <h2>Massage Therapies Available</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Swedish Massage</h3>
+        <p>A classic massage treatment for relaxation, easing muscular tension and supporting circulation.</p>
+      </article>
+      <article>
+        <h3>Hot Stone Massage</h3>
+        <p>Heated stones support deep warmth, muscular ease and a sense of grounded relaxation.</p>
+      </article>
+      <article>
+        <h3>Himalayan Salt Stone</h3>
+        <p>A warming, mineral-rich treatment for people seeking deep rest and a different massage experience.</p>
+      </article>
+      <article>
+        <h3>Aromatherapy Massage</h3>
+        <p>Massage supported by aromatic oils, chosen to complement the intention of the session.</p>
+      </article>
+      <article>
+        <h3>Indian Head Massage</h3>
+        <p>Focused care for head, neck and shoulder tension, especially useful for stress and screen fatigue.</p>
+      </article>
+      <article>
+        <h3>Retreat Therapies</h3>
+        <p>Optional massage may be available during selected weekend retreats when arranged in advance.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">By Appointment</p>
+      <h2>Book Massage Therapy with Sukhada</h2>
+      <p>Ask about treatment availability, retreat add-ons or the right massage option for you.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Book a Massage</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/therapies/holistic/">Explore Holistic Therapies</a>
+    </div>
+  </section>
+</BaseLayout>

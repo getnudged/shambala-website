@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Contact Shambala | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Contact Shambala Holistic & Retreat Centre in Derrylin, Co. Fermanagh to enquire about retreats, massage, Reiki, yoga, sound baths, stays and local visits.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/contact/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Shambala Holistic & Retreat Centre',
+  url: meta.canonical
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--contact">
+    <div class="inner-hero__content">
+      <p class="label">Derrylin · Co. Fermanagh · By appointment</p>
+      <h1>Contact Shambala Holistic & Retreat Centre in Fermanagh</h1>
+      <p>Enquire about retreats, therapies, Reiki training, sound baths, yoga, corporate wellbeing or self-catering stays by Upper Lough Erne.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Get in Touch</p>
+        <h2>Speak Directly with Sukhada</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <p>For current availability, retreat places, therapy bookings and general enquiries, contact Sukhada directly.</p>
+        <p><a href="tel:+447713744589">Call +44 7713 744 589</a> or email <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="contact-grid">
+      <article>
+        <p class="label">Phone</p>
+        <h2>Call Shambala</h2>
+        <p><a href="tel:+447713744589">+44 7713 744 589</a></p>
+      </article>
+      <article>
+        <p class="label">Email</p>
+        <h2>Email Sukhada</h2>
+        <p><a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a></p>
+      </article>
+      <article>
+        <p class="label">Address</p>
+        <h2>Visit by Appointment</h2>
+        <p>48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Enquiry Form</p>
+        <h2>Send a Message</h2>
+      </div>
+      <form class="enquiry-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Phone</span>
+          <input name="phone" type="tel" autocomplete="tel" />
+        </label>
+        <label>
+          <span>Interested in</span>
+          <select name="interest" required>
+            <option value="">Choose an option</option>
+            <option>Retreats</option>
+            <option>Massage therapy</option>
+            <option>Holistic therapies</option>
+            <option>Reiki training</option>
+            <option>Sound baths and yoga</option>
+            <option>Corporate wellness</option>
+            <option>Self-catering accommodation</option>
+          </select>
+        </label>
+        <label class="enquiry-form__full">
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

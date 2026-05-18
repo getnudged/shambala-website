@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Self Catering Fermanagh | Shambala Holistic Retreat Centre',
+  description: 'Ask about self-catering accommodation at Shambala in Derrylin, Co. Fermanagh, a peaceful stay by Upper Lough Erne near Enniskillen and Cavan, Ireland.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/self-catering/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: 'Self-Catering Accommodation at Shambala',
+  url: meta.canonical,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '48 Geaglum Road',
+    addressLocality: 'Derrylin',
+    addressRegion: 'Co. Fermanagh',
+    postalCode: 'BT92 9GN',
+    addressCountry: 'GB'
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--stay">
+    <div class="inner-hero__content">
+      <p class="label">Stay · Lough Erne · Fermanagh</p>
+      <h1>Self-Catering Accommodation at Shambala in Fermanagh</h1>
+      <p>Stay close to the water at Shambala, with peaceful self-catering accommodation by Upper Lough Erne.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Stay at Shambala</p>
+        <h2>Quiet Time Beside Upper Lough Erne</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala offers self-catering accommodation for guests who want a peaceful base in Derrylin, Co. Fermanagh, close to Upper Lough Erne.</p>
+        <p>The accommodation can suit people visiting for retreats, therapies, local exploration or quiet time in the Fermanagh landscape.</p>
+        <p>Availability, rates and suitability should be confirmed directly with Sukhada before booking travel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">For Visitors</p>
+      <h2>A Calm Base in Derrylin</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Retreat Guests</h3>
+        <p>Stay close to the centre before or after a retreat, subject to availability.</p>
+      </article>
+      <article>
+        <h3>Therapy Visitors</h3>
+        <p>Create more space around massage, Reiki, sound bath or holistic therapy appointments.</p>
+      </article>
+      <article>
+        <h3>Fermanagh Breaks</h3>
+        <p>Use Shambala as a quiet base for Lough Erne, Derrylin, Enniskillen and cross-border travel.</p>
+      </article>
+    </div>
+    <p class="small-note">TODO: Add accommodation photos, room details, capacity and confirmed nightly pricing when supplied by Shambala.</p>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Accommodation Enquiry</p>
+      <h2>Check Self-Catering Availability</h2>
+      <p>Contact Sukhada with your dates, group size and reason for visiting.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Check Availability</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/about/">About Shambala</a>
+    </div>
+  </section>
+</BaseLayout>
