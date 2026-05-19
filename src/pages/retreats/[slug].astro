@@ -16,6 +16,7 @@ const { retreat } = Astro.props;
 const { Content } = await render(retreat);
 const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
 const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
+const allRetreats = await getCollection('retreats');
 
 const formatDate = (date?: Date) =>
   date
@@ -35,6 +36,23 @@ const dateLabel = retreat.data.startDate
 const priceLabel = retreat.data.priceEUR
   ? `£${retreat.data.price} / €${retreat.data.priceEUR}`
   : `£${retreat.data.price}`;
+
+const depositLabel = retreat.data.price >= 200
+  ? retreat.data.priceEUR
+    ? 'Typical weekend retreat deposit: £130 / €150'
+    : 'Typical weekend retreat deposit: £130'
+  : retreat.data.priceEUR
+    ? 'Typical half-day retreat deposit: £20 / €23'
+    : 'Typical half-day retreat deposit: £20';
+
+const relatedRetreats = allRetreats
+  .filter((item) => (item.data.slug ?? item.id.replace(/\.md$/, '')) !== slug)
+  .sort((a, b) => {
+    const aTime = a.data.startDate?.valueOf() ?? Number.MAX_SAFE_INTEGER;
+    const bTime = b.data.startDate?.valueOf() ?? Number.MAX_SAFE_INTEGER;
+    return aTime - bTime;
+  })
+  .slice(0, 2);
 
 const buildDescription = (description: string) => {
   const suffix = ' Join Shambala in Derrylin, Co. Fermanagh for retreat time beside Upper Lough Erne.';
@@ -98,9 +116,16 @@ const eventSchema = retreat.data.startDate
   <article>
     <header class="inner-hero inner-hero--retreat-detail">
       <div class="inner-hero__content">
-        <p class="label">{dateLabel} · {priceLabel}</p>
-        <h1>{retreat.data.title}</h1>
-        <p>{retreat.data.description}</p>
+        <div class="retreat-hero-card">
+          <p class="label">Retreat at Shambala · {dateLabel}</p>
+          <h1>{retreat.data.title}</h1>
+          <p>{retreat.data.description}</p>
+          <div class="retreat-hero-meta" aria-label="Retreat summary">
+            <span>{priceLabel}</span>
+            <span>{retreat.data.facilitators.length > 0 ? retreat.data.facilitators.join(' & ') : 'Facilitator to confirm'}</span>
+            <span>Derrylin, Co. Fermanagh</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -124,7 +149,7 @@ const eventSchema = retreat.data.startDate
               </div>
             )}
           </dl>
-          {!retreat.data.startDate && <p class="small-note">TODO: Confirm exact retreat dates before launch.</p>}
+          {!retreat.data.startDate && <p class="detail-placeholder">Placeholder: exact retreat dates to confirm before launch.</p>}
           <a class="btn btn-dark" href="#retreat-enquiry">Reserve Your Place</a>
         </aside>
 
@@ -135,6 +160,31 @@ const eventSchema = retreat.data.startDate
     </section>
 
     <section class="page-section page-section--mist">
+      <div class="section-heading section-heading--simple">
+        <p class="label">Pricing & Booking</p>
+        <h2>Price, Deposit and Booking Notes</h2>
+      </div>
+      <div class="retreat-pricing-grid">
+        <article>
+          <p class="label">Retreat Price</p>
+          <h3>{priceLabel}</h3>
+          <p>Listed retreat price for {retreat.data.title}. Contact Shambala to confirm current availability before arranging travel.</p>
+        </article>
+        <article>
+          <p class="label">Deposit</p>
+          <h3>{depositLabel}</h3>
+          <p>Deposits are described in the audit notes as optional, with priority given to confirmed bookings.</p>
+        </article>
+        <article>
+          <p class="label">Cancellation</p>
+          <h3>14-day policy</h3>
+          <p>Audit notes say deposits are fully refundable up to 14 days before the retreat, then transferable to a future retreat.</p>
+        </article>
+      </div>
+      {!retreat.data.startDate && <p class="small-note">Placeholder: exact date-dependent booking terms should be reviewed once dates are confirmed.</p>}
+    </section>
+
+    <section class="page-section">
       <div class="section-heading section-heading--simple">
         <p class="label">What's Included</p>
         <h2>Included in This Retreat</h2>
@@ -147,7 +197,26 @@ const eventSchema = retreat.data.startDate
           </article>
         ))}
       </div>
-      {retreat.data.includes.length === 0 && <p class="small-note">TODO: Add confirmed inclusions for this retreat.</p>}
+      {retreat.data.includes.length === 0 && <p class="detail-placeholder">Placeholder: add confirmed inclusions for this retreat.</p>}
+    </section>
+
+    <section class="page-section page-section--mist">
+      <div class="split-layout">
+        <div>
+          <p class="label">Facilitators</p>
+          <h2>Who Holds the Retreat</h2>
+        </div>
+        <div class="copy-flow">
+          {retreat.data.facilitators.length > 0 ? (
+            <>
+              <p>This retreat is currently listed with {retreat.data.facilitators.join(' and ')} as facilitator{retreat.data.facilitators.length > 1 ? 's' : ''}.</p>
+              <p>Facilitator details should be confirmed when final retreat dates are agreed.</p>
+            </>
+          ) : (
+            <p class="detail-placeholder">Placeholder: facilitator details to confirm from Shambala before launch.</p>
+          )}
+        </div>
+      </div>
     </section>
 
     <section class="page-section" id="retreat-enquiry">
@@ -202,6 +271,33 @@ const eventSchema = retreat.data.startDate
       <div class="cta-actions">
         <a class="btn btn-primary" href="/getting-here/">Plan Your Journey</a>
         <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore All Retreats</a>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="section-heading">
+        <div>
+          <p class="label">Related Retreats</p>
+          <h2>More Time at Shambala</h2>
+        </div>
+        <a class="btn btn-dark" href="/retreats/">View All Retreats</a>
+      </div>
+      <div class="related-retreats-grid">
+        {relatedRetreats.map((item) => {
+          const relatedSlug = item.data.slug ?? item.id.replace(/\.md$/, '');
+          const relatedDate = item.data.startDate
+            ? formatDate(item.data.startDate)
+            : item.data.dateNote ?? (item.data.year ? `${item.data.year} date to confirm` : 'Date to confirm');
+          const relatedPrice = item.data.priceEUR ? `£${item.data.price} / €${item.data.priceEUR}` : `£${item.data.price}`;
+          return (
+            <a class="related-retreat-card" href={`/retreats/${relatedSlug}/`}>
+              <p class="label">{relatedDate} · {relatedPrice}</p>
+              <h3>{item.data.title}</h3>
+              <p>{item.data.description}</p>
+              <span class="text-link">View retreat details</span>
+            </a>
+          );
+        })}
       </div>
     </section>
   </article>

@@ -50,6 +50,53 @@
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
 
+.inner-hero--retreat-detail {
+  align-items: center;
+}
+
+.inner-hero--retreat-detail::before {
+  filter: saturate(0.85) brightness(0.82);
+  transform: scale(1.02);
+}
+
+.inner-hero--retreat-detail::after {
+  background:
+    linear-gradient(90deg, var(--night-3) 0%, rgba(14, 31, 40, 0.76) 42%, rgba(14, 31, 40, 0.18) 100%),
+    radial-gradient(ellipse 44% 58% at 78% 50%, var(--gold-wash) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(14, 31, 40, 0.24) 0%, transparent 38%, var(--overlay-dark) 100%);
+}
+
+.retreat-hero-card {
+  max-width: min(980px, 74vw);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  border-left: 2px solid var(--gold);
+}
+
+.retreat-hero-card h1 {
+  max-width: 11ch;
+}
+
+.retreat-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  margin-top: var(--space-m);
+  max-width: 860px;
+  background: var(--paper-line);
+}
+
+.retreat-hero-meta span {
+  flex: 1 1 12rem;
+  padding: 0.9rem 1rem;
+  background: rgba(14, 31, 40, 0.54);
+  color: var(--text-inv);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .page-section {
   padding: var(--space-xl) var(--grid-gutter);
 }
@@ -134,6 +181,8 @@
 
 .value-grid,
 .policy-grid,
+.retreat-pricing-grid,
+.related-retreats-grid,
 .retreat-index-grid {
   max-width: var(--grid-max);
   margin-inline: auto;
@@ -145,6 +194,8 @@
 
 .value-grid article,
 .policy-grid article,
+.retreat-pricing-grid article,
+.related-retreat-card,
 .retreat-index-card {
   background: var(--parchment);
   padding: 2.2rem;
@@ -154,14 +205,31 @@
 
 .value-grid h3,
 .policy-grid h3,
+.retreat-pricing-grid h3,
+.related-retreat-card h3,
 .retreat-index-card h3 {
   color: var(--text);
 }
 
 .value-grid p,
 .policy-grid p,
+.retreat-pricing-grid p,
+.related-retreat-card p,
 .retreat-index-card p {
   font-size: 0.98rem;
+}
+
+.related-retreats-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.related-retreat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-retreat-card:hover {
+  box-shadow: 0 12px 40px rgba(28, 43, 53, 0.12);
+  transform: translateY(-4px);
 }
 
 .policy-grid strong {
@@ -175,6 +243,15 @@
   max-width: var(--grid-max);
   margin: var(--space-m) auto 0;
   color: var(--text-mid);
+  font-size: 0.95rem;
+}
+
+.detail-placeholder {
+  margin: var(--space-m) 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid var(--gold);
+  background: var(--mist);
+  color: var(--text);
   font-size: 0.95rem;
 }
 
@@ -505,7 +582,9 @@
 
   .value-grid,
   .policy-grid,
+  .retreat-pricing-grid,
   .retreat-index-grid,
+  .related-retreats-grid,
   .blog-card-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -537,9 +616,16 @@
     font-size: clamp(2.6rem, 12vw, 3.5rem);
   }
 
+  .retreat-hero-card {
+    max-width: 100%;
+    padding-left: var(--space-s);
+  }
+
   .value-grid,
   .policy-grid,
+  .retreat-pricing-grid,
   .retreat-index-grid,
+  .related-retreats-grid,
   .blog-card-grid {
     grid-template-columns: 1fr;
   }
