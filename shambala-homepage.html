@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shambala Holistic & Retreat Centre | Wellness Retreat Fermanagh</title>
+<meta name="description" content="Welcome to Shambala — a holistic wellness retreat on the shores of Upper Lough Erne, Derrylin, Co. Fermanagh. Book massage, yoga, sound baths & residential retreats in Northern Ireland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --lough:       #2C4A5A;
+    --dusk:        #4A6741;
+    --dusk-deep:   #3A5232;
+    --stone:       #8B7355;
+    --mist:        #E8E4DC;
+    --parchment:   #F5F1E8;
+    --parchment-dark: #EDE9DF;
+    --text:        #1C2B35;
+    --text-mid:    #5A6B74;
+    --text-inv:    #F5F1E8;
+    --gold:        #C4A35A;
+    --border:      rgba(44,74,90,0.14);
+    --overlay:     rgba(20,36,46,0.52);
+    --font-d:      'Cormorant Garamond', Georgia, serif;
+    --font-b:      'Jost', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-b);
+    background: var(--parchment);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1,h2,h3,h4 { font-family: var(--font-d); font-weight: 300; line-height: 1.15; }
+  h1 { font-size: clamp(3rem,6vw,6rem); }
+  h2 { font-size: clamp(2.2rem,4vw,4.2rem); }
+  h3 { font-size: clamp(1.6rem,2.5vw,2.4rem); }
+  p  { font-size: 1.05rem; max-width: 62ch; color: var(--text-mid); }
+
+  .label {
+    font-family: var(--font-b);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 4vw;
+    transition: background 0.5s ease, padding 0.4s ease, backdrop-filter 0.5s ease;
+  }
+  nav.scrolled {
+    background: rgba(245,241,232,0.92);
+    backdrop-filter: blur(12px);
+    padding: 1rem 4vw;
+    box-shadow: 0 1px 0 var(--border);
+  }
+  nav.scrolled .nav-link { color: var(--text); }
+  nav.scrolled .nav-link::after { background: var(--dusk); }
+  nav.scrolled .nav-logo { color: var(--text); }
+
+  .nav-logo {
+    font-family: var(--font-d);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text-inv);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.4s;
+  }
+  .nav-logo span { font-style: italic; font-weight: 300; }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-link {
+    font-family: var(--font-b);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,241,232,0.88);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .nav-link:hover { color: var(--gold); }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    font-family: var(--font-b);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-inv);
+    background: var(--dusk);
+    border: none;
+    padding: 0.7rem 1.6rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  nav.scrolled .nav-cta { color: var(--text-inv); }
+  .nav-cta:hover { background: var(--dusk-deep); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  /* Lough Erne gradient landscape — fully CSS, no images needed */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 120% 60% at 50% 100%, rgba(44,74,90,0.55) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 40% at 20% 70%, rgba(74,103,65,0.3) 0%, transparent 60%),
+      linear-gradient(
+        175deg,
+        #A8C5D8 0%,
+        #7AAFC2 12%,
+        #5A94AE 24%,
+        #3D7A96 34%,
+        #2C4A5A 48%,
+        #253D4E 58%,
+        #1C3340 68%,
+        #162A34 78%,
+        #0E1F28 92%,
+        #091620 100%
+      );
+  }
+
+  /* Horizon reflection line */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 45%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(168,197,216,0.35) 20%, rgba(168,197,216,0.55) 50%, rgba(168,197,216,0.35) 80%, transparent 100%);
+  }
+
+  /* Water shimmer bands */
+  .hero-water {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(44,74,90,0.15) 30%,
+      rgba(28,51,64,0.4) 70%,
+      rgba(14,31,40,0.7) 100%
+    );
+  }
+  .hero-water::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 14px,
+      rgba(168,197,216,0.04) 14px,
+      rgba(168,197,216,0.04) 15px
+    );
+    animation: waterShimmer 8s ease-in-out infinite;
+  }
+  @keyframes waterShimmer {
+    0%,100% { opacity: 0.6; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  /* Treeline silhouette */
+  .hero-trees {
+    position: absolute;
+    bottom: 42%;
+    left: 0; right: 0;
+    height: 80px;
+    background: #0E1F28;
+    clip-path: polygon(
+      0% 100%, 0% 70%, 2% 62%, 4% 72%, 5% 55%, 7% 68%, 8% 50%,
+      9% 62%, 11% 45%, 12% 58%, 13% 40%, 14% 52%, 15% 38%,
+      16% 50%, 17% 34%, 18% 48%, 19% 32%, 20% 46%, 22% 38%,
+      24% 52%, 26% 35%, 28% 48%, 30% 30%, 32% 45%, 34% 28%,
+      36% 42%, 38% 25%, 40% 40%, 42% 22%, 44% 38%, 46% 28%,
+      48% 42%, 50% 20%, 52% 38%, 54% 25%, 56% 42%, 58% 30%,
+      60% 48%, 62% 32%, 64% 50%, 66% 35%, 68% 52%, 70% 38%,
+      72% 55%, 74% 40%, 76% 58%, 78% 42%, 80% 60%, 82% 48%,
+      84% 65%, 86% 52%, 88% 68%, 90% 55%, 92% 70%, 94% 58%,
+      96% 72%, 98% 62%, 100% 70%, 100% 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 4vw 8vh;
+    animation: heroFadeUp 1.4s ease both;
+    animation-delay: 0.3s;
+  }
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    color: var(--gold);
+    margin-bottom: 1rem;
+    animation: heroFadeUp 1.4s ease both;
+    animation-delay: 0.5s;
+  }
+
+  .hero h1 {
+    color: var(--text-inv);
+    max-width: 14ch;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+  }
+
+  .hero-quote {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: rgba(245,241,232,0.72);
+    max-width: 42ch;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: heroFadeUp 1.4s ease both;
+    animation-delay: 0.8s;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: heroFadeUp 1.4s ease both;
+    animation-delay: 1s;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-b);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.1rem 2.4rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-primary { background: var(--dusk); color: var(--text-inv); }
+  .btn-primary:hover { background: var(--dusk-deep); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--text-inv); border: 1px solid rgba(245,241,232,0.5); }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-dark { background: var(--lough); color: var(--text-inv); }
+  .btn-dark:hover { background: #1f3848; transform: translateY(-2px); }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(245,241,232,0.45);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-family: var(--font-b);
+    animation: heroFadeUp 2s ease both;
+    animation-delay: 1.5s;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(245,241,232,0.5), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { transform: scaleY(1); opacity: 0.5; }
+    50% { transform: scaleY(0.6); opacity: 1; }
+  }
+
+  /* ── WAVE DIVIDER ── */
+  .wave-divider {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin-top: -2px;
+  }
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 4vw; }
+
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    background: var(--parchment);
+    padding-top: 6rem;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .intro-text h2 { margin-bottom: 1.5rem; color: var(--lough); }
+  .intro-text p { margin-bottom: 1.2rem; }
+  .intro-text .btn { margin-top: 1.5rem; }
+
+  .intro-image-wrap {
+    position: relative;
+  }
+  .intro-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #2C4A5A 0%, #4A6741 60%, #8B7355 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Lough landscape in the image box */
+  .intro-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, #7AAFC2 0%, #2C4A5A 45%, #1C3340 65%, #4A6741 70%, #3A5232 100%);
+  }
+  .intro-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 35%;
+    background: linear-gradient(to top, rgba(20,36,46,0.7), transparent);
+  }
+  .intro-image-caption {
+    position: absolute;
+    bottom: -1px;
+    left: -2rem;
+    background: var(--dusk);
+    color: var(--text-inv);
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1rem;
+    padding: 1.2rem 1.8rem;
+    max-width: 22ch;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat { }
+  .stat-num {
+    font-family: var(--font-d);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--lough);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--text-mid); margin-top: 0.25rem; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--lough); }
+  .services h2 { color: var(--text-inv); margin-bottom: 0.8rem; }
+  .services .section-intro { color: rgba(245,241,232,0.65); margin-bottom: 4rem; }
+  .services .label { color: var(--gold); margin-bottom: 1rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    margin-top: 3.5rem;
+    background: rgba(168,197,216,0.12);
+  }
+
+  .service-card {
+    background: rgba(28,43,53,0.5);
+    padding: 2.8rem 2rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+    cursor: pointer;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover { background: rgba(44,74,90,0.8); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: grayscale(0.3);
+  }
+  .service-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-inv);
+    margin-bottom: 0.8rem;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+    color: rgba(245,241,232,0.6);
+    max-width: 26ch;
+    line-height: 1.6;
+  }
+  .service-arrow {
+    margin-top: 1.8rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .service-arrow::after { content: '→'; transition: transform 0.3s; }
+  .service-card:hover .service-arrow::after { transform: translateX(4px); }
+
+  /* ── RETREATS ── */
+  .retreats { background: var(--parchment-dark); }
+  .retreats-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .retreats-header h2 { color: var(--lough); }
+
+  .retreats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .retreat-card {
+    background: var(--parchment);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+    display: block;
+  }
+  .retreat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(28,43,53,0.14);
+  }
+  .retreat-card:hover .retreat-img { transform: scale(1.04); }
+
+  .retreat-img-wrap {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+  .retreat-img {
+    width: 100%; height: 100%;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+  /* CSS landscape scenes for retreat cards */
+  .retreat-img-1 {
+    background: linear-gradient(160deg, #A8C5D8 0%, #5A94AE 30%, #2C4A5A 55%, #4A6741 75%, #3A5232 100%);
+  }
+  .retreat-img-2 {
+    background: linear-gradient(160deg, #F0C080 0%, #D4956A 25%, #8B4A2A 50%, #4A6741 75%, #2C4A5A 100%);
+  }
+  .retreat-img-3 {
+    background: linear-gradient(160deg, #8B9DC8 0%, #4A5A8A 30%, #2C3A5A 55%, #3A5232 75%, #2C4A5A 100%);
+  }
+
+  .retreat-date-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: rgba(14,31,40,0.75);
+    color: var(--gold);
+    padding: 0.5rem 0.8rem;
+    font-family: var(--font-b);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+
+  .retreat-body {
+    padding: 1.8rem 2rem 2rem;
+  }
+  .retreat-type { margin-bottom: 0.8rem; }
+  .retreat-card h3 { font-size: 1.7rem; color: var(--text); margin-bottom: 0.6rem; }
+  .retreat-desc { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1.4rem; }
+
+  .retreat-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .retreat-price {
+    font-family: var(--font-d);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--lough);
+  }
+  .retreat-price span {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    font-family: var(--font-b);
+    font-weight: 300;
+    margin-left: 0.3rem;
+  }
+  .retreat-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusk);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .retreat-link::after { content: '→'; transition: transform 0.3s; }
+  .retreat-card:hover .retreat-link::after { transform: translateX(4px); }
+
+  /* ── SETTING ── */
+  .setting {
+    background: var(--lough);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .setting-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+  }
+  .setting-visual {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(200deg, #7AAFC2 0%, #3D7A96 20%, #2C4A5A 45%, #1C3340 65%, #0E1F28 100%);
+  }
+  .setting-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 18px,
+      rgba(168,197,216,0.06) 18px,
+      rgba(168,197,216,0.06) 19px
+    );
+    animation: waterShimmer 10s ease-in-out infinite;
+  }
+  /* Trees reflection */
+  .setting-visual::before {
+    content: '';
+    position: absolute;
+    bottom: 40%; left: 0; right: 0;
+    height: 90px;
+    background: #0E1F28;
+    clip-path: polygon(
+      0% 100%, 0% 55%, 3% 40%, 6% 58%, 9% 35%, 12% 52%, 15% 28%,
+      18% 45%, 21% 22%, 24% 40%, 27% 18%, 30% 38%, 33% 15%,
+      36% 35%, 39% 18%, 42% 38%, 45% 12%, 48% 32%, 51% 15%,
+      54% 35%, 57% 22%, 60% 42%, 63% 25%, 66% 45%, 69% 28%,
+      72% 48%, 75% 35%, 78% 55%, 81% 40%, 84% 58%, 87% 45%,
+      90% 62%, 93% 50%, 96% 65%, 100% 55%, 100% 100%
+    );
+  }
+  .setting-text {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .setting-text .label { color: var(--gold); margin-bottom: 1.5rem; }
+  .setting-text h2 { color: var(--text-inv); margin-bottom: 1.5rem; }
+  .setting-text p { color: rgba(245,241,232,0.7); margin-bottom: 1.2rem; max-width: 46ch; }
+
+  .border-note {
+    margin-top: 2rem;
+    padding: 1.2rem 1.5rem;
+    border-left: 2px solid var(--gold);
+    background: rgba(196,163,90,0.08);
+    font-size: 0.88rem;
+    color: rgba(245,241,232,0.65);
+    font-style: italic;
+    font-family: var(--font-d);
+    font-size: 1.05rem;
+  }
+
+  /* ── SOUND BATH FEATURE ── */
+  .soundbath {
+    background: var(--parchment);
+    padding: 7rem 4vw;
+  }
+  .soundbath-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .soundbath-text .label { margin-bottom: 1rem; }
+  .soundbath-text h2 { color: var(--lough); margin-bottom: 1.5rem; }
+  .soundbath-text p { margin-bottom: 1.2rem; }
+  .soundbath-text .btn { margin-top: 1.5rem; }
+
+  .soundbath-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .bowl-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  .bowl {
+    flex: 1;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    border: 1.5px solid rgba(44,74,90,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  .bowl::after {
+    content: '';
+    position: absolute;
+    top: 10%; left: 15%; right: 15%;
+    height: 2px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+  }
+  .bowl-a { height: 90px; background: linear-gradient(145deg, #8B7355, #6B5840); }
+  .bowl-b { height: 72px; background: linear-gradient(145deg, #C4A35A, #A88A42); }
+  .bowl-c { height: 108px; background: linear-gradient(145deg, #5A7855, #3D5A38); }
+  .bowl-d { height: 60px; background: linear-gradient(145deg, #7A9AB5, #5A7A95); }
+
+  /* Ripple rings */
+  .ripple-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    position: relative;
+  }
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--lough);
+    animation: rippleOut 3s ease-out infinite;
+    opacity: 0;
+  }
+  .ripple:nth-child(1) { width: 60px;  height: 60px;  animation-delay: 0s; }
+  .ripple:nth-child(2) { width: 100px; height: 100px; animation-delay: 0.6s; }
+  .ripple:nth-child(3) { width: 140px; height: 140px; animation-delay: 1.2s; }
+  @keyframes rippleOut {
+    0%  { opacity: 0.7; transform: scale(0.8); }
+    100%{ opacity: 0;   transform: scale(1.4); }
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: #1C2B35;
+  }
+  .testimonials .label { color: var(--gold); margin-bottom: 1rem; }
+  .testimonials-header { margin-bottom: 4rem; }
+  .testimonials-header h2 { color: var(--text-inv); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,0.04);
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.04);
+    padding: 3rem 2.5rem;
+  }
+  .testi-quote {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(245,241,232,0.88);
+    margin-bottom: 2rem;
+  }
+  .testi-stars {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8rem;
+  }
+  .testi-author {
+    font-size: 0.78rem;
+    color: rgba(245,241,232,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── CORPORATE ── */
+  .corporate {
+    background: var(--dusk);
+    padding: 6rem 4vw;
+  }
+  .corporate-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .corporate-text .label { color: var(--gold); margin-bottom: 1rem; }
+  .corporate-text h2 { color: var(--text-inv); max-width: 18ch; margin-bottom: 1.2rem; }
+  .corporate-text p { color: rgba(245,241,232,0.7); max-width: 48ch; }
+  .corporate-cta { flex-shrink: 0; }
+  .btn-outline-inv {
+    display: inline-block;
+    font-family: var(--font-b);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-inv);
+    border: 1px solid rgba(245,241,232,0.45);
+    padding: 1.1rem 2.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline-inv:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--parchment-dark);
+    text-align: center;
+    padding: 6rem 4vw;
+  }
+  .newsletter .label { margin-bottom: 1rem; }
+  .newsletter h2 { color: var(--lough); margin-bottom: 1rem; max-width: 22ch; margin-left: auto; margin-right: auto; }
+  .newsletter p { margin: 0 auto 2.5rem; max-width: 46ch; text-align: center; }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .newsletter-input {
+    flex: 1;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--border);
+    border-right: none;
+    background: var(--parchment);
+    font-family: var(--font-b);
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+  }
+  .newsletter-input:focus { border-color: var(--lough); }
+  .newsletter-input::placeholder { color: var(--text-mid); }
+  .newsletter-form .btn { flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0E1F28;
+    color: rgba(245,241,232,0.6);
+    padding: 5rem 4vw 2.5rem;
+  }
+  .footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(245,241,232,0.08);
+  }
+  .footer-brand .nav-logo {
+    color: var(--text-inv);
+    display: block;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+  }
+  .footer-brand p { font-size: 0.88rem; max-width: 32ch; line-height: 1.7; }
+  .footer-brand .footer-contact {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 2;
+  }
+  .footer-brand .footer-contact a {
+    color: rgba(245,241,232,0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+  }
+  .footer-brand .footer-contact a:hover { color: var(--gold); }
+
+  .footer-col h4 {
+    font-family: var(--font-b);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.7rem; }
+  .footer-col a {
+    color: rgba(245,241,232,0.55);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--text-inv); }
+
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(245,241,232,0.28);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .intro-grid,
+    .soundbath-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .retreats-grid { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .setting-inner { grid-template-columns: 1fr; }
+    .setting-visual { min-height: 320px; }
+    .nav-links { display: none; }
+    h1 { font-size: clamp(2.6rem, 8vw, 4rem); }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 5rem 5vw; }
+    .services-grid,
+    .retreats-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-input { border-right: 1px solid var(--border); border-bottom: none; }
+    .corporate-inner { flex-direction: column; }
+    .stat-row { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Shambala <span>Holistic & Retreat Centre</span></a>
+  <ul class="nav-links">
+    <li><a href="#" class="nav-link">About</a></li>
+    <li><a href="#" class="nav-link">Therapies</a></li>
+    <li><a href="#" class="nav-link">Retreats</a></li>
+    <li><a href="#" class="nav-link">Sound & Yoga</a></li>
+    <li><a href="#" class="nav-link">Stay</a></li>
+    <li><a href="#" class="nav-link">Blog</a></li>
+  </ul>
+  <a href="#" class="nav-cta btn">Book a Session</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero — Shambala Holistic Retreat Centre, Derrylin, Lough Erne">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-water" aria-hidden="true"></div>
+  <div class="hero-trees" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="label hero-eyebrow">Derrylin · Co. Fermanagh · Upper Lough Erne</p>
+    <h1>A Retreat for the Soul</h1>
+    <p class="hero-quote">"The natural healing force in each one of us is the greatest force in getting well."</p>
+    <div class="hero-btns">
+      <a href="#retreats" class="btn btn-primary">Explore Retreats</a>
+      <a href="#therapies" class="btn btn-ghost">Book a Therapy</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Discover</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Wave divider -->
+<div class="wave-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 60 L0 30 Q180 0 360 20 Q540 40 720 15 Q900 -10 1080 22 Q1260 50 1440 25 L1440 60 Z" fill="#F5F1E8"/>
+  </svg>
+</div>
+
+<!-- ── INTRO / ABOUT ── -->
+<section class="intro" id="about">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <p class="label reveal">Established 1999 · Northern Ireland</p>
+        <h2 class="reveal reveal-delay-1">Where the Lake<br><em>Holds Still</em></h2>
+        <p class="reveal reveal-delay-2">Shambala Holistic & Retreat Centre sits alongside the shores of Upper Lough Erne — a sanctuary carved from the landscape of Co. Fermanagh, where the water is calm and the pace of the world slows to match it.</p>
+        <p class="reveal reveal-delay-2">Founded by Sukhada Smith-Repass in 1999, Shambala has offered holistic therapies, residential retreats, sound healing and yoga to guests from across Ireland and beyond for over 26 years. Every session, every retreat, is rooted in genuine practice — not wellness as a trend, but as a way of life.</p>
+        <p class="reveal reveal-delay-3">We treat people as individuals, not symptoms. We welcome guests from Northern Ireland, the Republic of Ireland, and anyone who needs to find their way back to stillness.</p>
+        <a href="#" class="btn btn-dark reveal reveal-delay-3">Our Story</a>
+
+        <div class="stat-row reveal reveal-delay-4">
+          <div class="stat">
+            <div class="stat-num">26+</div>
+            <div class="stat-label">Years in practice</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">8</div>
+            <div class="stat-label">Holistic therapies offered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Currencies accepted (£ & €)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-image-wrap reveal reveal-delay-2">
+        <div class="intro-image" role="img" aria-label="Upper Lough Erne viewed from Shambala Retreat Centre, Derrylin, Co. Fermanagh"></div>
+        <div class="intro-image-caption">The shores of Upper Lough Erne, Derrylin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="therapies">
+  <div class="section-inner">
+    <p class="label reveal">What We Offer</p>
+    <h2 class="reveal reveal-delay-1">Rooted in<br><em>Genuine Practice</em></h2>
+    <p class="section-intro reveal reveal-delay-2">Six ways to restore your natural balance — from a single session to a full residential retreat.</p>
+
+    <div class="services-grid">
+      <a href="#" class="service-card reveal">
+        <span class="service-icon">🌿</span>
+        <h3>Holistic Therapies</h3>
+        <p>Reiki, EFT Tapping, Indian Head Massage, Reflexology, Crystal Healing and more.</p>
+        <div class="service-arrow">Explore therapies</div>
+      </a>
+      <a href="#" class="service-card reveal reveal-delay-1">
+        <span class="service-icon">🤲</span>
+        <h3>Massage</h3>
+        <p>Swedish, Hot Stone, Himalayan Salt Stone, Aromatherapy — tailored to you.</p>
+        <div class="service-arrow">Book a massage</div>
+      </a>
+      <a href="#" class="service-card reveal reveal-delay-2">
+        <span class="service-icon">🔔</span>
+        <h3>Sound Baths</h3>
+        <p>Tibetan singing bowls, crystal bowls, gong — a deeply restorative acoustic experience.</p>
+        <div class="service-arrow">Sound bath info</div>
+      </a>
+      <a href="#" class="service-card reveal reveal-delay-3">
+        <span class="service-icon">🧘</span>
+        <h3>Yoga & T'ai Chi</h3>
+        <p>Hatha, Vinyasa, Restorative Reiki Yoga, Qigong — movement for every body.</p>
+        <div class="service-arrow">View classes</div>
+      </a>
+      <a href="#" class="service-card reveal reveal-delay-4">
+        <span class="service-icon">🌲</span>
+        <h3>Wellness Days</h3>
+        <p>Forest bathing, meditation, barefoot grounding — half or full day immersions.</p>
+        <div class="service-arrow">Plan your day</div>
+      </a>
+      <a href="#" class="service-card reveal">
+        <span class="service-icon">✨</span>
+        <h3>Reiki Training</h3>
+        <p>Level 1, 2 and Master training with Sukhada, Reiki Master since 1999.</p>
+        <div class="service-arrow">Learn more</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── RETREATS ── -->
+<section class="retreats" id="retreats">
+  <div class="section-inner">
+    <div class="retreats-header">
+      <div>
+        <p class="label reveal">2026 Programme</p>
+        <h2 class="reveal reveal-delay-1">Residential<br><em>Retreats</em></h2>
+      </div>
+      <a href="#" class="btn btn-dark reveal reveal-delay-2">View All Retreats</a>
+    </div>
+
+    <div class="retreats-grid">
+      <a href="#" class="retreat-card reveal">
+        <div class="retreat-img-wrap">
+          <div class="retreat-img retreat-img-1" role="img" aria-label="Touching the Earth retreat — yoga and forest bathing at Shambala, Lough Erne"></div>
+          <div class="retreat-date-badge">June 2026 · Weekend</div>
+        </div>
+        <div class="retreat-body">
+          <p class="label retreat-type">Yoga · Forest Bathing · Meditation</p>
+          <h3>Touching the Earth</h3>
+          <p class="retreat-desc">A weekend of stillness — yoga, T'ai Chi Qigong, barefoot grounding and sound bath on the shores of Lough Erne. Digital detox invited.</p>
+          <div class="retreat-meta">
+            <div class="retreat-price">£260 <span>/ €300 per person</span></div>
+            <div class="retreat-link">Reserve a place</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="retreat-card reveal reveal-delay-1">
+        <div class="retreat-img-wrap">
+          <div class="retreat-img retreat-img-2" role="img" aria-label="Tai Chi and Yoga weekend retreat at Shambala Holistic Retreat Centre"></div>
+          <div class="retreat-date-badge">July 2026 · Weekend</div>
+        </div>
+        <div class="retreat-body">
+          <p class="label retreat-type">Tai Chi · Yoga · Cacao Ceremony</p>
+          <h3>The Yoga Warrior</h3>
+          <p class="retreat-desc">A sacred journey with Fiona and Sukhada — Hatha yoga, Restorative Reiki Yoga, Qigong, and a heart-opening Cacao Ceremony.</p>
+          <div class="retreat-meta">
+            <div class="retreat-price">£260 <span>/ €300 per person</span></div>
+            <div class="retreat-link">Reserve a place</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="retreat-card reveal reveal-delay-2">
+        <div class="retreat-img-wrap">
+          <div class="retreat-img retreat-img-3" role="img" aria-label="Half-day Tai Chi and yoga wellness day at Shambala Fermanagh"></div>
+          <div class="retreat-date-badge">May 2026 · Half Day</div>
+        </div>
+        <div class="retreat-body">
+          <p class="label retreat-type">Tai Chi · Yoga · Nature Immersion</p>
+          <h3>Half-Day Stillness</h3>
+          <p class="retreat-desc">A Saturday afternoon dedicated to restoring inner balance — Tai Chi, Forest Bathing, Gentle Yoga Flow and a shared lunch. A perfect first step.</p>
+          <div class="retreat-meta">
+            <div class="retreat-price">£40 <span>/ €47 per person</span></div>
+            <div class="retreat-link">Reserve a place</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE SETTING ── -->
+<section class="setting" aria-label="About the Lough Erne setting and location">
+  <div class="setting-inner">
+    <div class="setting-visual" role="img" aria-label="Upper Lough Erne at dusk — the setting of Shambala Retreat Centre, Derrylin, Co. Fermanagh"></div>
+    <div class="setting-text">
+      <p class="label">The Setting</p>
+      <h2>Upper Lough Erne,<br><em>Co. Fermanagh</em></h2>
+      <p>Shambala sits on the banks of Upper Lough Erne — one of Ireland's most beautiful and least-visited landscapes. The lake is a constant presence: visible from the yoga space, audible from the treatment rooms, steps from the front door.</p>
+      <p>We are 20 minutes from Enniskillen, 40 minutes from Cavan, and accessible from Dublin and Belfast within two hours. The border is crossed without formality — guests from the Republic are welcome, and we price in both currencies as a matter of course.</p>
+      <div class="border-note">
+        "Easily reached from Cavan, Monaghan, Leitrim, Derry and Belfast — a true all-Ireland retreat, sitting quietly at the heart of the island."
+      </div>
+      <a href="#" class="btn btn-ghost" style="margin-top:2rem; color: var(--text-inv); border-color: rgba(245,241,232,0.4);">Getting Here</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOUND BATH FEATURE ── -->
+<section class="soundbath" id="soundbath">
+  <div class="soundbath-inner">
+    <div class="soundbath-text">
+      <p class="label reveal">Sound Healing · Northern Ireland</p>
+      <h2 class="reveal reveal-delay-1">What Is a<br><em>Sound Bath?</em></h2>
+      <p class="reveal reveal-delay-2">A sound bath is a meditative experience in which you are immersed in the resonant tones of Tibetan singing bowls, crystal bowls, and gong. You lie down, close your eyes, and let the sound do its work.</p>
+      <p class="reveal reveal-delay-2">The vibrations slow brainwave activity into a deeply relaxed, meditative state — reducing stress, easing anxiety, and restoring the body's natural equilibrium. No experience necessary. No effort required.</p>
+      <a href="#" class="btn btn-dark reveal reveal-delay-3">Book a Sound Bath</a>
+    </div>
+    <div class="soundbath-visual reveal reveal-delay-2" aria-hidden="true">
+      <div class="bowl-row">
+        <div class="bowl bowl-a"></div>
+        <div class="bowl bowl-b"></div>
+        <div class="bowl bowl-c"></div>
+        <div class="bowl bowl-d"></div>
+      </div>
+      <div class="ripple-wrap">
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header">
+      <p class="label reveal">From Our Guests</p>
+      <h2 class="reveal reveal-delay-1">What People<br><em>Say</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"One of the most restorative weekends of my life. The setting is extraordinary, Sukhada's energy is calming, and the sound bath on Saturday night was unlike anything I've experienced."</p>
+        <div class="testi-author">— Sarah M. · Dublin · Touching the Earth Retreat</div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I came for a massage and left having booked a retreat. The Himalayan salt stone treatment was exceptional. Sukhada has a gift — you feel it immediately. Already planning to come back."</p>
+        <div class="testi-author">— Claire B. · Enniskillen · Massage Therapy</div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Our corporate team left completely transformed. The combination of yoga, forest bathing and the Lough Erne setting created something no conference room ever could. Highly recommended."</p>
+        <div class="testi-author">— Mark D. · Belfast · Corporate Wellbeing Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CORPORATE ── -->
+<section class="corporate" id="corporate">
+  <div class="corporate-inner">
+    <div class="corporate-text">
+      <p class="label">Corporate Wellbeing</p>
+      <h2>Recharge<br><em>Your Team</em></h2>
+      <p>Bespoke corporate wellbeing days and events for teams across Northern Ireland and Ireland — tailored to your group, delivered on the shores of Lough Erne. Yoga, sound baths, holistic therapies, forest bathing, and more.</p>
+    </div>
+    <div class="corporate-cta">
+      <a href="#" class="btn-outline-inv">Enquire About Corporate Days</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter">
+  <div class="section-inner" style="text-align:center">
+    <p class="label reveal">Stay Connected</p>
+    <h2 class="reveal reveal-delay-1">Retreat Updates &<br><em>Seasonal Offerings</em></h2>
+    <p class="reveal reveal-delay-2">Be the first to hear about new retreats, sound baths, wellness days and seasonal offers. We write when we have something worth saying.</p>
+    <div class="newsletter-form reveal reveal-delay-3">
+      <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address for newsletter">
+      <a href="#" class="btn btn-primary">Subscribe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Shambala <span>Holistic & Retreat Centre</span></a>
+      <p>A holistic wellness retreat on the shores of Upper Lough Erne, Derrylin, Co. Fermanagh — welcoming guests from across Ireland since 1999.</p>
+      <div class="footer-contact">
+        <a href="tel:+447713744589">+44 7713 744 589</a>
+        <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>
+        <a href="https://maps.google.com" target="_blank">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Therapies</h4>
+      <ul>
+        <li><a href="#">Holistic Therapies</a></li>
+        <li><a href="#">Massage</a></li>
+        <li><a href="#">Sound Baths</a></li>
+        <li><a href="#">Yoga & T'ai Chi</a></li>
+        <li><a href="#">Reiki Training</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Retreats</h4>
+      <ul>
+        <li><a href="#">All 2026 Retreats</a></li>
+        <li><a href="#">Touching the Earth</a></li>
+        <li><a href="#">The Yoga Warrior</a></li>
+        <li><a href="#">Wellness Days</a></li>
+        <li><a href="#">Corporate Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#">About Shambala</a></li>
+        <li><a href="#">Getting Here</a></li>
+        <li><a href="#">Self Catering</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Shambala Holistic & Retreat Centre · Derrylin, Co. Fermanagh · Registered in Northern Ireland</span>
+    <span>Prices in GBP & EUR · <a href="#" style="color:inherit">Privacy Policy</a> · <a href="#" style="color:inherit">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll behaviour
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
