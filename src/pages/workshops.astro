@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Workshops | Shambala Holistic Retreat Centre | Fermanagh',
+  description: "Join workshops and circles at Shambala in Fermanagh, including Ériu Botanicals women's circles and herbal ritual workshops by Upper Lough Erne in 2026.",
+  canonical: 'https://shambalaholisticandretreatcentre.com/workshops/'
+};
+
+const venue = {
+  '@type': 'Place',
+  name: 'Shambala Holistic & Retreat Centre',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '48 Geaglum Road',
+    addressLocality: 'Derrylin',
+    addressRegion: 'Co. Fermanagh',
+    postalCode: 'BT92 9GN',
+    addressCountry: 'GB'
+  }
+};
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Workshops and Circles at Shambala',
+    url: meta.canonical
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: "Women's Circle: Release, Reflection & Renewal",
+    description: 'A gentle and nourishing afternoon with guided reflection, meaningful conversation and a simple letting go ritual.',
+    startDate: '2026-06-28',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: venue,
+    organizer: {
+      '@type': 'Organization',
+      name: 'Ériu Botanicals'
+    }
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: 'Herbs for Health: Creating Herbal Formulas for Rituals & Ancient Wisdom',
+    description: 'An immersive workshop exploring herbal remedies, ritual practices, grounding herbs, calming blends and sacred plant traditions.',
+    startDate: '2026-07-19',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: venue,
+    organizer: {
+      '@type': 'Organization',
+      name: 'Ériu Botanicals'
+    }
+  }
+];
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--wellness">
+    <div class="inner-hero__content">
+      <p class="label">Ériu Botanicals · Workshops · Circles</p>
+      <h1>Workshops and Circles at Shambala</h1>
+      <p>Seasonal workshops and circles hosted at Shambala Holistic & Retreat Centre, including Ériu Botanicals events.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Collaboration</p>
+        <h2>Ériu Botanicals at Shambala</h2>
+      </div>
+      <div class="copy-flow">
+        <p>These workshops appear to be run under the Ériu Botanicals brand and hosted at Shambala Holistic & Retreat Centre.</p>
+        <p>They are listed separately from Shambala's own retreats and wellness days so the collaboration is clear.</p>
+        <p>Contact Shambala to confirm booking details, timing and current availability before travelling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Upcoming Workshops</p>
+      <h2>Ériu Botanicals Events</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <p class="label">28 June 2026 · Hosted by Supriya</p>
+        <h3>Women's Circle: Release, Reflection & Renewal</h3>
+        <p>A gentle and nourishing afternoon created to help you slow down, reflect and release what no longer serves you.</p>
+        <p>Through guided reflection, meaningful conversation and a simple letting go ritual, we'll gather in a warm and supportive space to reconnect with ourselves and each other.</p>
+        <p class="card-note">Time and price to confirm.</p>
+      </article>
+
+      <article>
+        <p class="label">19 July 2026 · Ériu Botanicals</p>
+        <h3>Herbs for Health</h3>
+        <p>Creating Herbal Formulas for Rituals & Ancient Wisdom.</p>
+        <p>Explore the healing wisdom of herbs through ritual, seasonal living and ancient traditions. This immersive workshop blends practical herbalism with elements of folk wisdom and Ayurvedic-inspired self-care, guiding you to connect more deeply with plants, intuition and the rhythms of nature.</p>
+        <p>Together we'll explore herbal remedies, ritual practices, grounding herbs, calming blends and sacred plant traditions in a warm, earthy and welcoming space.</p>
+        <p class="card-note">Full description, time and price to confirm.</p>
+      </article>
+
+      <article>
+        <p class="label">Venue</p>
+        <h3>Shambala Holistic & Retreat Centre</h3>
+        <p>Workshops are hosted at Shambala Holistic & Retreat Centre in Derrylin, Co. Fermanagh, close to Upper Lough Erne.</p>
+        <p>Booking details should be confirmed before travelling.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Workshop Enquiry</p>
+      <h2>Ask About Workshops and Circles</h2>
+      <p>Contact Shambala to confirm availability, booking details, timing and prices for Ériu Botanicals workshops.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="tel:+447713744589">Call Shambala</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="mailto:shambala108@icloud.com?subject=Workshop%20Enquiry">Email Shambala</a>
+    </div>
+  </section>
+</BaseLayout>

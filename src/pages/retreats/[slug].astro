@@ -17,6 +17,7 @@ const { Content } = await render(retreat);
 const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
 const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
 const allRetreats = await getCollection('retreats');
+const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
 
 const formatDate = (date?: Date) =>
   date
@@ -266,7 +267,7 @@ const eventSchema = retreat.data.startDate
       <div>
         <p class="label">Location</p>
         <h2>Retreat by Upper Lough Erne</h2>
-        <p>Shambala is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <p>Shambala is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>.</p>
       </div>
       <div class="cta-actions">
         <a class="btn btn-primary" href="/getting-here/">Plan Your Journey</a>

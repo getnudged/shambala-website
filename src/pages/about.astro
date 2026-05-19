@@ -8,6 +8,8 @@ const meta = {
   canonical: 'https://shambalaholisticandretreatcentre.com/about/'
 };
 
+const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
@@ -81,11 +83,65 @@ const schema = {
     </div>
   </section>
 
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">What We Offer</p>
+      <h2>Wellbeing, Retreats, Therapies and Training</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Retreats and Wellness</h3>
+        <ul class="plain-list">
+          <li>Corporate well-being events and retreats</li>
+          <li>School programmes</li>
+          <li>Wellness days</li>
+          <li>Half-day and weekend retreats</li>
+          <li>Yoga</li>
+          <li>Sound baths</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Therapies and Bodywork</h3>
+        <ul class="plain-list">
+          <li>Animal Reiki</li>
+          <li>Massage</li>
+          <li>Mindfulness</li>
+          <li>Reflexology</li>
+          <li>EFT, Emotional Freedom Technique / Tapping</li>
+          <li>Holistic therapies</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Training</h3>
+        <ul class="plain-list">
+          <li>Reiki training</li>
+          <li>Rahanni training</li>
+          <li>Crystal Healing training</li>
+          <li>Sound Healing training</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Inclusive Practice</p>
+        <h2>Support for Groups, Care Settings and Home Visits</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala offers Reiki, Reflexology, Music Therapy and Yoga for Adult Day Care Centres for adults with learning disabilities, nursing homes, the elderly, healthcare organisations and supported groups.</p>
+        <p>Activities and services can be shaped for individuals, groups, businesses, schools, healthcare organisations, people with learning disabilities and their carers.</p>
+        <p>Home visits can be arranged by request.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="page-section page-cta">
     <div>
       <p class="label">Plan a Visit</p>
       <h2>Come to the Water, and Take Time to Reset</h2>
-      <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+      <p>Shambala Holistic & Retreat Centre is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>.</p>
     </div>
     <div class="cta-actions">
       <a class="btn btn-primary" href="/retreats/">Explore Retreats</a>

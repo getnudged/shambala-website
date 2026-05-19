@@ -10,76 +10,58 @@ const meta = {
 
 const retreatCards = [
   {
+    title: 'Yoga & Tai Chi Retreat',
+    href: '/retreats/tai-chi-yoga-weekend/',
+    type: 'Weekend retreat',
+    date: '8-10 May 2026',
+    price: '£260 / €300',
+    summary: 'Relax and reconnect with a series of Yoga and Tai Chi classes during a weekend retreat beside Upper Lough Erne.',
+    notes: 'Includes 2 nights accommodation, all vegetarian meals and activities.'
+  },
+  {
     title: 'Touching the Earth: A Grounding Retreat',
     href: '/retreats/touching-the-earth/',
     type: 'Weekend retreat',
-    date: 'Date to confirm',
-    price: 'Typical weekend pricing: £260 / €300',
-    summary: 'Yoga, T\'ai Chi Qigong, forest bathing, meditation, grounding food, sound bath and digital detox beside Upper Lough Erne.',
-    notes: 'Optional therapies and Inis Rath / Hare Krishna Island Sunday extension mentioned on the current site.'
-  },
-  {
-    title: 'Tai Chi & Yoga Half-Day Retreat',
-    href: '/retreats/tai-chi-yoga-half-day/',
-    type: 'Half-day retreat',
-    date: 'Saturday 9 May, year to confirm',
-    price: '£40',
-    summary: 'Tai Chi, guided relaxation, lunch, forest bathing and Gentle Yoga Flow with Fiona.',
-    notes: 'Time listed as 11.00 am-3.00 pm.'
-  },
-  {
-    title: 'Tai Chi & Yoga Weekend Retreat',
-    href: '/retreats/tai-chi-yoga-weekend/',
-    type: 'Weekend retreat',
-    date: 'Date to confirm',
-    price: '£260 / €300',
-    summary: 'A restorative weekend with Fiona and Sukhada, including Hatha yoga, Restorative Reiki Yoga, Qigong and cacao ceremony.',
-    notes: 'Friday dinner starts at 6.00 pm.'
-  },
-  {
-    title: 'Slow Flow Rahanni Yoga & Sound Bath',
-    href: '/retreats/slow-flow-rahanni-yoga-sound-bath/',
-    type: 'Sound bath / yoga session',
-    date: 'Select Fridays, year to confirm',
-    price: '£20',
-    summary: 'Slow Flow Rahanni Yoga followed by sound bath meditation for deep relaxation and inner peace.',
-    notes: 'Listed Fridays include 8 May, 26 June, 28 August, 25 September, 2 October and 30 October.'
+    date: '26-28 June 2026',
+    price: '£250 / €300',
+    summary: 'Yoga, Tai Chi / Qigong, Meditation and Forest Bathing for grounding, earthing and reconnecting with nature.',
+    notes: 'Includes 2 nights accommodation, all vegetarian meals and activities. Optional therapies available on request.'
   },
   {
     title: 'Yoga Warrior Weekend Retreat',
     href: '/retreats/yoga-warrior-weekend/',
     type: 'Weekend retreat',
-    date: '28-30 August, year to confirm',
-    price: '£260 / €300',
-    summary: 'A weekend of yoga styles, mindfulness, nature walks, meditation, therapies and sound healing.',
-    notes: 'Facilitators listed as Fiona and Sukhada.'
+    date: '28-30 August 2026',
+    price: '£250 / €300',
+    summary: 'A weekend of various yoga styles with nature walks, meditation, mindfulness, massages and sound bath.',
+    notes: 'Source notes include tea/coffee and light vegetarian lunch; confirm whether this line applies to the full weekend or day retreat.'
   },
   {
-    title: 'Ikigai Life Purpose Retreat',
+    title: 'Life Purpose Weekend Retreat',
     href: '/retreats/ikigai-life-purpose-retreat/',
     type: 'Weekend retreat',
-    date: '25-27 September, year to confirm',
-    price: '£260 / €300',
-    summary: 'A reflective weekend inspired by Ikigai, Wabi-Sabi and Kaizen, with yoga, Qigong, Tai Chi, meditation and nature.',
-    notes: 'Includes optional therapies and possible Inis Rath visit.'
-  },
-  {
-    title: 'Samhain & Shamanism Weekend Retreat',
-    href: '/retreats/samhain-shamanism-weekend/',
-    type: 'Weekend retreat',
-    date: '30 October-1 November, year to confirm',
-    price: 'Price to confirm',
-    summary: 'Slow Flow Rahanni Yoga, sound bath, shamanic workshop, Fairy Woods walk, cacao ceremony and fire ceremony.',
-    notes: 'Current content says additional therapy costs apply.'
+    date: '25-27 September 2026',
+    price: '£250 / €300',
+    summary: 'Introspection, meditation and relaxation with Ikigai, Wabi-Sabi, Kaizen, workshops, Tai Chi, Qigong, Yoga and Sound Bath.',
+    notes: 'Source notes show £260 / €300 in one schedule and £250 / €300 in detail; using supplied detail price.'
   },
   {
     title: 'Joy Weekend Retreat',
     href: '/retreats/joy-weekend/',
     type: 'Weekend retreat',
-    date: '2-4 October, year to confirm',
+    date: '2-4 October 2026',
     price: '£260 / €300',
-    summary: 'A mental and emotional wellbeing weekend with hypnotherapy, life coaching, EFT, CBT, mindfulness, Qigong and forest bathing.',
-    notes: 'One Life Coaching or Holistic Therapy session is included.'
+    summary: 'A calm, nurturing space to release what feels heavy, learn grounding tools and restore inner balance.',
+    notes: 'Possibility to stay on Sunday night at extra cost.'
+  },
+  {
+    title: 'Samhain & Shamanism Weekend Retreat',
+    href: '/retreats/samhain-shamanism-weekend/',
+    type: 'Weekend retreat',
+    date: '30 October-1 November 2026',
+    price: '£250 / €300',
+    summary: 'Fire Circle, Cacao Ceremony, Drumming and Shamanic Journeying to set and release intentions into the flames.',
+    notes: 'Includes 2 nights accommodation, all vegetarian meals and activities.'
   },
   {
     title: 'Wellness Days and Half-Day Retreats',
@@ -126,7 +108,7 @@ const schema = {
       </div>
       <div class="copy-flow">
         <p>Shambala retreats bring together yoga, meditation, sound healing, forest bathing, mindful movement, nourishing food and optional holistic therapies in a peaceful lakeside setting in Derrylin, Co. Fermanagh.</p>
-        <p>The current programme includes residential weekend retreats, half-day retreats, sound bath sessions and focused wellness days. Some dates from the live site need year confirmation before they become individual event pages, so this page keeps those details visible without inventing missing information.</p>
+        <p>The current programme includes confirmed 2026 residential weekend retreats, plus half-day retreats, sound bath sessions and focused wellness days listed separately.</p>
         <p>For retreat information and booking, contact Sukhada on <a href="tel:+447713744589">+44 7713 744 589</a> or email <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>.</p>
       </div>
     </div>
@@ -144,7 +126,7 @@ const schema = {
       </article>
       <article>
         <h3>Weekend Retreat Deposit</h3>
-        <p><strong>£130 / €150</strong> per person. Weekend retreats are commonly priced at £260 / €300.</p>
+        <p><strong>£130 / €150</strong> per person. Weekend retreats are listed at £250-£260 / €300 depending on the retreat.</p>
       </article>
       <article>
         <h3>Cancellation Policy</h3>
@@ -157,8 +139,8 @@ const schema = {
   <section class="page-section">
     <div class="section-heading">
       <div>
-        <p class="label">Current Programme Inventory</p>
-        <h2>Retreats Found on the Current Site</h2>
+        <p class="label">2026 Programme</p>
+        <h2>Weekend Retreats at Shambala</h2>
       </div>
       <a class="btn btn-dark" href="mailto:shambala108@icloud.com?subject=Retreat%20Enquiry">Enquire About Retreats</a>
     </div>

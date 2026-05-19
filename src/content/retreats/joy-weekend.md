@@ -1,46 +1,35 @@
 ---
 title: "Joy Weekend Retreat"
-description: "A mental and emotional wellbeing weekend with hypnotherapy, life coaching, EFT, CBT, mindfulness, Qigong and forest bathing."
+description: "A calm and nurturing weekend retreat to release what feels heavy, learn grounding tools and restore inner balance at Shambala."
 startDate: 2026-10-02
 endDate: 2026-10-04
 price: 260
 currency: GBP
 priceEUR: 300
-includes: ["Accommodation", "Meals", "Life coaching or holistic therapy session", "Qigong", "Yoga", "Sound bath", "Forest bathing"]
+includes: ["Accommodation", "Meals", "Reflection", "Guidance", "Deep relaxation", "Grounding tools"]
 facilitators: ["Celine", "Fiona", "Sukhada Smith-Repass"]
 slug: "joy-weekend"
 ---
 
 ## Overview
 
-A weekend for mental and emotional wellbeing with hypnotherapy, life coaching, EFT, CBT, mindfulness, Qigong, Hatha yoga, forest bathing and nature walks.
+A tender pause for the heart. Joy offers a calm, nurturing space to release what feels heavy, learn grounding tools, and restore your inner balance with moments of reflection, guidance and deep relaxation.
 
-## Schedule
+Possibility to stay on Sunday night at an extra cost.
 
-### Friday
+## What's Included
 
-- Therapies from 3.00 pm-5.00 pm
-- Dinner at 6.00 pm
-- Introduction at 6.40 pm
-- Slow Flow Rahanni Yoga at 7.00 pm
-- Sound Bath Meditation at 8.00 pm
+- Accommodation
+- Meals
+- Reflection
+- Guidance
+- Deep relaxation
+- Grounding tools
 
-### Saturday
+## Pricing
 
-- Qigong with Fiona at 9.00 am
-- Breakfast at 10.15 am
-- Joy workshop at 11.00 am with mindfulness, SMART goals, CBT and hypnotherapy
-- Lunch at 1.00 pm
-- Guided meditation, visualisation and EFT tapping at 1.45 pm
-- Mindfulness walk and forest bathing at 3.00 pm
-- Free time or therapies at 4.00 pm
-- Dinner at 6.00 pm
-- Qigong with Fiona at 7.00 pm
+The Joy weekend retreat is listed at £260 / €300 per person.
 
-### Sunday
+## Note
 
-- Hatha yoga with Sukhada at 9.00 am
-- Breakfast at 10.00 am
-- Optional therapy at 10.15 am
-- Closing relaxation and farewell at 11.10 am
-- Optional Hare Krishna Temple visit at 11.50 am
+TODO: Confirm the full daily schedule before publishing a detailed timetable.

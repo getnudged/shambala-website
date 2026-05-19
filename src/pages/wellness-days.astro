@@ -4,9 +4,29 @@ import '../styles/components/inner-pages.css';
 
 const meta = {
   title: 'Wellness Days Fermanagh | Shambala Holistic Retreat Centre',
-  description: 'Plan a wellness day in Fermanagh at Shambala, with forest bathing, meditation, grounding practices, gentle movement and lunch beside Upper Lough Erne.',
+  description: 'Plan Sunday half-day retreats and Saturday day retreats at Shambala in Fermanagh, with vegetarian lunch, gentle movement and restoration.',
   canonical: 'https://shambalaholisticandretreatcentre.com/wellness-days/'
 };
+
+const halfDayRetreats = [
+  ['Sun 12 April', 'The Art of Reconnection', '/retreats/the-art-of-reconnection/'],
+  ['Sun 31 May', 'Joy', '/retreats/joy-half-day/'],
+  ['Sun 21 June', 'Energy in Motion', '/retreats/energy-in-motion-wellbeing-day/'],
+  ['Sun 26 July', 'Inner Peace', '/retreats/inner-peace-wellness-day/'],
+  ['Sun 23 August', 'Yoga, Walking & Adventure', '/retreats/walking-nature-adventure-wellness-day/'],
+  ['Sun 13 September', 'Journey Within', '/retreats/journey-within-silent-retreat/'],
+  ['Sun 11 October', 'The Power of Manifestation', '/retreats/power-of-manifestation-wellbeing-day/'],
+  ['Sun 15 November', 'Relax, Rewind & Reset', '/retreats/relax-rewind-reset/']
+];
+
+const dayRetreats = [
+  ['Sat 9 May', 'Tai Chi & Yoga', '/retreats/tai-chi-yoga-half-day/'],
+  ['Sat 27 June', 'Touching the Earth', '/retreats/touching-the-earth-half-day/'],
+  ['Sat 29 August', 'Yoga Warrior', '/retreats/yoga-warrior-half-day/'],
+  ['Sat 26 September', 'Life Purpose', '/retreats/ikigai-life-purpose-half-day/'],
+  ['Sat 3 October', 'Joy', '/retreats/joy-day-retreat/'],
+  ['Sat 31 October', 'Samhain & Shamanism', '/retreats/samhain-shamanism-half-day/']
+];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -37,7 +57,8 @@ const schema = {
       </div>
       <div class="copy-flow">
         <p>Wellness days at Shambala give you the feel of retreat without committing to a full residential weekend. They may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time by the water.</p>
-        <p>The current programme includes half-day retreats and focused wellbeing days, with common half-day pricing listed at £40. Some specialist days may vary.</p>
+        <p>The current programme includes Sunday half-day retreats from 12.30 pm-4.30 pm and Saturday day retreats from 11.00 am-3.00 pm.</p>
+        <p>Both formats are listed at £40 / €48 with vegetarian lunch included. Staying Saturday or Sunday night may be possible at additional cost, subject to availability.</p>
         <p>Dates and availability change seasonally, so contact Sukhada before travelling.</p>
       </div>
     </div>
@@ -45,33 +66,75 @@ const schema = {
 
   <section class="page-section page-section--mist">
     <div class="section-heading section-heading--simple">
-      <p class="label">What to Expect</p>
-      <h2>Restorative Ingredients</h2>
+      <p class="label">Half-Day Retreats · Sundays</p>
+      <h2>12.30 pm-4.30 pm · £40 / €48</h2>
+      <p>Vegetarian lunch included. Option to stay on Sunday night at extra cost, subject to availability.</p>
+    </div>
+    <div class="programme-table-wrap">
+      <table class="programme-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          {halfDayRetreats.map(([date, theme, href]) => (
+            <tr>
+              <td>{date}</td>
+              <td><a href={href}>{theme}</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Day Retreats · Saturdays</p>
+      <h2>11.00 am-3.00 pm · £40 / €48</h2>
+      <p>Vegetarian lunch included. Option to stay Saturday or Sunday night at additional cost, subject to availability.</p>
+    </div>
+    <div class="programme-table-wrap">
+      <table class="programme-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dayRetreats.map(([date, theme, href]) => (
+            <tr>
+              <td>{date}</td>
+              <td><a href={href}>{theme}</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Featured Half-Day Retreats</p>
+      <h2>Energy in Motion and Joy</h2>
     </div>
     <div class="value-grid">
       <article>
-        <h3>Forest Bathing</h3>
-        <p>Slow nature immersion in the grounds and nearby landscape, supporting presence and nervous system rest.</p>
+        <h3>Energy in Motion</h3>
+        <p>Give yourself a soft pause with Mindful Movement. This half-day experience is an invitation to slow down and be held in a nurturing atmosphere of mindful presence, gentle movement and meditation, ending with a deeply calming sound bath.</p>
+        <p>A beautiful way to soothe the nervous system, release stress and reconnect with your inner flow so you can leave feeling grounded, restored and refreshed. No experience required. All welcome.</p>
       </article>
       <article>
-        <h3>Grounding Practice</h3>
-        <p>Simple practices that reconnect body, breath and attention, often using the lakeside setting.</p>
+        <h3>Joy</h3>
+        <p>A tender pause for the heart. Joy offers a calm, nurturing space to release what feels heavy, learn grounding tools, and restore your inner balance with moments of reflection, guidance and deep relaxation.</p>
+        <p>All are welcome.</p>
       </article>
       <article>
-        <h3>Gentle Movement</h3>
-        <p>Yoga, Tai Chi, Qigong or mindful movement depending on the focus of the day.</p>
-      </article>
-      <article>
-        <h3>Meditation</h3>
-        <p>Guided meditation and visualisation to support inner quiet and clarity.</p>
-      </article>
-      <article>
-        <h3>Shared Lunch</h3>
-        <p>Retreat-style food and time to pause between sessions.</p>
-      </article>
-      <article>
-        <h3>Optional Therapies</h3>
-        <p>Selected dates may include or offer optional holistic therapies by advance arrangement.</p>
+        <h3>What to Expect</h3>
+        <p>Programmes may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time by the water.</p>
       </article>
     </div>
   </section>
@@ -80,11 +143,11 @@ const schema = {
     <div>
       <p class="label">Seasonal Dates</p>
       <h2>Plan Your Wellness Day at Shambala</h2>
-      <p>Ask about upcoming half-day retreats, full wellness days and group availability.</p>
+      <p>Ask about upcoming half-day retreats, full wellness days, workshops and group availability.</p>
     </div>
     <div class="cta-actions">
       <a class="btn btn-primary" href="/contact/">Plan Your Wellness Day</a>
-      <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore Retreats</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/workshops/">View Workshops</a>
     </div>
   </section>
 </BaseLayout>

@@ -5,6 +5,7 @@ startDate: 2026-10-31
 endDate: 2026-10-31
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Journeying workshop", "Lunch", "Grounding walk", "Yoga poses", "Cacao ceremony"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "samhain-shamanism-half-day"
@@ -13,6 +14,14 @@ slug: "samhain-shamanism-half-day"
 ## Overview
 
 A half-day Samhain and shamanism retreat with journeying, intention setting, letting go, grounding walk, opening of the heart yoga poses and cacao ceremony.
+
+## Time
+
+11.00 am-3.00 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
 
 ## Schedule
 

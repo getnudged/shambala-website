@@ -5,6 +5,7 @@ startDate: 2026-05-31
 endDate: 2026-05-31
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Mindfulness", "EFT workshop", "Life coaching", "Lunch", "Slow Flow Yoga", "Hypnotherapy"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "joy-half-day"
@@ -12,13 +13,18 @@ slug: "joy-half-day"
 
 ## Overview
 
-A mental and emotional wellbeing half-day focused on mindfulness, movement, mindset coaching, EFT, life coaching, slow flow yoga and hypnotherapy.
+A tender pause for the heart. Joy offers a calm, nurturing space to release what feels heavy, learn grounding tools, and restore your inner balance with moments of reflection, guidance and deep relaxation.
+
+All are welcome.
+
+## Time
+
+12.30 pm-4.30 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
 
 ## Schedule
 
-- 12.30 pm: Tea and coffee welcome
-- 12.45 pm: Mindfulness, EFT workshop and life coaching
-- 2.00 pm: Lunch break
-- 2.30 pm: Slow Flow Yoga
-- 3.00 pm: Hypnotherapy session
-- 3.30 pm: Close
+TODO: Confirm the detailed schedule for the Joy half-day retreat.

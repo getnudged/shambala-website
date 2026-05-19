@@ -8,6 +8,8 @@ const meta = {
   canonical: 'https://shambalaholisticandretreatcentre.com/contact/'
 };
 
+const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
@@ -32,7 +34,7 @@ const schema = {
         <h2>Speak Directly with Sukhada</h2>
       </div>
       <div class="copy-flow">
-        <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <p>Shambala Holistic & Retreat Centre is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>.</p>
         <p>For current availability, retreat places, therapy bookings and general enquiries, contact Sukhada directly.</p>
         <p><a href="tel:+447713744589">Call +44 7713 744 589</a> or email <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>.</p>
       </div>
@@ -54,7 +56,7 @@ const schema = {
       <article>
         <p class="label">Address</p>
         <h2>Visit by Appointment</h2>
-        <p>48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</p>
+        <p><a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a></p>
       </article>
     </div>
   </section>
@@ -89,7 +91,9 @@ const schema = {
             <option>Reiki training</option>
             <option>Sound baths and yoga</option>
             <option>Corporate wellness</option>
+            <option>School or care setting programme</option>
             <option>Self-catering accommodation</option>
+            <option>Workshops and circles</option>
           </select>
         </label>
         <label class="enquiry-form__full">

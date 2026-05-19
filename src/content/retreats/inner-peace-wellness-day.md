@@ -5,6 +5,7 @@ startDate: 2026-07-26
 endDate: 2026-07-26
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Journaling", "Mandala workshop", "Lunch", "Forest bathing", "Tai Chi", "Sound bath meditation"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "inner-peace-wellness-day"
@@ -13,6 +14,14 @@ slug: "inner-peace-wellness-day"
 ## Overview
 
 A creativity and stillness day with journaling, mandala workshop, forest bathing, Tai Chi and sound bath meditation.
+
+## Time
+
+12.30 pm-4.30 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
 
 ## Schedule
 

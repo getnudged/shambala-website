@@ -5,6 +5,7 @@ startDate: 2026-08-29
 endDate: 2026-08-29
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Yoga Warrior workshop", "Lunch", "Yoga Warrior poses"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "yoga-warrior-half-day"
@@ -13,6 +14,14 @@ slug: "yoga-warrior-half-day"
 ## Overview
 
 A half-day retreat for strength, focus, confidence, mindful movement and inner power.
+
+## Time
+
+11.00 am-3.00 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
 
 ## Schedule
 

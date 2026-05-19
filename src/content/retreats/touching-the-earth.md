@@ -1,58 +1,44 @@
 ---
 title: "Touching the Earth: A Grounding Retreat"
-description: "A grounding residential retreat with yoga, T'ai Chi Qigong, forest bathing, meditation, sound bath and nourishing food at Shambala in Fermanagh."
-year: 2026
-dateNote: "Exact weekend dates to confirm."
-price: 260
+description: "Spend a relaxing weekend grounding and reconnecting with nature through Yoga, Tai Chi, Qigong, Meditation and Forest Bathing at Shambala."
+startDate: 2026-06-26
+endDate: 2026-06-28
+price: 250
 currency: "GBP"
 priceEUR: 300
 includes:
-  - "Accommodation"
-  - "All meals"
-  - "Yoga sessions"
-  - "T'ai Chi Qigong"
+  - "2 nights accommodation"
+  - "All vegetarian meals"
+  - "Yoga"
+  - "Tai Chi / Qigong"
+  - "Meditation"
   - "Forest bathing"
-  - "Meditation and visualisation"
-  - "Sound bath"
-  - "Grounding food and herbal teas"
 slug: "touching-the-earth"
 ---
 
-Touching the Earth is a grounding weekend retreat at Shambala Holistic & Retreat Centre, created for guests who want to slow down, reconnect with the body and return to natural balance.
+## Overview
 
-The retreat brings together yoga, T'ai Chi Qigong, forest bathing, meditation, sound bath, crystal healing themes and time beside Upper Lough Erne. The current retreat notes invite guests into a digital detox, with nourishing food centred around root vegetables and grounding teas.
+Spend a relaxing weekend on the shores of Upper Lough Erne. Enjoy Yoga, Tai Chi / Qigong and Meditation for grounding and earthing the body.
 
-## Schedule
+Quiet the mind with Forest Bathing and connect with Mother Earth. On this retreat we will be focusing on bringing ourselves back to earth, grounding ourselves and connecting with nature. We will get the opportunity to get out of our heads and Touch the Earth.
 
-### Friday
+## What's Included
 
-- 3.00 pm-5.00 pm: Optional therapies by advance booking.
-- From 4.00 pm: General arrival.
-- 6.30 pm: Dinner.
-- 7.30 pm: Welcome, meditation and visualisation.
+- 2 nights accommodation
+- All vegetarian meals
+- Yoga
+- Tai Chi / Qigong
+- Meditation
+- Forest Bathing
 
-### Saturday
+## Optional Therapies
 
-- 8.30 am: Morning yoga.
-- 10.00 am: Breakfast.
-- 11.15 am: Restorative Reiki Yoga.
-- 1.00 pm: Lunch.
-- 2.15 pm: Barefoot grounding and forest bathing.
-- 3.30 pm-5.30 pm: Optional therapies by advance booking.
-- 7.00 pm: Dinner.
-- 8.15 pm: Sound bath.
+Therapies are available on request as an optional extra.
 
-### Sunday
+## Pricing
 
-- 9.00 am: Hatha yoga.
-- 10.00 am: Breakfast.
-- 11.00 am: Meditation and visualisation.
-- 11.45 am: Closing.
+The Touching the Earth weekend retreat is listed at £250 / €300 per person.
 
-## Optional Therapies And Notes
+## Note
 
-Optional therapies are noted for Friday and Saturday and should be pre-booked. The current site lists these at approximately £30-£40.
-
-The old retreat content also mentions a possible Sunday extension to Inis Rath / Hare Krishna Island, with departure from the nearby quay at 12.00 pm. This should be confirmed before it is used as final page copy.
-
-Grounding crystal themes mentioned in the source content include black tourmaline, shungite, smoky quartz, hematite, red jasper, tiger's eye, onyx, pyrite, obsidian, lava, jet, garnet, amethyst and moss agate.
+TODO: Confirm the full daily schedule before publishing a detailed timetable.

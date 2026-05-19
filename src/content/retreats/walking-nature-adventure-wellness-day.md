@@ -5,6 +5,7 @@ startDate: 2026-08-23
 endDate: 2026-08-23
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Estate walk", "Picnic lunch", "Tai Chi", "Nature walk", "Mindful walking practice"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "walking-nature-adventure-wellness-day"
@@ -14,13 +15,17 @@ slug: "walking-nature-adventure-wellness-day"
 
 An outdoor wellness day at Crom Estate with walking, picnic lunch, Tai Chi, nature walk and mindful walking practice.
 
+## Time
+
+12.30 pm-4.30 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
+
 ## Schedule
 
-- 12.00 pm: Meet at Crom Estate
-- 12.00 pm-2.00 pm: Estate walk and adventure
-- 2.00 pm: Picnic lunch
-- 2.30 pm: Tai Chi in nature
-- 3.30 pm: Nature walk and mindful walking practice
+TODO: Confirm the detailed schedule and meeting point for Yoga, Walking & Adventure.
 
 ## Notes
 

@@ -41,6 +41,8 @@ const airports = [
   'Belfast International Airport (BFS)',
   'Dublin Airport'
 ];
+
+const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
 ---
 
 <BaseLayout {meta} {schema}>
@@ -59,7 +61,7 @@ const airports = [
         <h2>On the Shores of Upper Lough Erne</h2>
       </div>
       <div class="copy-flow">
-        <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <p>Shambala Holistic & Retreat Centre is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>.</p>
         <p>The centre is close to the Northern Ireland and Republic of Ireland border, making it accessible for guests travelling from Fermanagh, Cavan, Monaghan, Dublin, Belfast and the wider island of Ireland.</p>
         <p>There is no passport requirement for routine cross-border travel between Northern Ireland and the Republic of Ireland. Guests from both sides of the border are welcome, and Shambala commonly references pricing in both GBP and EUR.</p>
       </div>
@@ -88,7 +90,7 @@ const airports = [
         <p class="label">Map</p>
         <h2>Find Shambala</h2>
         <p>Use the map link below for directions to 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
-        <a class="btn btn-dark" href="https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN" target="_blank" rel="noreferrer">Open Google Maps</a>
+        <a class="btn btn-dark" href={mapsUrl} target="_blank" rel="noreferrer">Open Google Maps</a>
       </article>
       <div class="landscape-card" role="img" aria-label="Upper Lough Erne setting near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
         <span>48 Geaglum Road, Derrylin</span>

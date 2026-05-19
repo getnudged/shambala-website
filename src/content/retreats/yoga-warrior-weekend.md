@@ -3,48 +3,32 @@ title: "Yoga Warrior Weekend Retreat"
 description: "A weekend retreat with yoga, mindfulness, nature walks, meditation, therapies and sound healing by Upper Lough Erne."
 startDate: 2026-08-28
 endDate: 2026-08-30
-price: 260
+price: 250
 currency: GBP
 priceEUR: 300
-includes: ["Accommodation", "Meals", "Yoga sessions", "Sound bath", "Meditation", "Nature walks"]
+includes: ["Yoga styles", "Nature walks", "Meditation", "Mindfulness", "Massages", "Sound bath", "Tea/Coffee", "Light vegetarian lunch"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "yoga-warrior-weekend"
 ---
 
 ## Overview
 
-A weekend of yoga styles along Upper Lough Erne, blending movement, mindfulness, nature walks, meditation, therapies and sound healing.
+Join us for a weekend of various yoga styles along the shores of Upper Lough Erne. Includes Nature Walks, Meditation, Mindfulness, Massages and Sound Bath.
 
-## Schedule
+## What's Included
 
-### Friday
+- Various yoga styles
+- Nature walks
+- Meditation
+- Mindfulness
+- Massages
+- Sound Bath
+- Tea/Coffee and light vegetarian lunch
 
-- Optional therapies from 3.00 pm-5.00 pm
-- Arrival from 4.00 pm
-- Dinner at 6.00 pm
-- Welcome with Fiona at 6.40 pm
-- Slow Flow Rahanni Yoga with Sukhada at 7.00 pm
-- Sound Bath Meditation with Sukhada at 8.00 pm
+## Pricing
 
-### Saturday
+The Yoga Warrior weekend retreat is listed at £250 / €300 per person.
 
-- Morning yoga with Fiona at 9.00 am
-- Breakfast at 10.00 am
-- Yoga Warrior workshop with Fiona at 11.00 am
-- Lunch at 1.00 pm
-- Yoga Warrior poses with Sukhada at 2.00 pm
-- Free time or optional therapies from 3.00 pm-6.00 pm
-- Dinner at 6.00 pm
-- Visualisation and mindfulness with Fiona at 7.00 pm
+## Note
 
-### Sunday
-
-- Hatha yoga with Sukhada at 9.00 am
-- Breakfast at 10.00 am
-- Optional therapies at 10.15 am
-- Meditation and visualisation with Fiona at 11.15 am
-- Close at 11.50 am
-
-## Notes
-
-Optional Sunday programme at Inis Rath / Hare Krishna Island is mentioned on the current site.
+TODO: Confirm whether the source line "Tea/Coffee & light vegetarian lunch" is intended for the full weekend retreat or the day retreat listing before publishing final inclusions.

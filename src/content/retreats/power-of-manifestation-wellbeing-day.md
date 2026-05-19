@@ -3,8 +3,9 @@ title: "Power of Manifestation Wellbeing Day"
 description: "A wellbeing day for intentional living with EFT tapping, goal setting, vision board work, nature walk, Tai Chi and visualisation."
 startDate: 2026-10-11
 endDate: 2026-10-11
-price: 50
+price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Mindfulness", "EFT Tapping", "Goal setting", "Vision Board workshop", "Nature walk", "Tai Chi", "Visualisation"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "power-of-manifestation-wellbeing-day"
@@ -14,14 +15,17 @@ slug: "power-of-manifestation-wellbeing-day"
 
 An intentional living day with mindfulness, EFT tapping, goal setting, vision board work, nature walk, Tai Chi and manifestation visualisation.
 
+## Time
+
+12.30 pm-4.30 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
+
 ## Schedule
 
-- 12.30 pm: Mindfulness, EFT Tapping and goal setting
-- 1.30 pm: Lunch break
-- 2.15 pm: Vision Board workshop
-- 3.45 pm: Nature walk
-- 4.15 pm: Tai Chi
-- 4.45 pm: Manifestation visualisation and closing
+TODO: Confirm the detailed schedule for The Power of Manifestation.
 
 ## Notes
 

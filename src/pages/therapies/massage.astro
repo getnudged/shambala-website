@@ -4,9 +4,11 @@ import '../../styles/components/inner-pages.css';
 
 const meta = {
   title: 'Massage Therapy Fermanagh | Shambala Holistic Retreat Centre',
-  description: 'Book massage therapy in Fermanagh near Enniskillen, including Swedish, hot stone, Himalayan salt stone and aromatherapy massage at Shambala by Lough Erne.',
+  description: 'Book massage therapy in Fermanagh near Enniskillen, including Aroma Touch, Himalayan Salt Stone, Indian Head Massage and Reflexology.',
   canonical: 'https://shambalaholisticandretreatcentre.com/therapies/massage/'
 };
+
+const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -24,7 +26,7 @@ const schema = {
 <BaseLayout {meta} {schema}>
   <section class="inner-hero inner-hero--massage">
     <div class="inner-hero__content">
-      <p class="label">Swedish · Hot Stone · Salt Stone · Aromatherapy</p>
+      <p class="label">Aroma Touch · Salt Stone · Indian Head · Reflexology</p>
       <h1>Massage Therapy in Fermanagh near Enniskillen</h1>
       <p>Restorative massage treatments with Sukhada in a quiet lakeside setting near Derrylin and Enniskillen.</p>
     </div>
@@ -38,7 +40,7 @@ const schema = {
       </div>
       <div class="copy-flow">
         <p>Massage therapy at Shambala is calm, focused and responsive. Each session is chosen around the person, with attention to tension, relaxation, comfort and the need to slow down.</p>
-        <p>The centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, around 20 minutes from Enniskillen and 40 minutes from Cavan.</p>
+        <p>The centre is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh</a>, around 20 minutes from Enniskillen and 40 minutes from Cavan.</p>
         <p>Contact Sukhada directly for current massage availability and the best treatment for your needs.</p>
       </div>
     </div>
@@ -46,29 +48,75 @@ const schema = {
 
   <section class="page-section page-section--mist">
     <div class="section-heading section-heading--simple">
-      <p class="label">Treatment Options</p>
+      <p class="label">Massage Prices</p>
+      <h2>Treatment Price List</h2>
+    </div>
+    <div class="programme-table-wrap">
+      <table class="programme-table">
+        <thead>
+          <tr>
+            <th>Treatment</th>
+            <th>60 min</th>
+            <th>90 min</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aroma Touch</td>
+            <td>£45</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Hot Himalayan Salt Stone Massage</td>
+            <td>£50</td>
+            <td>£70</td>
+          </tr>
+          <tr>
+            <td>Indian Head Massage</td>
+            <td>£40</td>
+            <td>£65</td>
+          </tr>
+          <tr>
+            <td>Reflexology</td>
+            <td>£40</td>
+            <td>£65</td>
+          </tr>
+          <tr>
+            <td>Swedish Full Body Massage</td>
+            <td>TODO</td>
+            <td>TODO</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small-note">Aroma Touch is listed as back and feet with essential oils. Indian Head Massage covers upper back, neck, shoulders and head. Reflexology is a therapeutic foot massage. TODO: Confirm Swedish Full Body Massage pricing with Sukhada.</p>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Treatment Notes</p>
       <h2>Massage Therapies Available</h2>
     </div>
     <div class="value-grid">
       <article>
-        <h3>Swedish Massage</h3>
-        <p>A classic massage treatment for relaxation, easing muscular tension and supporting circulation.</p>
+        <h3>Aroma Touch</h3>
+        <p>Back and feet massage with essential oils.</p>
       </article>
       <article>
-        <h3>Hot Stone Massage</h3>
-        <p>Heated stones support deep warmth, muscular ease and a sense of grounded relaxation.</p>
-      </article>
-      <article>
-        <h3>Himalayan Salt Stone</h3>
-        <p>A warming, mineral-rich treatment for people seeking deep rest and a different massage experience.</p>
-      </article>
-      <article>
-        <h3>Aromatherapy Massage</h3>
-        <p>Massage supported by aromatic oils, chosen to complement the intention of the session.</p>
+        <h3>Hot Himalayan Salt Stone Massage</h3>
+        <p>A warming salt stone massage for deep rest and ease.</p>
       </article>
       <article>
         <h3>Indian Head Massage</h3>
-        <p>Focused care for head, neck and shoulder tension, especially useful for stress and screen fatigue.</p>
+        <p>Focused care for the upper back, neck, shoulders and head.</p>
+      </article>
+      <article>
+        <h3>Reflexology</h3>
+        <p>Therapeutic foot massage supporting relaxation and balance.</p>
+      </article>
+      <article>
+        <h3>Swedish Full Body Massage</h3>
+        <p class="card-note">TODO: Confirm 60 minute and 90 minute pricing before publishing final rates.</p>
       </article>
       <article>
         <h3>Retreat Therapies</h3>

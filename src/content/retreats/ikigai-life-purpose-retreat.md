@@ -1,51 +1,38 @@
 ---
-title: "Ikigai Life Purpose Retreat"
-description: "A reflective weekend retreat exploring Ikigai, Wabi-Sabi and Kaizen through yoga, Qigong, meditation and nature."
+title: "Life Purpose Weekend Retreat"
+description: "A weekend of introspection, meditation and relaxation with Ikigai, Wabi-Sabi, Kaizen, workshops, Tai Chi, Qigong, Yoga and Sound Bath."
 startDate: 2026-09-25
 endDate: 2026-09-27
-price: 260
+price: 250
 currency: GBP
 priceEUR: 300
-includes: ["Accommodation", "Meals", "Life Purpose Workshop", "Yoga", "Qigong", "Sound bath", "Nature walk"]
+includes: ["Accommodation", "Meals", "Life Purpose Workshop", "Tai Chi", "Qigong", "Yoga", "Meditation", "Nature walks", "Sound bath"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "ikigai-life-purpose-retreat"
 ---
 
 ## Overview
 
-A reflective weekend inspired by Japanese wisdom traditions, exploring Ikigai, Wabi-Sabi and Kaizen through yoga, Qigong, Tai Chi, meditation, nature and restorative practice.
+A weekend of introspection, meditation and relaxation. Introducing Japanese philosophy including Ikigai, reason for being, Wabi-Sabi, the beauty of imperfection, and Kaizen, continuous improvement.
 
-## Schedule
+The weekend includes workshops, Tai Chi, Qigong, Yoga, massages, holistic treatments, nature walks and Sound Bath.
 
-### Friday
+## What's Included
 
-- Optional therapies from 3.00 pm-5.00 pm
-- Arrival from 4.00 pm
-- Dinner at 6.00 pm
-- Introduction with Fiona at 6.40 pm
-- Slow Flow Rahanni Yoga with Sukhada at 7.00 pm
-- Sound Bath Meditation with Sukhada at 8.00 pm
+- Accommodation
+- Meals
+- Workshops
+- Tai Chi
+- Qigong
+- Yoga
+- Meditation
+- Nature walks
+- Sound Bath
 
-### Saturday
+## Pricing
 
-- Qigong with Fiona at 9.00 am
-- Breakfast at 10.15 am
-- Life Purpose Workshop from 11.00 am-1.00 pm
-- Lunch at 1.00 pm
-- Guided meditation and visualisation at 1.45 pm
-- Nature walk at 3.00 pm
-- Free time or optional therapies at 4.00 pm
-- Dinner at 6.00 pm
-- Qigong with Fiona at 7.00 pm
+The Life Purpose weekend retreat is listed at £250 / €300 per person.
 
-### Sunday
+## Note
 
-- Hatha yoga with Sukhada at 9.00 am
-- Breakfast at 10.00 am
-- Optional therapies at 10.15 am
-- Closing relaxation with Fiona and Sukhada at 11.10 am
-- Close at 11.50 am
-
-## Notes
-
-Optional Inis Rath / Hare Krishna Island visit is mentioned on the current site.
+TODO: Source notes show a price discrepancy for this retreat, with £260 / €300 in the general schedule and £250 / €300 in the detail. Current page uses the detail price supplied for implementation.

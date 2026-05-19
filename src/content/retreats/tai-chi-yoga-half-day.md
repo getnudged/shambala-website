@@ -5,6 +5,7 @@ startDate: 2026-05-09
 endDate: 2026-05-09
 price: 40
 currency: GBP
+priceEUR: 48
 includes: ["Tai Chi", "Guided relaxation", "Lunch", "Forest bathing", "Gentle Yoga Flow"]
 facilitators: ["Fiona"]
 slug: "tai-chi-yoga-half-day"
@@ -13,6 +14,14 @@ slug: "tai-chi-yoga-half-day"
 ## Overview
 
 A Saturday half-day retreat for movement, nature and mindfulness at Shambala Holistic & Retreat Centre.
+
+## Time
+
+11.00 am-3.00 pm.
+
+## Pricing
+
+£40 / €48 with vegetarian lunch included.
 
 ## Schedule
 
