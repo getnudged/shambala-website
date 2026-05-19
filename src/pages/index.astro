@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/home.css';
 import heroImage from '../images/Shambala House.jpeg';
+import upperLoughErneImage from '../images/upper-lough-ern.jpeg';
 
 const meta = {
   title: 'Shambala Holistic & Retreat Centre | Wellness Retreat Fermanagh',
@@ -66,7 +67,13 @@ const meta = {
           </div>
         </div>
       </div>
-      <figure class="lough-panel" role="img" aria-label="Upper Lough Erne viewed from Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+      <figure class="lough-panel">
+        <Image
+          src={upperLoughErneImage}
+          alt="Upper Lough Erne viewed from Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+          loading="lazy"
+          decoding="async"
+        />
         <figcaption>The shores of Upper Lough Erne, Derrylin</figcaption>
       </figure>
     </div>
