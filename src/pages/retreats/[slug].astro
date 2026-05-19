@@ -1,0 +1,208 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/components/inner-pages.css';
+
+export async function getStaticPaths() {
+  const retreats = await getCollection('retreats');
+
+  return retreats.map((retreat) => ({
+    params: { slug: retreat.data.slug ?? retreat.id.replace(/\.md$/, '') },
+    props: { retreat }
+  }));
+}
+
+const { retreat } = Astro.props;
+const { Content } = await render(retreat);
+const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
+const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
+
+const formatDate = (date?: Date) =>
+  date
+    ? date.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      })
+    : null;
+
+const dateLabel = retreat.data.startDate
+  ? retreat.data.endDate && retreat.data.endDate.valueOf() !== retreat.data.startDate.valueOf()
+    ? `${formatDate(retreat.data.startDate)} - ${formatDate(retreat.data.endDate)}`
+    : formatDate(retreat.data.startDate)
+  : retreat.data.dateNote ?? (retreat.data.year ? `${retreat.data.year} date to confirm` : 'Date to confirm');
+
+const priceLabel = retreat.data.priceEUR
+  ? `£${retreat.data.price} / €${retreat.data.priceEUR}`
+  : `£${retreat.data.price}`;
+
+const buildDescription = (description: string) => {
+  const suffix = ' Join Shambala in Derrylin, Co. Fermanagh for retreat time beside Upper Lough Erne.';
+  const text = description.length >= 150 ? description : `${description}${suffix}`;
+  if (text.length <= 160) return text;
+  const trimmed = text.slice(0, 157);
+  return `${trimmed.slice(0, trimmed.lastIndexOf(' '))}...`;
+};
+
+const meta = {
+  title: `${retreat.data.title} | Shambala Fermanagh`,
+  description: buildDescription(retreat.data.description),
+  canonical
+};
+
+const eventSchema = retreat.data.startDate
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      name: retreat.data.title,
+      description: retreat.data.description,
+      startDate: retreat.data.startDate.toISOString().slice(0, 10),
+      endDate: (retreat.data.endDate ?? retreat.data.startDate).toISOString().slice(0, 10),
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: 'Shambala Holistic & Retreat Centre',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '48 Geaglum Road',
+          addressLocality: 'Derrylin',
+          addressRegion: 'Co. Fermanagh',
+          postalCode: 'BT92 9GN',
+          addressCountry: 'GB'
+        }
+      },
+      offers: {
+        '@type': 'Offer',
+        price: retreat.data.price,
+        priceCurrency: retreat.data.currency,
+        availability: 'https://schema.org/InStock',
+        url: canonical
+      },
+      organizer: {
+        '@type': 'Organization',
+        name: 'Shambala Holistic & Retreat Centre',
+        url: 'https://shambalaholisticandretreatcentre.com/'
+      }
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: retreat.data.title,
+      url: canonical,
+      description: retreat.data.description
+    };
+---
+
+<BaseLayout {meta} schema={eventSchema}>
+  <article>
+    <header class="inner-hero inner-hero--retreat-detail">
+      <div class="inner-hero__content">
+        <p class="label">{dateLabel} · {priceLabel}</p>
+        <h1>{retreat.data.title}</h1>
+        <p>{retreat.data.description}</p>
+      </div>
+    </header>
+
+    <section class="page-section">
+      <div class="retreat-detail-grid">
+        <aside class="retreat-facts" aria-label="Retreat details">
+          <p class="label">Retreat Details</p>
+          <dl>
+            <div>
+              <dt>Date</dt>
+              <dd>{dateLabel}</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>{priceLabel}</dd>
+            </div>
+            {retreat.data.facilitators.length > 0 && (
+              <div>
+                <dt>Facilitators</dt>
+                <dd>{retreat.data.facilitators.join(', ')}</dd>
+              </div>
+            )}
+          </dl>
+          {!retreat.data.startDate && <p class="small-note">TODO: Confirm exact retreat dates before launch.</p>}
+          <a class="btn btn-dark" href="#retreat-enquiry">Reserve Your Place</a>
+        </aside>
+
+        <div class="article-content">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--mist">
+      <div class="section-heading section-heading--simple">
+        <p class="label">What's Included</p>
+        <h2>Included in This Retreat</h2>
+      </div>
+      <div class="value-grid">
+        {retreat.data.includes.map((item) => (
+          <article>
+            <h3>{item}</h3>
+            <p>Included as part of {retreat.data.title} at Shambala Holistic & Retreat Centre.</p>
+          </article>
+        ))}
+      </div>
+      {retreat.data.includes.length === 0 && <p class="small-note">TODO: Add confirmed inclusions for this retreat.</p>}
+    </section>
+
+    <section class="page-section" id="retreat-enquiry">
+      <div class="split-layout">
+        <div>
+          <p class="label">Retreat Enquiry</p>
+          <h2>Reserve Your Place</h2>
+          <p>Use this retreat enquiry form to contact Shambala about availability, dietary requirements and booking details.</p>
+        </div>
+        <form class="enquiry-form" name={`retreat-${slug}`} method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value={`retreat-${slug}`} />
+          <input type="hidden" name="retreat" value={retreat.data.title} />
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input name="phone" type="tel" autocomplete="tel" />
+          </label>
+          <label>
+            <span>Number of guests</span>
+            <input name="guests" type="number" min="1" inputmode="numeric" />
+          </label>
+          <label class="enquiry-form__full">
+            <span>Dietary requirements</span>
+            <textarea name="dietary-requirements" rows="3"></textarea>
+          </label>
+          <label class="enquiry-form__full">
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <label class="enquiry-form__full">
+            <span>How did you hear about us?</span>
+            <input name="referral-source" type="text" />
+          </label>
+          <button class="btn btn-primary" type="submit">Send Retreat Enquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page-section page-cta">
+      <div>
+        <p class="label">Location</p>
+        <h2>Retreat by Upper Lough Erne</h2>
+        <p>Shambala is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="/getting-here/">Plan Your Journey</a>
+        <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore All Retreats</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

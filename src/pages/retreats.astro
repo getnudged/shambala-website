@@ -11,6 +11,7 @@ const meta = {
 const retreatCards = [
   {
     title: 'Touching the Earth: A Grounding Retreat',
+    href: '/retreats/touching-the-earth/',
     type: 'Weekend retreat',
     date: 'Date to confirm',
     price: 'Typical weekend pricing: £260 / €300',
@@ -19,6 +20,7 @@ const retreatCards = [
   },
   {
     title: 'Tai Chi & Yoga Half-Day Retreat',
+    href: '/retreats/tai-chi-yoga-half-day/',
     type: 'Half-day retreat',
     date: 'Saturday 9 May, year to confirm',
     price: '£40',
@@ -27,6 +29,7 @@ const retreatCards = [
   },
   {
     title: 'Tai Chi & Yoga Weekend Retreat',
+    href: '/retreats/tai-chi-yoga-weekend/',
     type: 'Weekend retreat',
     date: 'Date to confirm',
     price: '£260 / €300',
@@ -35,6 +38,7 @@ const retreatCards = [
   },
   {
     title: 'Slow Flow Rahanni Yoga & Sound Bath',
+    href: '/retreats/slow-flow-rahanni-yoga-sound-bath/',
     type: 'Sound bath / yoga session',
     date: 'Select Fridays, year to confirm',
     price: '£20',
@@ -43,6 +47,7 @@ const retreatCards = [
   },
   {
     title: 'Yoga Warrior Weekend Retreat',
+    href: '/retreats/yoga-warrior-weekend/',
     type: 'Weekend retreat',
     date: '28-30 August, year to confirm',
     price: '£260 / €300',
@@ -51,6 +56,7 @@ const retreatCards = [
   },
   {
     title: 'Ikigai Life Purpose Retreat',
+    href: '/retreats/ikigai-life-purpose-retreat/',
     type: 'Weekend retreat',
     date: '25-27 September, year to confirm',
     price: '£260 / €300',
@@ -59,6 +65,7 @@ const retreatCards = [
   },
   {
     title: 'Samhain & Shamanism Weekend Retreat',
+    href: '/retreats/samhain-shamanism-weekend/',
     type: 'Weekend retreat',
     date: '30 October-1 November, year to confirm',
     price: 'Price to confirm',
@@ -67,6 +74,7 @@ const retreatCards = [
   },
   {
     title: 'Joy Weekend Retreat',
+    href: '/retreats/joy-weekend/',
     type: 'Weekend retreat',
     date: '2-4 October, year to confirm',
     price: '£260 / €300',
@@ -75,6 +83,7 @@ const retreatCards = [
   },
   {
     title: 'Wellness Days and Half-Day Retreats',
+    href: '/wellness-days/',
     type: 'Half-day / wellbeing day',
     date: 'Multiple dates, year to confirm',
     price: 'Commonly £40',
@@ -156,7 +165,7 @@ const schema = {
 
     <div class="retreat-index-grid">
       {retreatCards.map((retreat) => (
-        <article class="retreat-index-card">
+        <a class="retreat-index-card" href={retreat.href}>
           <p class="label">{retreat.type}</p>
           <h3>{retreat.title}</h3>
           <dl>
@@ -171,7 +180,8 @@ const schema = {
           </dl>
           <p>{retreat.summary}</p>
           <p class="card-note">{retreat.notes}</p>
-        </article>
+          <span class="text-link">View retreat details</span>
+        </a>
       ))}
     </div>
   </section>

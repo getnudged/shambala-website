@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Getting to Shambala | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Plan your journey to Shambala in Derrylin, Co. Fermanagh, with travel times from Cavan, Enniskillen, Dublin, Belfast, Derry and nearby Monaghan town today.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/getting-here/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Getting to Shambala Holistic & Retreat Centre',
+  url: meta.canonical,
+  about: {
+    '@type': 'Place',
+    name: 'Shambala Holistic & Retreat Centre',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '48 Geaglum Road',
+      addressLocality: 'Derrylin',
+      addressRegion: 'Co. Fermanagh',
+      postalCode: 'BT92 9GN',
+      addressCountry: 'GB'
+    }
+  }
+};
+
+const travelTimes = [
+  ['Enniskillen', '20 minutes'],
+  ['Cavan', '40 minutes'],
+  ['Monaghan', '50 minutes'],
+  ['Derry', '1.5 hours'],
+  ['Belfast', '2 hours'],
+  ['Dublin', '2 hours']
+];
+
+const airports = [
+  'Belfast City Airport (BHD)',
+  'Belfast International Airport (BFS)',
+  'Dublin Airport'
+];
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--getting-here">
+    <div class="inner-hero__content">
+      <p class="label">Derrylin · Co. Fermanagh · Upper Lough Erne</p>
+      <h1>Getting to Shambala Holistic & Retreat Centre in Fermanagh</h1>
+      <p>Plan your journey to Shambala from Enniskillen, Cavan, Monaghan, Dublin, Belfast and beyond.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Location</p>
+        <h2>On the Shores of Upper Lough Erne</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Shambala Holistic & Retreat Centre is based at 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <p>The centre is close to the Northern Ireland and Republic of Ireland border, making it accessible for guests travelling from Fermanagh, Cavan, Monaghan, Dublin, Belfast and the wider island of Ireland.</p>
+        <p>There is no passport requirement for routine cross-border travel between Northern Ireland and the Republic of Ireland. Guests from both sides of the border are welcome, and Shambala commonly references pricing in both GBP and EUR.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Driving Times</p>
+      <h2>Approximate Journey Times</h2>
+    </div>
+    <div class="value-grid">
+      {travelTimes.map(([place, time]) => (
+        <article>
+          <p class="label">{place}</p>
+          <h3>{time}</h3>
+          <p>Approximate travel time by car to Shambala Holistic & Retreat Centre in Derrylin.</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="feature-grid">
+      <article>
+        <p class="label">Map</p>
+        <h2>Find Shambala</h2>
+        <p>Use the map link below for directions to 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
+        <a class="btn btn-dark" href="https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN" target="_blank" rel="noreferrer">Open Google Maps</a>
+      </article>
+      <div class="landscape-card" role="img" aria-label="Upper Lough Erne setting near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+        <span>48 Geaglum Road, Derrylin</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="split-layout">
+      <div>
+        <p class="label">Airports</p>
+        <h2>Nearest Airports for Longer Journeys</h2>
+      </div>
+      <div class="copy-flow">
+        <p>The nearest airport options for guests travelling from further afield are:</p>
+        <ul class="plain-list">
+          {airports.map((airport) => <li>{airport}</li>)}
+        </ul>
+        <p>For retreat guests arriving without a car, contact Shambala before booking travel so local arrival options can be discussed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Travel Questions</p>
+      <h2>Ask Before You Travel</h2>
+      <p>Contact Sukhada if you need help planning your journey to Shambala or checking retreat arrival times.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Contact Shambala</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore Retreats</a>
+    </div>
+  </section>
+</BaseLayout>
