@@ -14,10 +14,8 @@ includes:
   - "Meditation"
   - "Forest bathing"
 slug: "touching-the-earth"
-# Add posterImage and/or posterPdf when the final poster asset is saved, for example:
-# posterImage: "/retreat-posters/touching-the-earth-grounding-retreat-poster.jpg"
-# posterPdf: "/retreat-posters/touching-the-earth-grounding-retreat-poster.pdf"
-# posterAlt: "Touching the Earth grounding retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+posterImage: "/retreat-posters/touching-the-earth-retreat.jpeg"
+posterAlt: "Touching the Earth grounding retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
