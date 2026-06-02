@@ -7,8 +7,8 @@ keywords:
   - "what is a sound bath"
   - "sound bath Ireland"
   - "sound healing Northern Ireland"
-image: "shambala-sound-bath-singing-bowls-01.jpg"
-imageAlt: "Tibetan singing bowls at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+image: "benefits-of-a-sound-bath.png"
+imageAlt: "Benefits of a sound bath at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 A sound bath is a deeply restful sound experience. You lie down, close your eyes, and allow yourself to be surrounded by the tones and vibrations of instruments such as Tibetan singing bowls, crystal bowls and gong.
