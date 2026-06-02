@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/inner-pages.css';
+import geaglumRoadImage from '../images/48-geaglum-road-derrylin.png';
 
 const meta = {
   title: 'Getting to Shambala | Shambala Holistic Retreat Centre | Fermanagh',
@@ -92,7 +94,12 @@ const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C
         <p>Use the map link below for directions to 48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN.</p>
         <a class="btn btn-dark" href={mapsUrl} target="_blank" rel="noreferrer">Open Google Maps</a>
       </article>
-      <div class="landscape-card" role="img" aria-label="Upper Lough Erne setting near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+      <div class="landscape-card landscape-card--photo">
+        <Image
+          src={geaglumRoadImage}
+          alt="48 Geaglum Road in Derrylin near Shambala Holistic Retreat Centre, Co. Fermanagh"
+          loading="lazy"
+        />
         <span>48 Geaglum Road, Derrylin</span>
       </div>
     </div>
