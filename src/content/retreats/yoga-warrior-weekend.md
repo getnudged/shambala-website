@@ -9,6 +9,8 @@ priceEUR: 300
 includes: ["Yoga styles", "Nature walks", "Meditation", "Mindfulness", "Massages", "Sound bath", "Tea/Coffee", "Light vegetarian lunch"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "yoga-warrior-weekend"
+posterImage: "/retreat-posters/yoga-warrior.jpeg"
+posterAlt: "Yoga Warrior Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
@@ -31,4 +33,4 @@ The Yoga Warrior weekend retreat is listed at £250 / €300 per person.
 
 ## Note
 
-TODO: Confirm whether the source line "Tea/Coffee & light vegetarian lunch" is intended for the full weekend retreat or the day retreat listing before publishing final inclusions.
+Vegetarian food is included. Holistic therapies may be available to book separately.

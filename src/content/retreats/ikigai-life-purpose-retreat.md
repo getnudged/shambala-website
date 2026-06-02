@@ -9,6 +9,8 @@ priceEUR: 300
 includes: ["Accommodation", "Meals", "Life Purpose Workshop", "Tai Chi", "Qigong", "Yoga", "Meditation", "Nature walks", "Sound bath"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "ikigai-life-purpose-retreat"
+posterImage: "/retreat-posters/life-purpose-weekend-retreat.jpeg"
+posterAlt: "Life Purpose Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
@@ -35,4 +37,4 @@ The Life Purpose weekend retreat is listed at £250 / €300 per person.
 
 ## Note
 
-TODO: Source notes show a price discrepancy for this retreat, with £260 / €300 in the general schedule and £250 / €300 in the detail. Current page uses the detail price supplied for implementation.
+Therapy options may be available at additional cost. An optional Sunday island programme and visit to the Hare Krishna Temple may also be available.

@@ -1,34 +1,32 @@
 ---
 title: "Journey Within Silent Retreat"
-description: "A silent wellness day with mindfulness, breathwork, mindful lunch, silent nature walk, Tai Chi and closing meditation."
+description: "A quiet half-day silent retreat for gentle presence, mindful meditation, reflective practices and nourishing silence."
 startDate: 2026-09-13
 endDate: 2026-09-13
 price: 40
 currency: GBP
 priceEUR: 48
-includes: ["Mindfulness", "CBT", "Breathwork", "Mindful lunch", "Silent nature walk", "Tai Chi", "Closing meditation"]
+includes: ["Mindful meditation", "Reflective practices", "Nourishing silence", "Vegetarian lunch"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "journey-within-silent-retreat"
+posterImage: "/retreat-posters/wellbeing-day-journey-within.jpeg"
+posterAlt: "Journey Within Silent Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
 
-A silent wellness day for stillness, mindfulness, breathwork, mindful lunch, silent nature walk, Tai Chi and reflective closing meditation.
+Step away from the noise and give yourself the gift of stillness. This silent retreat invites you into a space of gentle presence, mindful meditation, reflective practices and nourishing silence.
+
+A half-day to slow down, turn inward and reconnect with your inner wisdom. No experience required. All welcome.
 
 ## Time
 
-12.30 pm-4.30 pm.
+11.00 am-3.00 pm on Sunday 13 September.
 
 ## Pricing
 
 £40 / €48 with vegetarian lunch included.
 
-## Schedule
+## Notes
 
-- 12.30 pm: Tea and coffee welcome
-- 1.00 pm: Mindfulness, CBT and breathwork to enter silence
-- 2.00 pm: Mindfulness lunch
-- 2.30 pm: Mindfulness walk
-- 3.00 pm: Tai Chi
-- 4.00 pm: Reflection on silence and closing meditation
-- 4.30 pm: Close
+Option to stay Sunday night at additional cost, subject to availability.
