@@ -463,6 +463,17 @@
   font-size: 0.98rem;
 }
 
+.blog-post-image {
+  margin: 0 0 var(--space-l);
+}
+
+.blog-post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
 .text-link {
   display: inline-block;
   margin-top: var(--space-s);

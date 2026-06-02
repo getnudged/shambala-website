@@ -7,8 +7,8 @@ keywords:
   - "Reiki Fermanagh"
   - "Reiki benefits"
   - "holistic therapies Fermanagh"
-image: "shambala-sukhada-reiki-session-01.jpg"
-imageAlt: "Reiki therapy session at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+image: "benefits-of-reiki.png"
+imageAlt: "Benefits of Reiki at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 Reiki is a gentle, non-invasive holistic therapy often chosen by people who want to relax, reset and support their natural balance. It does not require effort from the client. You remain clothed, rest comfortably and allow the session to unfold.
