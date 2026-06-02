@@ -17,7 +17,7 @@
 }
 
 .inner-hero::before {
-  background-image: url('../../images/shambala-house.jpeg');
+  background-image: url('/images/shambala-house.jpeg');
   background-position: center 54%;
   background-size: cover;
 }
