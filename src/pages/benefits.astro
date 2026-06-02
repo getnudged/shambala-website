@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Benefits of Holistic Therapies | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Explore the benefits of holistic therapies in Fermanagh, from Reiki and reflexology to sound baths, massage and wellness retreats at Shambala.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/benefits/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Benefits of Holistic Therapies in Fermanagh',
+  url: meta.canonical,
+  description: meta.description,
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Benefits of holistic therapies at Shambala',
+    itemListElement: [
+      'Deep relaxation and nervous system support',
+      'Time to rest, reset and reconnect',
+      'Whole-person care through Reiki, massage, reflexology and sound',
+      'Supportive retreat setting beside Upper Lough Erne'
+    ].map((name, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name
+    }))
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--therapies">
+    <div class="inner-hero__content">
+      <p class="label">Reiki · Massage · Sound · Retreats</p>
+      <h1>Benefits of Holistic Therapies in Fermanagh</h1>
+      <p>Understand how holistic therapies, sound baths, massage and retreat time can support rest, balance and a steadier relationship with everyday life.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Whole-Person Care</p>
+        <h2>Why People Choose Holistic Therapies</h2>
+      </div>
+      <div class="copy-flow">
+        <p>Holistic therapies look at the whole person rather than a single symptom. At Shambala Holistic & Retreat Centre in Derrylin, sessions are shaped around rest, grounding, relaxation and the body's natural capacity to settle.</p>
+        <p>People come for many reasons: stress, tiredness, a busy mind, a need for quiet, or a wish to reconnect with themselves after a demanding season. Therapies such as Reiki, reflexology, massage, EFT and sound baths offer a gentle way to pause and listen inwardly.</p>
+        <p>The setting matters too. Upper Lough Erne, the quiet road into Derrylin and the slower pace of the centre all help guests step away from everyday noise and into a more restorative rhythm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Core Benefits</p>
+      <h2>Rest, Balance and Reconnection</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Deep Relaxation</h3>
+        <p>Massage, sound baths and Reiki invite the body out of constant effort and into a calmer state where rest can begin to feel possible again.</p>
+      </article>
+      <article>
+        <h3>Stress Support</h3>
+        <p>Gentle, non-invasive therapies can support people who feel overloaded, helping the mind slow down and the body release held tension.</p>
+      </article>
+      <article>
+        <h3>Emotional Grounding</h3>
+        <p>EFT, Reiki, meditation and nature-based retreat time can help guests feel steadier, clearer and more connected to themselves.</p>
+      </article>
+      <article>
+        <h3>Body Awareness</h3>
+        <p>Reflexology, Indian Head Massage and bodywork encourage awareness of tension patterns, breath and comfort in the body.</p>
+      </article>
+      <article>
+        <h3>Quiet Reflection</h3>
+        <p>Retreats and wellness days create space for people to pause, journal, walk, meditate and return to what matters.</p>
+      </article>
+      <article>
+        <h3>Connection with Place</h3>
+        <p>The lakeside setting in Co. Fermanagh supports the work naturally, giving guests water, sky and landscape as part of the experience.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Therapy Paths</p>
+      <h2>Choose the Right Kind of Support</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Reiki and Holistic Therapies</h3>
+        <p>Gentle energetic and reflective therapies for relaxation, balance and inner steadiness.</p>
+        <a class="text-link" href="/therapies/holistic/">Explore Reiki and holistic therapies</a>
+      </article>
+      <article>
+        <h3>Massage and Reflexology</h3>
+        <p>Bodywork for easing tension, encouraging circulation and giving the nervous system time to soften.</p>
+        <a class="text-link" href="/therapies/massage/">Book massage therapy in Fermanagh</a>
+      </article>
+      <article>
+        <h3>Sound Baths and Yoga</h3>
+        <p>Restorative sound, gentle movement and meditation for deep rest and a quieter mind.</p>
+        <a class="text-link" href="/sound-baths-yoga/">Book a sound bath or yoga session</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="split-layout">
+      <div>
+        <p class="label">When to Visit</p>
+        <h2>A Calm Place to Begin Again</h2>
+      </div>
+      <div class="copy-flow">
+        <p>You do not need previous experience with holistic therapies to visit Shambala. Many people begin with a single massage, Reiki session, sound bath or wellness day before choosing a retreat.</p>
+        <p>For guests travelling from Enniskillen, Cavan, Monaghan, Belfast, Dublin or elsewhere across Ireland, Shambala offers a quiet rural setting without feeling remote or difficult to reach.</p>
+        <p>If you are unsure which therapy is right, contact Sukhada and describe what you are hoping for. The right starting point can be simple.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Plan Your Session</p>
+      <h2>Find the Therapy That Fits Your Needs</h2>
+      <p>Explore Shambala's therapies or contact Sukhada directly to discuss the right starting point.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/therapies/">Explore Therapies</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/contact/">Contact Shambala</a>
+    </div>
+  </section>
+</BaseLayout>

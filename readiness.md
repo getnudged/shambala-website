@@ -13,27 +13,20 @@ The static build is healthy, the main generated routes respond locally, and ther
 ## Verified Today
 
 - `npm run check` passed with 0 errors, 0 warnings, and 0 hints.
-- `npm run build` passed and generated 39 static pages.
+- `npm run build` passed and generated 41 static pages.
 - Astro generated WebP assets for the current JPEG source images.
 - Local production preview responded with `200 OK` for:
   - `/`
   - `/contact/`
   - `/retreats/touching-the-earth/`
 - Local production preview responded with `404 Not Found` for missing required routes:
-  - `/benefits/`
-  - `/testimonials/`
   - `/therapies-2/`
+- `/benefits/` and `/testimonials/` have since been added and generated successfully in the Astro build.
 - Representative generated pages have one H1, canonical tags, and JSON-LD schema.
 - Contact, newsletter, and retreat enquiry forms include Netlify form attributes and hidden `form-name` fields in generated HTML.
 - No production source reference was found for the old email `rayoflight108@mac.com`, wrong road spelling `Gealgum`, old public brand `Ray of Light`, or `bumbleprint`, excluding the internal content audit/reference notes.
 
 ## Launch Blockers
-
-- [ ] Build `/benefits/`.
-  Required by the project sitemap but currently returns 404.
-
-- [ ] Build `/testimonials/`.
-  Required by the project sitemap but currently returns 404.
 
 - [ ] Add Netlify redirects.
   Required old URLs currently return 404 locally. At minimum:
@@ -169,4 +162,3 @@ If an image is added directly in chat, convert it to WebP or add it as a source 
 - [ ] Testimonials approved for publication.
 - [ ] Privacy policy and cookie policy wording.
 - [ ] Social sharing image or approved hero image for `og-image.jpg`.
-

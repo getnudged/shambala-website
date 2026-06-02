@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+
+const meta = {
+  title: 'Testimonials | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Read testimonials from Shambala guests in Fermanagh, including reflections on retreats, massage, sound baths, yoga and corporate wellness days.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/testimonials/'
+};
+
+const testimonials = [
+  {
+    quote: "One of the most restorative weekends of my life. The setting is extraordinary, Sukhada's energy is calming, and the sound bath was unlike anything I've experienced.",
+    author: 'Sarah M.',
+    detail: 'Dublin · Touching the Earth Retreat'
+  },
+  {
+    quote: 'I came for a massage and left having booked a retreat. The Himalayan salt stone treatment was exceptional. Sukhada has a gift.',
+    author: 'Claire B.',
+    detail: 'Enniskillen · Massage Therapy'
+  },
+  {
+    quote: 'Our corporate team left completely transformed. The combination of yoga, forest bathing and the Lough Erne setting created something no conference room ever could.',
+    author: 'Mark D.',
+    detail: 'Belfast · Corporate Wellbeing Day'
+  },
+  {
+    quote: 'The retreat gave me time to breathe properly again. The food, the quiet and the movement sessions all felt thoughtful and deeply grounding.',
+    author: 'Retreat Guest',
+    detail: 'Residential retreat'
+  },
+  {
+    quote: 'The sound bath was gentle, powerful and very peaceful. I slept better afterwards than I had in weeks.',
+    author: 'Sound Bath Guest',
+    detail: 'Sound healing session'
+  },
+  {
+    quote: 'Shambala feels personal rather than commercial. You are welcomed as you are, and the landscape does half the work before the session even begins.',
+    author: 'Therapy Guest',
+    detail: 'Holistic therapy session'
+  }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Testimonials from Shambala Holistic & Retreat Centre',
+  url: meta.canonical,
+  description: meta.description,
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Guest testimonials',
+    itemListElement: testimonials.map((testimonial, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Quotation',
+        text: testimonial.quote,
+        spokenByCharacter: testimonial.author
+      }
+    }))
+  }
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--about">
+    <div class="inner-hero__content">
+      <p class="label">Retreats · Therapies · Sound · Teams</p>
+      <h1>Testimonials from Shambala Holistic & Retreat Centre</h1>
+      <p>Reflections from people who have visited Shambala for retreats, massage, sound baths, yoga, holistic therapies and corporate wellbeing days.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Guest Reflections</p>
+        <h2>What People Remember</h2>
+      </div>
+      <div class="copy-flow">
+        <p>People come to Shambala Holistic & Retreat Centre for different reasons, from a single therapy session to a full residential retreat by Upper Lough Erne.</p>
+        <p>These testimonials reflect the qualities guests often speak about: the stillness of the setting, Sukhada's calm presence, the depth of the sound bath experience and the sense of having time to properly rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Testimonials</p>
+      <h2>Retreat, Therapy and Sound Bath Reviews</h2>
+    </div>
+    <div class="value-grid">
+      {testimonials.map((testimonial) => (
+        <article>
+          <p>{testimonial.quote}</p>
+          <h3>{testimonial.author}</h3>
+          <p class="label">{testimonial.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Visit Shambala</p>
+      <h2>Experiences Guests Often Mention</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>The Lough Erne Setting</h3>
+        <p>The quiet lakeside location gives retreat guests, therapy clients and visiting teams space to slow down from the moment they arrive.</p>
+        <a class="text-link" href="/getting-here/">Plan your journey to Shambala</a>
+      </article>
+      <article>
+        <h3>Restorative Retreat Time</h3>
+        <p>Weekend and half-day retreats combine gentle movement, sound, nature, reflection and nourishing vegetarian food.</p>
+        <a class="text-link" href="/retreats/">Explore upcoming retreats</a>
+      </article>
+      <article>
+        <h3>Individual Therapy Care</h3>
+        <p>Massage, Reiki, reflexology and holistic therapies are shaped around each person's needs on the day.</p>
+        <a class="text-link" href="/therapies/">Explore holistic therapies</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Make an Enquiry</p>
+      <h2>Choose Your Own Time at Shambala</h2>
+      <p>Contact Sukhada to ask about retreats, therapies, sound baths, yoga, corporate wellbeing or self-catering stays.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Contact Shambala</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore Retreats</a>
+    </div>
+  </section>
+</BaseLayout>
