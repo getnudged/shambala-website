@@ -358,6 +358,171 @@
   font-size: 0.95rem;
 }
 
+.page-section--stay-gallery {
+  padding-top: var(--space-xl);
+  background:
+    linear-gradient(180deg, var(--parchment) 0%, var(--mist) 100%);
+}
+
+.stay-feature {
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+
+.stay-feature__copy {
+  padding-block: var(--space-m);
+}
+
+.stay-feature__copy h2 {
+  color: var(--lough);
+}
+
+.stay-feature__facts {
+  display: grid;
+  gap: 1px;
+  margin: var(--space-m) 0 0;
+  background: var(--border);
+}
+
+.stay-feature__facts div {
+  padding: 1.1rem 0;
+  background: var(--parchment);
+}
+
+.stay-feature__facts dt {
+  color: var(--stone);
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stay-feature__facts dd {
+  margin: 0.2rem 0 0;
+  color: var(--text);
+}
+
+.stay-feature__image {
+  position: relative;
+  min-height: 540px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--lough);
+}
+
+.stay-feature__image img,
+.stay-gallery__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.98);
+}
+
+.stay-feature__image figcaption {
+  position: absolute;
+  inset: auto 0 0 auto;
+  max-width: min(25rem, 82%);
+  padding: 1.15rem 1.35rem;
+  background: var(--dusk);
+  color: var(--text-inv);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.stay-room-grid {
+  max-width: var(--grid-max);
+  margin: var(--space-l) auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.stay-room-grid article {
+  min-height: 100%;
+  padding: 2rem;
+  background: var(--parchment);
+}
+
+.stay-room-grid h3 {
+  color: var(--lough);
+}
+
+.stay-room-grid p:not(.label) {
+  font-size: 0.98rem;
+}
+
+.stay-gallery {
+  max-width: var(--grid-max);
+  margin: var(--space-l) auto 0;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1rem);
+}
+
+.stay-gallery__item {
+  position: relative;
+  grid-column: span 2;
+  min-height: 290px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--lough);
+}
+
+.stay-gallery__item--wide {
+  grid-column: span 3;
+}
+
+.stay-gallery__item--tall {
+  min-height: 520px;
+}
+
+.stay-gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 44%, var(--overlay-dark) 100%);
+  opacity: 0.92;
+  transition: opacity 0.3s ease;
+}
+
+.stay-gallery__item figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.2rem;
+  color: var(--text-inv);
+}
+
+.stay-gallery__item strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.stay-gallery__item span {
+  max-width: 32ch;
+  color: var(--paper-fade);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.stay-gallery__item:hover::after {
+  opacity: 0.72;
+}
+
 .detail-placeholder {
   margin: var(--space-m) 0 0;
   padding: 1rem 1.1rem;
@@ -823,7 +988,8 @@
 
 @media (max-width: 980px) {
   .split-layout,
-  .feature-grid {
+  .feature-grid,
+  .stay-feature {
     grid-template-columns: 1fr;
   }
 
@@ -833,8 +999,18 @@
   .retreat-index-grid,
   .related-retreats-grid,
   .booking-strip,
-  .blog-card-grid {
+  .blog-card-grid,
+  .stay-room-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .stay-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stay-gallery__item,
+  .stay-gallery__item--wide {
+    grid-column: span 1;
   }
 
   .article-layout,
@@ -876,8 +1052,20 @@
   .related-retreats-grid,
   .class-schedule-grid,
   .booking-strip,
-  .blog-card-grid {
+  .blog-card-grid,
+  .stay-room-grid,
+  .stay-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .stay-feature__image,
+  .stay-gallery__item,
+  .stay-gallery__item--tall {
+    min-height: 380px;
+  }
+
+  .stay-feature__image figcaption {
+    max-width: 100%;
   }
 
   .landscape-card {

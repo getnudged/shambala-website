@@ -1,9 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import '../styles/components/inner-pages.css';
+import kitchenImage from '../images/shambala-self-catering-kitchen-fermanagh.jpeg';
+import diningImage from '../images/shambala-self-catering-dining-area-fermanagh.jpeg';
+import loungeImage from '../images/shambala-self-catering-guest-lounge-fermanagh.jpeg';
+import doubleBedroomImage from '../images/shambala-self-catering-double-bedroom-fermanagh.jpeg';
+import singleBedroomImage from '../images/shambala-self-catering-single-bedroom-fermanagh.jpeg';
+import mainBedroomImage from '../images/shambala-self-catering-main-bedroom-fermanagh.jpeg';
+import exteriorImage from '../images/shambala-retreat-centre-exterior-derrylin.jpeg';
+import gardenImage from '../images/shambala-retreat-centre-garden-accommodation.jpeg';
+import woodlandWalkImage from '../images/shambala-woodland-walk-fermanagh.jpeg';
+import forestPathImage from '../images/shambala-forest-path-fermanagh.jpeg';
+import jettyImage from '../images/shambala-lough-erne-jetty-fermanagh.jpeg';
+import loughViewImage from '../images/shambala-upper-lough-erne-view.jpeg';
+import sunsetImage from '../images/shambala-lough-erne-sunset-fermanagh.jpeg';
+import dawnImage from '../images/shambala-lough-erne-dawn-retreat-view.jpeg';
 
 const meta = {
-  title: 'Self Catering Fermanagh | Shambala Holistic Retreat Centre',
+  title: 'Self-Catering Accommodation | Shambala Holistic Retreat Centre | Fermanagh',
   description: 'Book vegan and vegetarian self-catering accommodation at Shambala in Derrylin, Co. Fermanagh, with NITB certified rooms by Upper Lough Erne.',
   canonical: 'https://shambalaholisticandretreatcentre.com/self-catering/'
 };
@@ -22,6 +37,107 @@ const schema = {
     addressCountry: 'GB'
   }
 };
+
+const stayGallery = [
+  {
+    image: kitchenImage,
+    title: 'Shared Kitchen',
+    caption: 'A practical self-catering kitchen for simple meals during your stay.',
+    alt: 'Self-catering kitchen at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--wide'
+  },
+  {
+    image: mainBedroomImage,
+    title: 'Double Room',
+    caption: 'A calm double room for guests staying before, during or after retreat time.',
+    alt: 'Double bedroom at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: singleBedroomImage,
+    title: 'Single Room',
+    caption: 'A quiet single room for solo guests and retreat visitors.',
+    alt: 'Single bedroom at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: doubleBedroomImage,
+    title: 'Guest Bedroom',
+    caption: 'Simple, warm accommodation within the Shambala retreat centre.',
+    alt: 'Guest bedroom at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: diningImage,
+    title: 'Dining Area',
+    caption: 'A relaxed place for tea, breakfast and unhurried meals.',
+    alt: 'Dining area at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: ''
+  },
+  {
+    image: loungeImage,
+    title: 'Guest Lounge',
+    caption: 'A quiet indoor corner for reading, resting and arriving slowly.',
+    alt: 'Guest lounge at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: ''
+  },
+  {
+    image: gardenImage,
+    title: 'Garden Arrival',
+    caption: 'Outdoor seating and the centre exterior beside the Fermanagh landscape.',
+    alt: 'Garden and accommodation exterior at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: exteriorImage,
+    title: 'The Centre',
+    caption: 'Shambala Holistic & Retreat Centre at 48 Geaglum Road, Derrylin.',
+    alt: 'Exterior of Shambala Holistic Retreat Centre at 48 Geaglum Road, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--wide'
+  },
+  {
+    image: woodlandWalkImage,
+    title: 'Woodland Walk',
+    caption: 'Green pathways close to the centre for slow walks and fresh air.',
+    alt: 'Woodland walk near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: forestPathImage,
+    title: 'Forest Path',
+    caption: 'Sheltered woodland paths for quiet time between activities.',
+    alt: 'Forest path near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: jettyImage,
+    title: 'Lough Erne Jetty',
+    caption: 'A nearby jetty opening onto the still water of Upper Lough Erne.',
+    alt: 'Lough Erne jetty near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--tall'
+  },
+  {
+    image: loughViewImage,
+    title: 'Upper Lough Erne',
+    caption: 'Wide lake views minutes from the centre.',
+    alt: 'Upper Lough Erne view near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--wide'
+  },
+  {
+    image: sunsetImage,
+    title: 'Evening Water',
+    caption: 'Soft evening light across the lake at the end of the day.',
+    alt: 'Sunset over Lough Erne near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--wide'
+  },
+  {
+    image: dawnImage,
+    title: 'Dawn Stillness',
+    caption: 'Morning light and still water across Upper Lough Erne.',
+    alt: 'Dawn lake view near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh',
+    className: 'stay-gallery__item--wide'
+  }
+];
 ---
 
 <BaseLayout {meta} {schema}>
@@ -47,27 +163,65 @@ const schema = {
     </div>
   </section>
 
-  <section class="page-section page-section--mist">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Rates</p>
-      <h2>Room Rates</h2>
+  <section class="page-section page-section--stay-gallery">
+    <div class="stay-feature">
+      <div class="stay-feature__copy">
+        <p class="label">Accommodation</p>
+        <h2>Stay in the Centre, Walk to the Water</h2>
+        <p>Bedrooms are simple, warm and practical, with shared self-catering spaces for guests who want a quiet base before a retreat, after a wellness day, or during a visit to Fermanagh.</p>
+        <dl class="stay-feature__facts">
+          <div>
+            <dt>Rooms</dt>
+            <dd>Double and single options</dd>
+          </div>
+          <div>
+            <dt>Kitchen</dt>
+            <dd>Shared self-catering facilities</dd>
+          </div>
+          <div>
+            <dt>Setting</dt>
+            <dd>Woodland paths and Upper Lough Erne nearby</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="stay-feature__image">
+        <Image
+          src={mainBedroomImage}
+          alt="Double bedroom for self-catering accommodation at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+          loading="lazy"
+        />
+        <figcaption>Accommodation is calm and unshowy, designed as a restful base beside the retreat centre.</figcaption>
+      </figure>
     </div>
-    <div class="value-grid">
+
+    <div class="stay-room-grid" aria-label="Self-catering room and rate details">
       <article>
         <p class="label">Double Room</p>
         <h3>£80 / €91</h3>
-        <p>Per night.</p>
+        <p>Per night. Best for guests who want more space during a retreat stay or a quiet break in Fermanagh.</p>
       </article>
       <article>
         <p class="label">Single Room</p>
         <h3>£60 / €69</h3>
-        <p>Per night.</p>
+        <p>Per night. Suitable for solo guests, retreat participants and visitors booking time for themselves.</p>
       </article>
       <article>
-        <p class="label">Retreat Stays</p>
-        <h3>Stay On</h3>
-        <p>Additional nights after retreat days may be possible at extra cost.</p>
+        <p class="label">Capacity</p>
+        <h3>By Enquiry</h3>
+        <p>Confirm room availability, guest numbers and dates directly with Shambala before arranging travel.</p>
       </article>
+    </div>
+
+    <div class="stay-gallery" aria-label="Self-catering accommodation gallery">
+      {stayGallery.map((item) => (
+        <figure class:list={['stay-gallery__item', item.className]}>
+          <Image src={item.image} alt={item.alt} loading="lazy" />
+          <figcaption>
+            <strong>{item.title}</strong>
+            <span>{item.caption}</span>
+          </figcaption>
+        </figure>
+      ))}
     </div>
   </section>
 
@@ -90,7 +244,6 @@ const schema = {
         <p>Visit Marble Arch Caves, National Trust properties and places of interest around County Fermanagh.</p>
       </article>
     </div>
-    <p class="small-note">TODO: Add accommodation photos, room details and capacity when supplied by Shambala.</p>
   </section>
 
   <section class="page-section page-cta">
