@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/inner-pages.css';
+import lakeImage from '../images/shambala-retreat-lake.jpg';
 
 const meta = {
   title: 'About Sukhada | Shambala Holistic Retreat Centre | Fermanagh',
@@ -56,7 +58,12 @@ const schema = {
         <h2>Sukhada Smith-Repass</h2>
         <p>Sukhada describes her work simply: she does these therapies because she wants to help people. Her practice continues to evolve through ongoing training, Reiki teaching and hands-on care for guests who come to Shambala for rest, clarity and support.</p>
       </article>
-      <div class="landscape-card" role="img" aria-label="Upper Lough Erne setting at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
+      <div class="landscape-card landscape-card--photo">
+        <Image
+          src={lakeImage}
+          alt="Upper Lough Erne lakeside setting at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+          loading="lazy"
+        />
         <span>Lakeside practice in Fermanagh</span>
       </div>
     </div>
