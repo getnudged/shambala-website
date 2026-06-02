@@ -3,7 +3,7 @@ title: "Touching the Earth: A Grounding Retreat"
 description: "Spend a relaxing weekend grounding and reconnecting with nature through Yoga, Tai Chi, Qigong, Meditation and Forest Bathing at Shambala."
 startDate: 2026-06-26
 endDate: 2026-06-28
-price: 250
+price: 260
 currency: "GBP"
 priceEUR: 300
 includes:
@@ -14,6 +14,10 @@ includes:
   - "Meditation"
   - "Forest bathing"
 slug: "touching-the-earth"
+# Add posterImage and/or posterPdf when the final poster asset is saved, for example:
+# posterImage: "/retreat-posters/touching-the-earth-grounding-retreat-poster.jpg"
+# posterPdf: "/retreat-posters/touching-the-earth-grounding-retreat-poster.pdf"
+# posterAlt: "Touching the Earth grounding retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
@@ -37,7 +41,7 @@ Therapies are available on request as an optional extra.
 
 ## Pricing
 
-The Touching the Earth weekend retreat is listed at £250 / €300 per person.
+The Touching the Earth weekend retreat is listed at £260 / €300 per person.
 
 ## Note
 

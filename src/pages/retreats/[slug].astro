@@ -18,6 +18,9 @@ const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
 const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
 const allRetreats = await getCollection('retreats');
 const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
+const hasPoster = Boolean(retreat.data.posterImage || retreat.data.posterPdf);
+const posterPreviewTarget = `retreat-poster-${slug}`;
+const posterAlt = retreat.data.posterAlt ?? `${retreat.data.title} poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`;
 
 const formatDate = (date?: Date) =>
   date
@@ -184,6 +187,46 @@ const eventSchema = retreat.data.startDate
       </div>
       {!retreat.data.startDate && <p class="small-note">Placeholder: exact date-dependent booking terms should be reviewed once dates are confirmed.</p>}
     </section>
+
+    {hasPoster && (
+      <section class="page-section">
+        <div class="split-layout">
+          <div>
+            <p class="label">Retreat Poster</p>
+            <h2>Preview the Retreat Poster</h2>
+            <p>Open the poster for a quick visual summary of dates, pricing and included retreat activities.</p>
+          </div>
+          <div class="poster-preview-card">
+            {retreat.data.posterImage ? (
+              <a class="poster-preview-card__image" href={`#${posterPreviewTarget}`} aria-label={`Preview poster for ${retreat.data.title}`}>
+                <img src={retreat.data.posterImage} alt={posterAlt} loading="lazy" />
+              </a>
+            ) : (
+              <a class="poster-preview-card__pdf" href={`#${posterPreviewTarget}`} aria-label={`Preview poster for ${retreat.data.title}`}>
+                <span class="label">PDF Poster</span>
+                <strong>{retreat.data.title}</strong>
+              </a>
+            )}
+            <div class="poster-preview-card__actions">
+              <a class="btn btn-dark" href={`#${posterPreviewTarget}`}>Preview Poster</a>
+              {retreat.data.posterPdf && <a class="btn btn-ghost" href={retreat.data.posterPdf} target="_blank" rel="noreferrer">Open PDF</a>}
+            </div>
+          </div>
+        </div>
+
+        <div class="poster-modal" id={posterPreviewTarget} role="dialog" aria-modal="true" aria-label={`Poster preview for ${retreat.data.title}`}>
+          <a class="poster-modal__backdrop" href="#retreat-enquiry" aria-label="Close poster preview"></a>
+          <div class="poster-modal__content">
+            <a class="poster-modal__close" href="#retreat-enquiry">Close</a>
+            {retreat.data.posterPdf && !retreat.data.posterImage ? (
+              <iframe src={retreat.data.posterPdf} title={`Poster PDF for ${retreat.data.title}`}></iframe>
+            ) : (
+              <img src={retreat.data.posterImage} alt={posterAlt} loading="lazy" />
+            )}
+          </div>
+        </div>
+      </section>
+    )}
 
     <section class="page-section">
       <div class="section-heading section-heading--simple">

@@ -509,6 +509,115 @@
   color: var(--text);
 }
 
+.poster-preview-card {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.poster-preview-card__image,
+.poster-preview-card__pdf {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.poster-preview-card__image {
+  max-width: 420px;
+  border: 1px solid var(--border);
+  background: var(--mist);
+  box-shadow: 0 12px 40px rgba(28, 43, 53, 0.12);
+}
+
+.poster-preview-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poster-preview-card__pdf {
+  max-width: 420px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  background: var(--mist);
+}
+
+.poster-preview-card__pdf strong {
+  display: block;
+  color: var(--lough);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.poster-preview-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.poster-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  padding: var(--grid-gutter);
+}
+
+.poster-modal:target {
+  display: grid;
+  place-items: center;
+}
+
+.poster-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 31, 40, 0.82);
+}
+
+.poster-modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: min(920px, 94vw);
+  max-height: 90svh;
+  overflow: auto;
+  background: var(--parchment);
+  box-shadow: 0 24px 90px rgba(14, 31, 40, 0.45);
+}
+
+.poster-modal__content img,
+.poster-modal__content iframe {
+  display: block;
+  width: min(760px, 94vw);
+  max-width: 100%;
+}
+
+.poster-modal__content img {
+  height: auto;
+}
+
+.poster-modal__content iframe {
+  height: min(88svh, 920px);
+  border: 0;
+}
+
+.poster-modal__close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  padding: 0.85rem 1rem;
+  background: var(--lough);
+  color: var(--text-inv);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .article-meta {
   position: sticky;
   top: 7rem;
