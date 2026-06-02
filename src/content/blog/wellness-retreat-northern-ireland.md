@@ -7,8 +7,8 @@ keywords:
   - "wellness retreat Northern Ireland"
   - "weekend retreat Ireland"
   - "yoga retreat Ireland"
-image: "shambala-lough-erne-retreat-setting-01.jpg"
-imageAlt: "Upper Lough Erne setting at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+image: "retreat-in-northern-ireland.png"
+imageAlt: "Wellness retreat in Northern Ireland at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 A wellness retreat gives you something that is increasingly rare: protected time away from ordinary demands. Instead of fitting rest around everything else, you make rest the centre of the day.
