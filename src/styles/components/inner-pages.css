@@ -169,6 +169,10 @@
   clip-path: none;
 }
 
+.landscape-card--portrait img {
+  object-position: center 18%;
+}
+
 .landscape-card span {
   position: absolute;
   inset: auto auto 0 0;
