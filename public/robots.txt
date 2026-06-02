@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shambalaholisticandretreatcentre.com/sitemap.xml
