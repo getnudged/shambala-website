@@ -273,7 +273,7 @@ const eventSchema = retreat.data.startDate
           <h2>Reserve Your Place</h2>
           <p>Use this retreat enquiry form to contact Shambala about availability, dietary requirements and booking details.</p>
         </div>
-        <form class="enquiry-form" name="retreat-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form class="enquiry-form" name="retreat-enquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="retreat-enquiry" />
           <input type="hidden" name="retreat" value={retreat.data.title} />
           <p class="form-honeypot" hidden aria-hidden="true">

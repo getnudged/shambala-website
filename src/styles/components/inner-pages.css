@@ -50,6 +50,67 @@
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
 
+.thank-you-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 9rem var(--grid-gutter) var(--space-xl);
+  background:
+    linear-gradient(180deg, var(--paper-fade) 0%, transparent 44%),
+    radial-gradient(ellipse 70% 42% at 50% 28%, var(--gold-wash) 0%, transparent 70%),
+    linear-gradient(145deg, var(--mist) 0%, var(--parchment) 48%, var(--lough) 140%);
+}
+
+.thank-you-page__inner {
+  width: min(760px, 100%);
+  padding: clamp(2rem, 5vw, 4rem);
+  background: rgba(245, 241, 232, 0.92);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px rgba(28, 43, 53, 0.12);
+}
+
+.thank-you-page__inner h1 {
+  max-width: 10ch;
+  color: var(--lough);
+}
+
+.thank-you-page__inner p:not(.label) {
+  color: var(--text-mid);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.thank-you-page__actions,
+.thank-you-page__contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: var(--space-m);
+}
+
+.thank-you-page__contact {
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--border);
+}
+
+.thank-you-page__contact span,
+.thank-you-page__contact a {
+  font-family: var(--font-label);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.thank-you-page__contact span {
+  color: var(--stone);
+}
+
+.thank-you-page__contact a {
+  color: var(--lough);
+  text-decoration: none;
+}
+
 .inner-hero--retreat-detail {
   align-items: center;
 }
