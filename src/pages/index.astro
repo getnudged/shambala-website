@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/home.css';
 import heroImage from '../images/shambala-house.jpeg';
@@ -11,6 +12,49 @@ const meta = {
   description: 'Welcome to Shambala — a Lough Erne holistic wellness retreat in Derrylin, Co. Fermanagh for massage, yoga, sound baths and retreats.',
   canonical: 'https://shambalaholisticandretreatcentre.com/'
 };
+
+const imageModules = import.meta.glob('../images/*.{jpeg,jpg,png,webp}', { eager: true });
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const retreats = await getCollection('retreats');
+
+const formatDateBadge = (startDate: Date, endDate?: Date) => {
+  const month = startDate.toLocaleDateString('en-GB', { month: 'long' });
+  const year = startDate.getFullYear();
+  const isWeekend = endDate && endDate.valueOf() !== startDate.valueOf();
+
+  return `${month} ${year} · ${isWeekend ? 'Weekend' : 'Day'}`;
+};
+
+const priceLabel = (price: number, priceEUR?: number, currency = 'GBP') => {
+  if (currency === 'GBP' && priceEUR) return `£${price} / €${priceEUR} per person`;
+  return `${currency === 'EUR' ? '€' : '£'}${price} per person`;
+};
+
+const homepageRetreats = retreats
+  .filter((retreat) => {
+    const start = retreat.data.startDate;
+    const end = retreat.data.endDate ?? start;
+    return Boolean(start && end && end >= today && retreat.data.cardImage && retreat.data.price >= 200);
+  })
+  .sort((a, b) => (a.data.startDate?.valueOf() ?? 0) - (b.data.startDate?.valueOf() ?? 0))
+  .slice(0, 3)
+  .map((retreat) => {
+    const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
+    const imagePath = `../images/${retreat.data.cardImage}`;
+    const image = imageModules[imagePath] as { default: ImageMetadata } | undefined;
+
+    return {
+      href: `/retreats/${slug}/`,
+      title: retreat.data.title,
+      description: retreat.data.description,
+      badge: retreat.data.startDate ? formatDateBadge(retreat.data.startDate, retreat.data.endDate) : 'Date to confirm',
+      price: priceLabel(retreat.data.price, retreat.data.priceEUR, retreat.data.currency),
+      label: retreat.data.includes.slice(0, 3).join(' · '),
+      image: image?.default,
+      imageAlt: retreat.data.cardImageAlt ?? `${retreat.data.title} at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`
+    };
+  });
 ---
 
 <BaseLayout {meta}>
@@ -136,39 +180,27 @@ const meta = {
         <a href="/retreats/" class="btn btn-dark">View All Retreats</a>
       </div>
       <div class="retreats-grid">
-        <a href="/retreats/touching-the-earth/" class="retreat-card">
-          <div class="retreat-img retreat-img--earth" role="img" aria-label="Touching the Earth yoga and forest bathing retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
-            <span>June 2026 · Weekend</span>
-          </div>
-          <div class="retreat-body">
-            <p class="label">Yoga · Forest Bathing · Meditation</p>
-            <h3>Touching the Earth</h3>
-            <p>A weekend of yoga, T’ai Chi Qigong, barefoot grounding and sound bath on the shores of Lough Erne.</p>
-            <strong>£260 <small>/ €300 per person</small></strong>
-          </div>
-        </a>
-        <a href="/retreats/yoga-warrior-weekend/" class="retreat-card">
-          <div class="retreat-img retreat-img--warrior" role="img" aria-label="Yoga Warrior weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
-            <span>August 2026 · Weekend</span>
-          </div>
-          <div class="retreat-body">
-            <p class="label">Yoga · Nature Walks · Sound Bath</p>
-            <h3>Yoga Warrior</h3>
-            <p>A weekend of various yoga styles with nature walks, meditation, mindfulness, massages and sound bath.</p>
-            <strong>£250 <small>/ €300 per person</small></strong>
-          </div>
-        </a>
-        <a href="/retreats/ikigai-life-purpose-retreat/" class="retreat-card">
-          <div class="retreat-img retreat-img--stillness" role="img" aria-label="Life Purpose weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh">
-            <span>September 2026 · Weekend</span>
-          </div>
-          <div class="retreat-body">
-            <p class="label">Ikigai · Tai Chi · Sound Bath</p>
-            <h3>Life Purpose Weekend</h3>
-            <p>A weekend of introspection, meditation and relaxation with workshops, Tai Chi, Qigong, Yoga and Sound Bath.</p>
-            <strong>£250 <small>/ €300 per person</small></strong>
-          </div>
-        </a>
+        {homepageRetreats.map((retreat) => (
+          <a href={retreat.href} class="retreat-card">
+            <div class="retreat-img">
+              {retreat.image && (
+                <Image
+                  src={retreat.image}
+                  alt={retreat.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <span>{retreat.badge}</span>
+            </div>
+            <div class="retreat-body">
+              <p class="label">{retreat.label}</p>
+              <h3>{retreat.title}</h3>
+              <p>{retreat.description}</p>
+              <strong>{retreat.price}</strong>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>

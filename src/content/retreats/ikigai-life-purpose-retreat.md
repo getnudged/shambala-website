@@ -9,6 +9,8 @@ priceEUR: 300
 includes: ["Accommodation", "Meals", "Life Purpose Workshop", "Tai Chi", "Qigong", "Yoga", "Meditation", "Nature walks", "Sound bath"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "ikigai-life-purpose-retreat"
+cardImage: "shambala-retreat-life-purpose-fermanagh.png"
+cardImageAlt: "Life Purpose weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/life-purpose-weekend-retreat.jpeg"
 posterAlt: "Life Purpose Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---

@@ -9,6 +9,8 @@ priceEUR: 300
 includes: ["Yoga", "Chakra Dancing", "Shamanic Workshop", "Cacao Ceremony", "Fire Ceremony", "Sound Bath Meditation", "Walk in the Fairy Woods"]
 facilitators: ["Sukhada Smith-Repass", "Celine"]
 slug: "samhain-shamanism-weekend"
+cardImage: "shambala-retreat-samhain-shamanism-fermanagh.png"
+cardImageAlt: "Samhain and Shamanism Weekend Retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/samhain-and-shamanism-weekend-retreat.jpeg"
 posterAlt: "Samhain and Shamanism Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---

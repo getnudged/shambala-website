@@ -9,6 +9,8 @@ priceEUR: 300
 includes: ["Yoga styles", "Nature walks", "Meditation", "Mindfulness", "Massages", "Sound bath", "Tea/Coffee", "Light vegetarian lunch"]
 facilitators: ["Fiona", "Sukhada Smith-Repass"]
 slug: "yoga-warrior-weekend"
+cardImage: "shambala-retreat-yoga-warrior-fermanagh.png"
+cardImageAlt: "Yoga Warrior weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/yoga-warrior.jpeg"
 posterAlt: "Yoga Warrior Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
