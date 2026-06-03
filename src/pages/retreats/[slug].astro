@@ -37,15 +37,18 @@ const dateLabel = retreat.data.startDate
     : formatDate(retreat.data.startDate)
   : retreat.data.dateNote ?? (retreat.data.year ? `${retreat.data.year} date to confirm` : 'Date to confirm');
 
-const priceLabel = retreat.data.priceEUR
+const primaryCurrencySymbol = retreat.data.currency === 'EUR' ? '€' : '£';
+const priceLabel = retreat.data.currency === 'GBP' && retreat.data.priceEUR
   ? `£${retreat.data.price} / €${retreat.data.priceEUR}`
-  : `£${retreat.data.price}`;
+  : `${primaryCurrencySymbol}${retreat.data.price}`;
 
 const depositLabel = retreat.data.price >= 200
   ? retreat.data.priceEUR
     ? 'Typical weekend retreat deposit: £130 / €150'
     : 'Typical weekend retreat deposit: £130'
-  : retreat.data.priceEUR
+  : retreat.data.currency === 'EUR'
+    ? 'Typical half-day retreat deposit: contact Shambala to confirm'
+    : retreat.data.priceEUR
     ? 'Typical half-day retreat deposit: £20 / €23'
     : 'Typical half-day retreat deposit: £20';
 
@@ -332,7 +335,10 @@ const eventSchema = retreat.data.startDate
           const relatedDate = item.data.startDate
             ? formatDate(item.data.startDate)
             : item.data.dateNote ?? (item.data.year ? `${item.data.year} date to confirm` : 'Date to confirm');
-          const relatedPrice = item.data.priceEUR ? `£${item.data.price} / €${item.data.priceEUR}` : `£${item.data.price}`;
+          const relatedCurrencySymbol = item.data.currency === 'EUR' ? '€' : '£';
+          const relatedPrice = item.data.currency === 'GBP' && item.data.priceEUR
+            ? `£${item.data.price} / €${item.data.priceEUR}`
+            : `${relatedCurrencySymbol}${item.data.price}`;
           return (
             <a class="related-retreat-card" href={`/retreats/${relatedSlug}/`}>
               <p class="label">{relatedDate} · {relatedPrice}</p>

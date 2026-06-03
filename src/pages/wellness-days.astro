@@ -11,13 +11,18 @@ const meta = {
 const halfDayRetreats = [
   ['Sun 12 April', 'The Art of Reconnection', '/retreats/the-art-of-reconnection/'],
   ['Sun 31 May', 'Joy', '/retreats/joy-half-day/'],
-  ['Sun 21 June', 'Energy in Motion', '/retreats/energy-in-motion-wellbeing-day/'],
+  ['Sun 28 June', 'Energy in Motion', '/retreats/energy-in-motion-wellbeing-day/'],
   ['Sun 28 June', 'Creative Flow', '/retreats/creative-flow-wellbeing-day/'],
   ['Sun 26 July', 'Inner Peace', '/retreats/inner-peace-wellness-day/'],
   ['Sun 23 August', 'Yoga, Walking & Adventure', '/retreats/walking-nature-adventure-wellness-day/'],
   ['Sun 13 September', 'Journey Within', '/retreats/journey-within-silent-retreat/'],
   ['Sun 11 October', 'The Power of Manifestation', '/retreats/power-of-manifestation-wellbeing-day/'],
   ['Sun 15 November', 'Autumn Reset Wellbeing Day', '/retreats/relax-rewind-reset/']
+];
+
+const wellbeingDays2027 = [
+  ['Sun 17 January 2027', 'Relax, Restore & Renew', '/retreats/relax-restore-renew-wellbeing-day/'],
+  ['Sun 14 February 2027', 'Heart Awakening', '/retreats/heart-awakening-wellbeing-day/']
 ];
 
 const dayRetreats = [
@@ -59,7 +64,7 @@ const schema = {
       <div class="copy-flow">
         <p>Wellness days at Shambala give you the feel of retreat without committing to a full residential weekend. They may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time by the water.</p>
         <p>The current programme includes Sunday half-day retreats and Saturday day retreats, commonly running from either 12.30 pm-4.30 pm or 11.00 am-3.00 pm depending on the event.</p>
-        <p>Both formats are listed at £40 / €48 with vegetarian lunch included. Staying Saturday or Sunday night may be possible at additional cost, subject to availability.</p>
+        <p>Most formats are listed at £40 with vegetarian lunch included. Energy in Motion is poster-listed at €50. Staying Saturday or Sunday night may be possible at additional cost, subject to availability.</p>
         <p>Dates and availability change seasonally, so contact Sukhada before travelling.</p>
       </div>
     </div>
@@ -68,7 +73,7 @@ const schema = {
   <section class="page-section page-section--mist">
     <div class="section-heading section-heading--simple">
       <p class="label">Half-Day Retreats · Sundays</p>
-      <h2>Sunday Wellbeing Days · £40 / €48</h2>
+      <h2>Sunday Wellbeing Days</h2>
       <p>Vegetarian lunch included. Most Sunday events run either 12.30 pm-4.30 pm or 11.00 am-3.00 pm; check each event page before travelling.</p>
     </div>
     <div class="programme-table-wrap">
@@ -81,6 +86,32 @@ const schema = {
         </thead>
         <tbody>
           {halfDayRetreats.map(([date, theme, href]) => (
+            <tr>
+              <td>{date}</td>
+              <td><a href={href}>{theme}</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">2027 Wellbeing Days</p>
+      <h2>New Year and Heart-Centred Retreat Days</h2>
+      <p>Poster-backed 2027 wellbeing dates currently listed by Shambala.</p>
+    </div>
+    <div class="programme-table-wrap">
+      <table class="programme-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          {wellbeingDays2027.map(([date, theme, href]) => (
             <tr>
               <td>{date}</td>
               <td><a href={href}>{theme}</a></td>
@@ -125,8 +156,8 @@ const schema = {
     <div class="value-grid">
       <article>
         <h3>Energy in Motion</h3>
-        <p>Give yourself a soft pause with Mindful Movement. This half-day experience is an invitation to slow down and be held in a nurturing atmosphere of mindful presence, gentle movement and meditation, ending with a deeply calming sound bath.</p>
-        <p>A beautiful way to soothe the nervous system, release stress and reconnect with your inner flow so you can leave feeling grounded, restored and refreshed. No experience required. All welcome.</p>
+        <p>Give yourself a soft pause with Energy in Motion. This half-day experience invites you into a nurturing atmosphere of mindful presence, gentle movement and meditation.</p>
+        <p>A beautiful way to soothe the nervous system, release stress and reconnect with your inner flow. No experience required. All welcome.</p>
       </article>
       <article>
         <h3>Joy</h3>
