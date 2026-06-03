@@ -1,8 +1,8 @@
 ---
 title: "Slow Flow Rahanni Yoga & Sound Bath"
 description: "Slow Flow Rahanni Yoga followed by a sound bath meditation at Shambala Holistic & Retreat Centre in Derrylin, Co. Fermanagh."
-startDate: 2026-05-08
-endDate: 2026-05-08
+startDate: 2026-06-26
+endDate: 2026-06-26
 price: 20
 currency: GBP
 includes: ["Slow Flow Rahanni Yoga", "Sound Bath Meditation"]
@@ -16,7 +16,6 @@ A restorative evening combining Slow Flow Rahanni Yoga with sound bath meditatio
 
 ## 2026 Dates Listed
 
-- 8 May
 - 26 June
 - 28 August
 - 25 September
