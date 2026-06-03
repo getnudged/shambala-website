@@ -26,13 +26,4 @@ import '../styles/components/nav.css';
   <a class="nav-cta" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Book a Session</a>
 </header>
 
-<script>
-  const header = document.querySelector('[data-site-header]');
-  if (header) {
-    const updateHeader = () => {
-      header.classList.toggle('site-header--scrolled', window.scrollY > 60);
-    };
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
-  }
-</script>
+<script is:inline src="/scripts/site-header.js" defer></script>

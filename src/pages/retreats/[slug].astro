@@ -237,7 +237,7 @@ const eventSchema = retreat.data.startDate
         <h2>Included in This Retreat</h2>
       </div>
       <div class="value-grid">
-        {retreat.data.includes.map((item) => (
+        {retreat.data.includes.map((item: string) => (
           <article>
             <h3>{item}</h3>
             <p>Included as part of {retreat.data.title} at Shambala Holistic & Retreat Centre.</p>
@@ -273,9 +273,15 @@ const eventSchema = retreat.data.startDate
           <h2>Reserve Your Place</h2>
           <p>Use this retreat enquiry form to contact Shambala about availability, dietary requirements and booking details.</p>
         </div>
-        <form class="enquiry-form" name="retreat-enquiry" method="POST" data-netlify="true">
+        <form class="enquiry-form" name="retreat-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="retreat-enquiry" />
           <input type="hidden" name="retreat" value={retreat.data.title} />
+          <p class="form-honeypot" hidden aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </p>
           <label>
             <span>Name</span>
             <input name="name" type="text" autocomplete="name" required />
@@ -304,6 +310,7 @@ const eventSchema = retreat.data.startDate
             <span>How did you hear about us?</span>
             <input name="referral-source" type="text" />
           </label>
+          <div class="enquiry-form__full" data-netlify-recaptcha="true"></div>
           <button class="btn btn-primary" type="submit">Send Retreat Enquiry</button>
         </form>
       </div>
