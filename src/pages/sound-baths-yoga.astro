@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/inner-pages.css';
+import soundImage from '../images/benefits-of-a-sound-bath.png';
+import yogaImage from '../images/shambala-retreat-yoga-warrior-fermanagh.png';
 
 const meta = {
-  title: 'Sound & Yoga | Shambala Holistic Retreat Centre | Fermanagh',
-  description: 'Book sound baths, Chakra Dancing and weekly yoga classes in Enniskillen and Derrylin with Shambala, with gentle movement and meditation.',
+  title: 'Sound Baths and Yoga | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Explore sound baths and yoga at Shambala in Derrylin, Co. Fermanagh, with dedicated pages for sound meditation, yoga classes and retreat sessions.',
   canonical: 'https://shambalaholisticandretreatcentre.com/sound-baths-yoga/'
 };
 
@@ -12,166 +15,72 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Sound Baths and Yoga in Fermanagh',
-  serviceType: 'Sound bath, yoga and weekly yoga classes',
+  serviceType: 'Sound bath meditation and yoga classes',
   provider: {
     '@type': 'HealthAndBeautyBusiness',
     name: 'Shambala Holistic & Retreat Centre'
-  }
+  },
+  areaServed: ['Derrylin', 'Co. Fermanagh', 'Enniskillen', 'Northern Ireland']
 };
 ---
 
 <BaseLayout {meta} {schema}>
   <section class="inner-hero inner-hero--sound">
     <div class="inner-hero__content">
-      <p class="label">Sound Healing · Restorative Yoga · Meditation</p>
-      <h1>Sound Baths and Yoga in Fermanagh</h1>
-      <p>Immersive sound, gentle movement and deep rest at Shambala Holistic & Retreat Centre near Upper Lough Erne.</p>
+      <p class="label">Sound Healing · Yoga · Meditation</p>
+      <h1>Sound Baths and Yoga at Shambala</h1>
+      <p>Two restorative ways to soften the body, quiet the mind and reconnect beside Upper Lough Erne.</p>
     </div>
   </section>
 
   <section class="page-section">
-    <div class="split-layout">
-      <div>
-        <p class="label">Sound and Stillness</p>
-        <h2>Let the Body Settle</h2>
-      </div>
-      <div class="copy-flow">
-        <p>A sound bath is a meditative experience where you rest while resonant tones from instruments such as Tibetan bowls, crystal bowls and gong move through the room.</p>
-        <p>At Shambala, sound baths may be offered as standalone sessions, as part of Slow Flow Rahanni Yoga evenings, during wellness days, or within residential retreats.</p>
-        <p>The practice is simple: lie down, get comfortable, listen, and let the body move towards stillness.</p>
-      </div>
+    <div class="section-heading section-heading--simple">
+      <p class="label">Choose Your Session</p>
+      <h2>Sound Stillness or Gentle Movement</h2>
+    </div>
+    <div class="pathway-grid">
+      <a class="pathway-card pathway-card--image" href="/sound-baths/">
+        <Image src={soundImage} alt="Sound bath meditation at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+        <div>
+          <p class="label">Sound Baths</p>
+          <h3>Rest deeply with bowls, gong and sound meditation</h3>
+          <span class="text-link">Book a sound bath</span>
+        </div>
+      </a>
+      <a class="pathway-card pathway-card--image" href="/yoga/">
+        <Image src={yogaImage} alt="Yoga retreat session at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+        <div>
+          <p class="label">Yoga</p>
+          <h3>Join weekly classes and retreat yoga with Shambala</h3>
+          <span class="text-link">View yoga classes</span>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="page-section page-section--mist">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Sessions May Include</p>
-      <h2>Sound, Breath and Gentle Movement</h2>
-    </div>
-    <div class="value-grid">
-      <article>
-        <h3>Sound Bath Meditation</h3>
-        <p>Tibetan bowls, crystal bowls and gong tones create a calm field for deep relaxation.</p>
-      </article>
-      <article>
-        <h3>Restorative Yoga</h3>
-        <p>Slow, supportive yoga that helps the body soften before sound meditation.</p>
-      </article>
-      <article>
-        <h3>Slow Flow Rahanni Yoga</h3>
-        <p>A gentle evening practice that may be paired with sound bath meditation on selected dates.</p>
-      </article>
-      <article>
-        <h3>Retreat Sound Baths</h3>
-        <p>Many residential retreats include a sound bath as part of the evening programme.</p>
-      </article>
-      <article>
-        <h3>Private Groups</h3>
-        <p>Sound and yoga sessions can be discussed for small groups and wellbeing days.</p>
-      </article>
-      <article>
-        <h3>First-Time Visitors</h3>
-        <p>No experience is needed. Wear comfortable clothing and arrive ready to rest.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="section-heading">
-      <div>
-        <p class="label">Weekly Yoga · Enniskillen</p>
-        <h2>Feel Relaxed, Centred and Balanced</h2>
-      </div>
-      <a class="btn btn-dark" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Message to Book</a>
-    </div>
-
     <div class="split-layout">
+      <div>
+        <p class="label">At Shambala</p>
+        <h2>Practices That Work Beautifully Together</h2>
+      </div>
       <div class="copy-flow">
-        <p>Come stretch, breathe and unwind in a calm environment with weekly yoga classes connected with Shambala Holistic & Retreat Centre.</p>
-        <p>Classes are suitable for all levels and for people who want gentle movement, a steadier breath and time to reset during the week.</p>
-        <p><strong>Booking is essential.</strong> Enniskillen classes are £10 per session.</p>
-      </div>
-
-      <div class="class-schedule-grid" aria-label="Weekly yoga class schedule">
-        <article>
-          <p class="label">Mondays</p>
-          <h3>5.30-6.30 pm</h3>
-          <p>St. MacCartin's Cathedral Hall, Enniskillen.</p>
-        </article>
-        <article>
-          <p class="label">Wednesdays</p>
-          <h3>6-7 pm</h3>
-          <p>Fermanagh House, Broadmeadow Place, Enniskillen.</p>
-        </article>
-        <article>
-          <p class="label">Saturdays</p>
-          <h3>9-10 am</h3>
-          <p>Shambala Holistic & Retreat Centre, Derrylin. €10 per person.</p>
-        </article>
-        <article>
-          <p class="label">By Request</p>
-          <h3>Weekdays</h3>
-          <p>Weekday yoga at Shambala Centre can be arranged by request. Booking essential.</p>
-        </article>
+        <p>Sound baths and yoga are offered separately, and often appear together within retreats, wellness days and special evening sessions at Shambala Holistic & Retreat Centre.</p>
+        <p>Yoga helps the body arrive through breath and movement. Sound bath meditation then invites the nervous system towards stillness through resonant tones and deep listening.</p>
+        <p>Both pages include booking details, what to expect and the best next step for first-time visitors.</p>
       </div>
     </div>
-
-    <div class="booking-strip" aria-label="Weekly yoga booking details">
-      <div>
-        <p class="label">Price</p>
-        <strong>£10 / €10</strong>
-      </div>
-      <div>
-        <p class="label">Booking</p>
-        <strong>Essential</strong>
-      </div>
-      <div>
-        <p class="label">Contact</p>
-        <a href="https://wa.me/447713744589" target="_blank" rel="noreferrer">+44 7713 744 589</a>
-      </div>
-      <div>
-        <p class="label">Email</p>
-        <a href="mailto:shambala108@icloud.com">shambala108@icloud.com</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section page-section--mist">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Regular Events</p>
-      <h2>Chakra Dancing and Sound Bath Meditation</h2>
-    </div>
-    <div class="split-layout">
-      <div class="copy-flow">
-        <p>Chakra Dancing invites you to move gently and freely, helping you reconnect with your body, release tension, and flow through the energy of the chakras.</p>
-        <p>Sound Bath Meditation lets the waves of sound wash over you as you listen to the gentle sounds of different melodious instruments. It is a deeply relaxing experience.</p>
-        <p>There is an option to attend just the Chakra Dancing or Sound Bath separately.</p>
-      </div>
-      <div class="class-schedule-grid" aria-label="Chakra Dancing and Sound Bath Meditation schedule">
-        <article>
-          <p class="label">Schedule</p>
-          <h3>Select Fridays</h3>
-          <p>Dates to be confirmed with Shambala.</p>
-        </article>
-        <article>
-          <p class="label">Format</p>
-          <h3>Attend One or Both</h3>
-          <p>Option to attend Chakra Dancing or Sound Bath Meditation separately.</p>
-        </article>
-      </div>
-    </div>
-    <p class="small-note">TODO: Confirm specific Friday dates with Sukhada before publishing dated listings.</p>
   </section>
 
   <section class="page-section page-cta">
     <div>
-      <p class="label">Sound and Yoga Enquiry</p>
-      <h2>Book a Sound Bath or Yoga Session</h2>
-      <p>Contact Sukhada for weekly yoga classes, upcoming sound baths, yoga sessions and retreat availability.</p>
+      <p class="label">Booking</p>
+      <h2>Ask About Sound Baths or Yoga</h2>
+      <p>Contact Sukhada for current dates, weekly yoga classes, private group sessions and retreat availability.</p>
     </div>
     <div class="cta-actions">
       <a class="btn btn-primary" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Message to Book</a>
-      <a class="btn btn-ghost btn-ghost--inverse" href="mailto:shambala108@icloud.com?subject=Sound%20and%20Yoga%20Enquiry">Email Shambala</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/contact/">Contact Shambala</a>
     </div>
   </section>
 </BaseLayout>

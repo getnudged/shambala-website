@@ -1,0 +1,143 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+import yogaImage from '../images/shambala-retreat-yoga-warrior-fermanagh.png';
+import centreImage from '../images/shambala-upper-lough-erne-view.jpeg';
+
+const meta = {
+  title: 'Yoga Classes | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Join yoga classes and retreat yoga with Shambala in Fermanagh, including gentle movement, weekly sessions, restorative practice and yoga by Lough Erne.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/yoga/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Yoga Classes and Retreat Yoga in Fermanagh',
+  serviceType: 'Yoga classes, restorative yoga and retreat yoga',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  areaServed: ['Derrylin', 'Co. Fermanagh', 'Enniskillen', 'Northern Ireland']
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--yoga">
+    <div class="inner-hero__content">
+      <p class="label">Weekly Classes · Retreat Yoga · Gentle Movement</p>
+      <h1>Yoga Classes and Retreat Yoga in Fermanagh</h1>
+      <p>Move, breathe and settle with Shambala through weekly yoga classes, restorative sessions and retreat practices.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="feature-grid">
+      <div class="copy-flow">
+        <p class="label">Yoga at Shambala</p>
+        <h2>Movement That Helps the Body Arrive</h2>
+        <p>Yoga with Shambala is gentle, steady and welcoming. The emphasis is on breath, presence, mobility and a calmer relationship with the body.</p>
+        <p>Sessions may include Hatha yoga, restorative yoga, slow flow, Rahanni Yoga and retreat practices that prepare the body for meditation or sound bath work.</p>
+        <p>Classes are suitable for mixed levels. Booking is essential so Sukhada can confirm the right session and current availability.</p>
+      </div>
+      <figure class="landscape-card landscape-card--photo landscape-card--portrait">
+        <Image src={yogaImage} alt="Yoga class at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+        <span>Yoga for steady breath</span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading">
+      <div>
+        <p class="label">Weekly Yoga</p>
+        <h2>Current Class Schedule</h2>
+      </div>
+      <a class="btn btn-dark" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Message to Book</a>
+    </div>
+    <div class="class-schedule-grid" aria-label="Weekly yoga class schedule">
+      <article>
+        <p class="label">Mondays</p>
+        <h3>5.30-6.30 pm</h3>
+        <p>St. MacCartin's Cathedral Hall, Enniskillen. Booking essential. £10 per session.</p>
+      </article>
+      <article>
+        <p class="label">Wednesdays</p>
+        <h3>6-7 pm</h3>
+        <p>Fermanagh House, Broadmeadow Place, Enniskillen. Booking essential. £10 per session.</p>
+      </article>
+      <article>
+        <p class="label">Saturdays</p>
+        <h3>9-10 am</h3>
+        <p>Shambala Holistic & Retreat Centre, Derrylin. Booking essential. €10 per person.</p>
+      </article>
+      <article>
+        <p class="label">By Request</p>
+        <h3>Weekdays</h3>
+        <p>Weekday yoga at Shambala can be arranged by request for individuals or small groups.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <figure class="image-panel">
+        <Image src={centreImage} alt="Upper Lough Erne view after yoga at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+      </figure>
+      <div class="copy-flow">
+        <p class="label">Retreat Yoga</p>
+        <h2>Yoga Woven Through Retreat Time</h2>
+        <p>Residential retreats often include morning yoga, gentle movement, relaxation and reflective practice by Upper Lough Erne.</p>
+        <p>Yoga can sit alongside forest bathing, meditation, sound bath, Tai Chi, Qigong, Chakra Dancing and holistic therapies depending on the retreat.</p>
+        <p>The pace is unhurried and supportive, with enough space around the practice for food, nature, rest and integration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Yoga Sessions May Include</p>
+      <h2>Breath, Flow, Rest and Sound</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Hatha Yoga</h3>
+        <p>Accessible postures and breath awareness to support strength, balance and grounding.</p>
+      </article>
+      <article>
+        <h3>Slow Flow</h3>
+        <p>Gentle movement for easing tension, encouraging mobility and settling the nervous system.</p>
+      </article>
+      <article>
+        <h3>Restorative Yoga</h3>
+        <p>Supportive rest-based practice that prepares the body for meditation or sound bath work.</p>
+      </article>
+      <article>
+        <h3>Rahanni Yoga</h3>
+        <p>A softer energetic practice that may be paired with sound bath meditation on selected dates.</p>
+      </article>
+      <article>
+        <h3>Retreat Practice</h3>
+        <p>Morning and evening yoga woven into weekend retreats and wellbeing days.</p>
+      </article>
+      <article>
+        <h3>Small Groups</h3>
+        <p>Yoga sessions can be discussed for private groups, corporate wellbeing and retreat guests.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Yoga Enquiry</p>
+      <h2>Book a Yoga Class or Retreat Session</h2>
+      <p>Contact Sukhada to check current yoga class times, book a place or ask about yoga within upcoming retreats.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Message to Book</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/sound-baths/">Explore Sound Baths</a>
+    </div>
+  </section>
+</BaseLayout>

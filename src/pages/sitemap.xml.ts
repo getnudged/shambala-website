@@ -12,6 +12,8 @@ const staticRoutes = [
   '/retreats/',
   '/wellness-days/',
   '/sound-baths-yoga/',
+  '/sound-baths/',
+  '/yoga/',
   '/corporate-wellness/',
   '/self-catering/',
   '/getting-here/',

@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/components/inner-pages.css';
+import soundImage from '../images/benefits-of-a-sound-bath.png';
+import loughImage from '../images/shambala-lough-erne-dawn-retreat-view.jpeg';
+
+const meta = {
+  title: 'Sound Baths | Shambala Holistic Retreat Centre | Fermanagh',
+  description: 'Book sound baths in Fermanagh at Shambala Holistic & Retreat Centre, with Tibetan bowls, crystal bowls, gong, meditation and deep rest.',
+  canonical: 'https://shambalaholisticandretreatcentre.com/sound-baths/'
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Sound Baths in Fermanagh',
+  serviceType: 'Sound bath meditation and sound healing',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Shambala Holistic & Retreat Centre'
+  },
+  areaServed: ['Derrylin', 'Co. Fermanagh', 'Enniskillen', 'Northern Ireland']
+};
+---
+
+<BaseLayout {meta} {schema}>
+  <section class="inner-hero inner-hero--sound">
+    <div class="inner-hero__content">
+      <p class="label">Sound Healing · Meditation · Deep Rest</p>
+      <h1>Sound Baths in Fermanagh</h1>
+      <p>Rest in the resonant tones of Tibetan bowls, crystal bowls and gong at Shambala Holistic & Retreat Centre.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="feature-grid">
+      <div class="copy-flow">
+        <p class="label">What to Expect</p>
+        <h2>Lie Down, Listen and Let the Sound Hold You</h2>
+        <p>A sound bath is a meditative experience where you rest comfortably while tones and vibrations move through the space.</p>
+        <p>There is nothing to perform and no previous meditation experience needed. The sound gives the mind a gentle point of focus while the body is invited into stillness.</p>
+        <p>Sound baths at Shambala may be offered as standalone sessions, private group sessions, wellness day activities or part of residential retreats.</p>
+      </div>
+      <figure class="landscape-card landscape-card--photo">
+        <Image src={soundImage} alt="Sound bath bowls at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+        <span>Sound for deep rest</span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="page-section page-section--mist">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Session Elements</p>
+      <h2>Bowls, Gong, Breath and Stillness</h2>
+    </div>
+    <div class="value-grid">
+      <article>
+        <h3>Tibetan Bowls</h3>
+        <p>Warm resonant tones that create a steady field for relaxation and inward listening.</p>
+      </article>
+      <article>
+        <h3>Crystal Bowls</h3>
+        <p>Clear, spacious sound that helps the room feel open, calm and held.</p>
+      </article>
+      <article>
+        <h3>Gong</h3>
+        <p>Deep vibration and layered sound for a more immersive meditative experience.</p>
+      </article>
+      <article>
+        <h3>Guided Arrival</h3>
+        <p>Time to settle, breathe and get comfortable before the sound begins.</p>
+      </article>
+      <article>
+        <h3>Retreat Sound Baths</h3>
+        <p>Many retreats include evening sound bath meditation as part of the programme.</p>
+      </article>
+      <article>
+        <h3>Private Groups</h3>
+        <p>Small group and corporate sound bath sessions can be discussed with Sukhada.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="split-layout">
+      <figure class="image-panel">
+        <Image src={loughImage} alt="Lough Erne dawn view before a sound bath at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh" loading="lazy" />
+      </figure>
+      <div class="copy-flow">
+        <p class="label">Who It Helps</p>
+        <h2>A Simple Way Into Quiet</h2>
+        <p>Sound baths are often chosen by people who feel tired, overstimulated, stressed or unable to switch off.</p>
+        <p>Guests usually wear comfortable clothing and lie on a mat or resting space. You can bring an extra blanket, eye pillow or anything that helps you feel settled.</p>
+        <p>The lake setting at Shambala supports the practice naturally: quiet water, open sky and a slower rhythm before and after the session.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-cta">
+    <div>
+      <p class="label">Sound Bath Enquiry</p>
+      <h2>Book a Sound Bath at Shambala</h2>
+      <p>Contact Sukhada for current sound bath dates, private sessions, group bookings and retreat availability.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://wa.me/447713744589" target="_blank" rel="noreferrer">Message to Book</a>
+      <a class="btn btn-ghost btn-ghost--inverse" href="/yoga/">Explore Yoga</a>
+    </div>
+  </section>
+</BaseLayout>
