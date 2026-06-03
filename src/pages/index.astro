@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/home.css';
 import heroImage from '../images/shambala-house.jpeg';
 import upperLoughErneImage from '../images/upper-lough-ern.jpeg';
+import settingLoughErneImage from '../images/shambala-upper-lough-erne-view.jpeg';
 
 const meta = {
   title: 'Shambala Holistic & Retreat Centre | Wellness Retreat Fermanagh',
@@ -173,7 +174,14 @@ const meta = {
   </section>
 
   <section class="setting" aria-label="The Lough Erne setting and cross-border access">
-    <div class="setting-visual" role="img" aria-label="Upper Lough Erne at dusk near Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"></div>
+    <div class="setting-visual">
+      <Image
+        src={settingLoughErneImage}
+        alt="Upper Lough Erne view at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
     <div class="setting-text">
       <p class="label">The Setting</p>
       <h2>Upper Lough Erne, <em>Co. Fermanagh</em></h2>
