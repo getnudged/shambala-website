@@ -42,7 +42,3 @@ Therapies are available on request as an optional extra.
 ## Pricing
 
 The Touching the Earth weekend retreat is listed at £260 / €300 per person.
-
-## Note
-
-TODO: Confirm the full daily schedule before publishing a detailed timetable.
