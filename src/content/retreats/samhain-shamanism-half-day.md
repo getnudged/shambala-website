@@ -1,19 +1,21 @@
 ---
 title: "Samhain & Shamanism Half-Day Retreat"
-description: "A Samhain and shamanism half-day retreat with journeying, intention setting, grounding walk, yoga poses and cacao ceremony."
+description: "A Samhain and shamanism half-day retreat with shamanic workshop, lunch, Fairy Woods walk and cacao ceremony."
 startDate: 2026-10-31
 endDate: 2026-10-31
 price: 40
 currency: GBP
 priceEUR: 48
-includes: ["Journeying workshop", "Lunch", "Grounding walk", "Yoga poses", "Cacao ceremony"]
+includes: ["Shamanic workshop", "Lunch", "Walk in Fairy Woods", "Cacao ceremony", "Vegetarian lunch"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "samhain-shamanism-half-day"
+scheduleImage: "/retreat-schedules/samhain-and-shamanism-half-day.jpeg"
+scheduleAlt: "Samhain and Shamanism half-day retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
 
-A half-day Samhain and shamanism retreat with journeying, intention setting, letting go, grounding walk, opening of the heart yoga poses and cacao ceremony.
+A half-day Samhain and shamanism retreat with a shamanic workshop, shared lunch, a walk in the Fairy Woods and cacao ceremony.
 
 ## Time
 
@@ -25,7 +27,11 @@ A half-day Samhain and shamanism retreat with journeying, intention setting, let
 
 ## Schedule
 
-- 11.00 am: Journeying workshop, setting intentions and letting go
+- 11.00 am: Shamanic workshop with Sukhada
 - 1.00 pm: Lunch
-- 2.00 pm: Grounding walk
-- 2.30 pm: Opening of the Heart yoga poses and cacao ceremony
+- 1.30 pm: Walk in Fairy Woods
+- 2.15 pm: Cacao ceremony
+
+## Notes
+
+Arrival from 10.45 am please. Option to stay Friday and Saturday at additional cost, subject to availability.
