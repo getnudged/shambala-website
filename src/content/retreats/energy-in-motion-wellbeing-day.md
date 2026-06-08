@@ -25,7 +25,3 @@ A beautiful way to soothe the nervous system, release stress and reconnect with 
 ## Pricing
 
 €50 with vegetarian lunch included. Option to stay Sunday night at an extra cost.
-
-## Note
-
-The Shambala poster lists this event at Upper Lough Erne, County Fermanagh. A separate Cavan version of the poster exists but has not been wired into this Shambala event page.
