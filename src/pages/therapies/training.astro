@@ -2,6 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/components/inner-pages.css';
 
+const reikiPoster = '/retreat-posters/reikie-classes.jpeg';
+const reikiPosterTarget = 'reiki-classes-poster';
+const reikiPosterAlt = 'Reiki classes poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh';
+
 const meta = {
   title: 'Reiki Training Fermanagh | Shambala Holistic Retreat Centre',
   description: 'Begin Reiki training in Fermanagh with Sukhada at Shambala, from Reiki Level 1 and Level 2 through to deeper practice and Master training pathways here.',
@@ -62,10 +66,37 @@ const schema = {
         <p>Advanced Reiki training for committed students, arranged through direct conversation with Sukhada.</p>
       </article>
     </div>
-    <p class="small-note">TODO: Add confirmed course dates, duration and pricing when supplied by Shambala.</p>
+    <p class="small-note">Current Reiki class dates and details are shared through the poster below and by direct enquiry with Sukhada.</p>
   </section>
 
-  <section class="page-section page-cta">
+  <section class="page-section">
+    <div class="split-layout">
+      <div>
+        <p class="label">Reiki Classes</p>
+        <h2>Preview the Current Reiki Poster</h2>
+        <p>Open the poster for the latest Reiki class information, then contact Sukhada to ask about availability and the right training level for you.</p>
+      </div>
+      <div class="poster-preview-card">
+        <a class="poster-preview-card__image" href={`#${reikiPosterTarget}`} aria-label="Preview poster for Reiki classes at Shambala">
+          <img src={reikiPoster} alt={reikiPosterAlt} loading="lazy" />
+        </a>
+        <div class="poster-preview-card__actions">
+          <a class="btn btn-dark" href={`#${reikiPosterTarget}`}>Preview Poster</a>
+          <a class="btn btn-ghost" href={reikiPoster} target="_blank" rel="noreferrer">Open Poster</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-modal" id={reikiPosterTarget} role="dialog" aria-modal="true" aria-label="Poster preview for Reiki classes at Shambala">
+      <a class="poster-modal__backdrop" href="#reiki-training-enquiry" aria-label="Close poster preview"></a>
+      <div class="poster-modal__content">
+        <a class="poster-modal__close" href="#reiki-training-enquiry">Close</a>
+        <img src={reikiPoster} alt={reikiPosterAlt} loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-cta" id="reiki-training-enquiry">
     <div>
       <p class="label">Training Enquiry</p>
       <h2>Begin a Reiki Conversation</h2>
