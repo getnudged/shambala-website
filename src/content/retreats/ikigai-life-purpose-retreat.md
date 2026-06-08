@@ -13,6 +13,8 @@ cardImage: "shambala-retreat-life-purpose-fermanagh.png"
 cardImageAlt: "Life Purpose weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/life-purpose-weekend-retreat.jpeg"
 posterAlt: "Life Purpose Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-ikagai.jpeg"
+scheduleAlt: "Ikigai Life Purpose Retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

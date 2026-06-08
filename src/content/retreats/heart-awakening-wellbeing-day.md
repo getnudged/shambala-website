@@ -10,6 +10,8 @@ facilitators: ["Sukhada Smith-Repass"]
 slug: "heart-awakening-wellbeing-day"
 posterImage: "/retreat-posters/heart-awakening-wellbeing-day.jpeg"
 posterAlt: "Heart Awakening Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-heart-awakening.jpeg"
+scheduleAlt: "Heart Awakening Weekend Retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

@@ -13,6 +13,8 @@ cardImage: "shambala-retreat-yoga-warrior-fermanagh.png"
 cardImageAlt: "Yoga Warrior weekend retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/yoga-warrior.jpeg"
 posterAlt: "Yoga Warrior Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-yoga-warrior.jpeg"
+scheduleAlt: "Yoga Warrior Weekend Retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
