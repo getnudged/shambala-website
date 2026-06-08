@@ -18,12 +18,6 @@
   force = true
 
 [[redirects]]
-  from = "/workshops/"
-  to = "/sound-baths-yoga/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/massage/"
   to = "/therapies/massage/"
   status = 301
