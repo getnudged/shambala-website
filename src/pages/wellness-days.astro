@@ -3,15 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/components/inner-pages.css';
 
 const meta = {
-  title: 'Wellness Days Fermanagh | Shambala Holistic Retreat Centre',
-  description: 'Plan Sunday half-day retreats and Saturday day retreats at Shambala in Fermanagh, with vegetarian lunch, gentle movement and restoration.',
+  title: 'Wellness Days Fermanagh & Cavan | Shambala Retreat Centre',
+  description: 'Plan restorative wellness days with Shambala in Fermanagh and Cavan, with vegetarian lunch, gentle movement, sound bath and meditation.',
   canonical: 'https://shambalaholisticandretreatcentre.com/wellness-days/'
 };
 
+const cavanWellbeingDays = [
+  ['Sun 23 August', 'Open to Joy', '/retreats/open-to-joy-wellbeing-day/'],
+  ['Sat 12 September', 'Rooted & Radiant', '/retreats/rooted-and-radiant-wellbeing-day/'],
+  ['Sat 17 October', 'Flow Within', '/retreats/flow-within-wellbeing-day/']
+];
+
 const halfDayRetreats = [
   ['Sun 28 June', 'Energy in Motion', '/retreats/energy-in-motion-wellbeing-day/'],
-  ['Sun 28 June', 'Creative Flow', '/retreats/creative-flow-wellbeing-day/'],
-  ['Sun 26 July', 'Inner Peace', '/retreats/inner-peace-wellness-day/'],
+  ['Sun 26 July', 'Creative Flow', '/retreats/creative-flow-wellbeing-day/'],
   ['Sun 23 August', 'Yoga, Walking & Adventure', '/retreats/walking-nature-adventure-wellness-day/'],
   ['Sun 13 September', 'Journey Within', '/retreats/journey-within-silent-retreat/'],
   ['Sun 11 October', 'The Power of Manifestation', '/retreats/power-of-manifestation-wellbeing-day/'],
@@ -34,7 +39,7 @@ const dayRetreats = [
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Wellness Days in Fermanagh',
+  name: 'Wellness Days in Fermanagh and Cavan',
   serviceType: 'Wellness day',
   provider: {
     '@type': 'HealthAndBeautyBusiness',
@@ -47,8 +52,8 @@ const schema = {
   <section class="inner-hero inner-hero--wellness">
     <div class="inner-hero__content">
       <p class="label">Forest Bathing · Grounding · Meditation</p>
-      <h1>Wellness Days in Fermanagh at Shambala</h1>
-      <p>Half-day and full-day restorative experiences beside Upper Lough Erne, designed for rest, reconnection and natural balance.</p>
+      <h1>Wellness Days in Fermanagh and Cavan</h1>
+      <p>Half-day and full-day restorative experiences with Shambala, designed for rest, reconnection and natural balance.</p>
     </div>
   </section>
 
@@ -59,11 +64,37 @@ const schema = {
         <h2>A Shorter Way to Step Away</h2>
       </div>
       <div class="copy-flow">
-        <p>Wellness days at Shambala give you the feel of retreat without committing to a full residential weekend. They may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time by the water.</p>
+        <p>Wellness days with Shambala give you the feel of retreat without committing to a full residential weekend. They may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time.</p>
         <p>The current programme includes Sunday half-day retreats and Saturday day retreats, commonly running from either 12.30 pm-4.30 pm or 11.00 am-3.00 pm depending on the event.</p>
-        <p>Most formats are listed at £40 with vegetarian lunch included. Energy in Motion is poster-listed at €50. Staying Saturday or Sunday night may be possible at additional cost, subject to availability.</p>
+        <p>Most Shambala formats are listed at £40 with vegetarian lunch included. Energy in Motion and the Cavan wellbeing days are poster-listed at €50. Staying Saturday or Sunday night may be possible for Shambala-based dates at additional cost, subject to availability.</p>
         <p>Dates and availability change seasonally, so contact Sukhada before travelling.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading section-heading--simple">
+      <p class="label">Cavan Wellbeing Days · The Lab</p>
+      <h2>Open to Joy, Rooted & Radiant, and Flow Within</h2>
+      <p>Collaborative wellbeing days with Shambala and Zensational Wellbeing at The Lab, 65 Main St, Townparks, Cavan, H12 XC79. Vegetarian lunch included. €50 per person.</p>
+    </div>
+    <div class="programme-table-wrap">
+      <table class="programme-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cavanWellbeingDays.map(([date, theme, href]) => (
+            <tr>
+              <td>{date}</td>
+              <td><a href={href}>{theme}</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 

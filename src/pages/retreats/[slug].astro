@@ -17,10 +17,25 @@ const { Content } = await render(retreat);
 const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
 const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
 const allRetreats = await getCollection('retreats');
-const mapsUrl = 'https://maps.google.com/?q=48%20Geaglum%20Road%2C%20Derrylin%2C%20Co.%20Fermanagh%2C%20BT92%209GN';
+const retreatLocation = {
+  name: retreat.data.venueName ?? 'Shambala Holistic & Retreat Centre',
+  streetAddress: retreat.data.venueAddress ?? '48 Geaglum Road',
+  locality: retreat.data.venueLocality ?? 'Derrylin',
+  region: retreat.data.venueRegion ?? 'Co. Fermanagh',
+  postalCode: retreat.data.venuePostalCode ?? 'BT92 9GN',
+  country: retreat.data.venueCountry ?? 'GB'
+};
+const locationLabel = `${retreatLocation.locality}, ${retreatLocation.region}`;
+const locationAddress = `${retreatLocation.streetAddress}, ${retreatLocation.locality}, ${retreatLocation.region}, ${retreatLocation.postalCode}`;
+const mapsUrl = retreat.data.venueMapUrl ?? `https://maps.google.com/?q=${encodeURIComponent(locationAddress)}`;
+const hasCustomVenue = Boolean(retreat.data.venueName);
 const hasPoster = Boolean(retreat.data.posterImage || retreat.data.posterPdf);
+const hasSchedule = Boolean(retreat.data.scheduleImage);
 const posterPreviewTarget = `retreat-poster-${slug}`;
 const posterAlt = retreat.data.posterAlt ?? `${retreat.data.title} poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`;
+const schedulePreviewTarget = `retreat-schedule-${slug}`;
+const scheduleAlt = retreat.data.scheduleAlt ?? `${retreat.data.title} schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`;
+const displayFacilitators = retreat.data.facilitators.length > 0 ? retreat.data.facilitators : ['Sukhada Smith-Repass'];
 
 const formatDate = (date?: Date) =>
   date
@@ -62,7 +77,9 @@ const relatedRetreats = allRetreats
   .slice(0, 2);
 
 const buildDescription = (description: string) => {
-  const suffix = ' Join Shambala in Derrylin, Co. Fermanagh for retreat time beside Upper Lough Erne.';
+  const suffix = hasCustomVenue
+    ? ` Join Shambala at ${retreatLocation.name} in ${retreatLocation.region}.`
+    : ' Join Shambala in Derrylin, Co. Fermanagh for retreat time beside Upper Lough Erne.';
   const text = description.length >= 150 ? description : `${description}${suffix}`;
   if (text.length <= 160) return text;
   const trimmed = text.slice(0, 157);
@@ -70,7 +87,7 @@ const buildDescription = (description: string) => {
 };
 
 const meta = {
-  title: `${retreat.data.title} | Shambala Fermanagh`,
+  title: `${retreat.data.title} | Shambala ${retreatLocation.region.replace('Co. ', '')}`,
   description: buildDescription(retreat.data.description),
   canonical
 };
@@ -87,14 +104,14 @@ const eventSchema = retreat.data.startDate
       eventStatus: 'https://schema.org/EventScheduled',
       location: {
         '@type': 'Place',
-        name: 'Shambala Holistic & Retreat Centre',
+        name: retreatLocation.name,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '48 Geaglum Road',
-          addressLocality: 'Derrylin',
-          addressRegion: 'Co. Fermanagh',
-          postalCode: 'BT92 9GN',
-          addressCountry: 'GB'
+          streetAddress: retreatLocation.streetAddress,
+          addressLocality: retreatLocation.locality,
+          addressRegion: retreatLocation.region,
+          postalCode: retreatLocation.postalCode,
+          addressCountry: retreatLocation.country
         }
       },
       offers: {
@@ -124,13 +141,13 @@ const eventSchema = retreat.data.startDate
     <header class="inner-hero inner-hero--retreat-detail">
       <div class="inner-hero__content">
         <div class="retreat-hero-card">
-          <p class="label">Retreat at Shambala · {dateLabel}</p>
+          <p class="label">Retreat at {retreatLocation.name} · {dateLabel}</p>
           <h1>{retreat.data.title}</h1>
           <p>{retreat.data.description}</p>
           <div class="retreat-hero-meta" aria-label="Retreat summary">
             <span>{priceLabel}</span>
-            <span>{retreat.data.facilitators.length > 0 ? retreat.data.facilitators.join(' & ') : 'Facilitator to confirm'}</span>
-            <span>Derrylin, Co. Fermanagh</span>
+            <span>{displayFacilitators.join(' & ')}</span>
+            <span>{locationLabel}</span>
           </div>
         </div>
       </div>
@@ -149,12 +166,10 @@ const eventSchema = retreat.data.startDate
               <dt>Price</dt>
               <dd>{priceLabel}</dd>
             </div>
-            {retreat.data.facilitators.length > 0 && (
-              <div>
-                <dt>Facilitators</dt>
-                <dd>{retreat.data.facilitators.join(', ')}</dd>
-              </div>
-            )}
+            <div>
+              <dt>Facilitators</dt>
+              <dd>{displayFacilitators.join(', ')}</dd>
+            </div>
           </dl>
           {!retreat.data.startDate && <p class="detail-placeholder">Placeholder: exact retreat dates to confirm before launch.</p>}
           <a class="btn btn-dark" href="#retreat-enquiry">Reserve Your Place</a>
@@ -231,6 +246,34 @@ const eventSchema = retreat.data.startDate
       </section>
     )}
 
+    {hasSchedule && (
+      <section class="page-section page-section--mist">
+        <div class="split-layout">
+          <div>
+            <p class="label">Retreat Schedule</p>
+            <h2>Preview the Retreat Schedule</h2>
+            <p>Open the schedule for the current timetable, arrival notes and retreat flow.</p>
+          </div>
+          <div class="poster-preview-card">
+            <a class="poster-preview-card__image" href={`#${schedulePreviewTarget}`} aria-label={`Preview schedule for ${retreat.data.title}`}>
+              <img src={retreat.data.scheduleImage} alt={scheduleAlt} loading="lazy" />
+            </a>
+            <div class="poster-preview-card__actions">
+              <a class="btn btn-dark" href={`#${schedulePreviewTarget}`}>Preview Schedule</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="poster-modal" id={schedulePreviewTarget} role="dialog" aria-modal="true" aria-label={`Schedule preview for ${retreat.data.title}`}>
+          <a class="poster-modal__backdrop" href="#retreat-enquiry" aria-label="Close schedule preview"></a>
+          <div class="poster-modal__content">
+            <a class="poster-modal__close" href="#retreat-enquiry">Close</a>
+            <img src={retreat.data.scheduleImage} alt={scheduleAlt} loading="lazy" />
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="page-section">
       <div class="section-heading section-heading--simple">
         <p class="label">What's Included</p>
@@ -240,7 +283,7 @@ const eventSchema = retreat.data.startDate
         {retreat.data.includes.map((item: string) => (
           <article>
             <h3>{item}</h3>
-            <p>Included as part of {retreat.data.title} at Shambala Holistic & Retreat Centre.</p>
+            <p>Included as part of {retreat.data.title} at {retreatLocation.name}.</p>
           </article>
         ))}
       </div>
@@ -254,14 +297,7 @@ const eventSchema = retreat.data.startDate
           <h2>Who Holds the Retreat</h2>
         </div>
         <div class="copy-flow">
-          {retreat.data.facilitators.length > 0 ? (
-            <>
-              <p>This retreat is currently listed with {retreat.data.facilitators.join(' and ')} as facilitator{retreat.data.facilitators.length > 1 ? 's' : ''}.</p>
-              <p>Facilitator details should be confirmed when final retreat dates are agreed.</p>
-            </>
-          ) : (
-            <p class="detail-placeholder">Placeholder: facilitator details to confirm from Shambala before launch.</p>
-          )}
+          <p>This retreat is currently listed with {displayFacilitators.join(' and ')} as facilitator{displayFacilitators.length > 1 ? 's' : ''}.</p>
         </div>
       </div>
     </section>
@@ -319,11 +355,11 @@ const eventSchema = retreat.data.startDate
     <section class="page-section page-cta">
       <div>
         <p class="label">Location</p>
-        <h2>Retreat by Upper Lough Erne</h2>
-        <p>Shambala is based at <a href={mapsUrl} target="_blank" rel="noreferrer">48 Geaglum Road, Derrylin, Co. Fermanagh, BT92 9GN</a>.</p>
+        <h2>Retreat Location</h2>
+        <p>{retreat.data.title} is based at <a href={mapsUrl} target="_blank" rel="noreferrer">{locationAddress}</a>.</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="/getting-here/">Plan Your Journey</a>
+        <a class="btn btn-primary" href={hasCustomVenue ? mapsUrl : '/getting-here/'} target={hasCustomVenue ? '_blank' : undefined} rel={hasCustomVenue ? 'noreferrer' : undefined}>{hasCustomVenue ? 'Open Venue Map' : 'Plan Your Journey'}</a>
         <a class="btn btn-ghost btn-ghost--inverse" href="/retreats/">Explore All Retreats</a>
       </div>
     </section>

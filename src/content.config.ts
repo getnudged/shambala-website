@@ -33,7 +33,16 @@ const retreats = defineCollection({
     cardImageAlt: z.string().optional(),
     posterImage: z.string().optional(),
     posterPdf: z.string().optional(),
-    posterAlt: z.string().optional()
+    posterAlt: z.string().optional(),
+    scheduleImage: z.string().optional(),
+    scheduleAlt: z.string().optional(),
+    venueName: z.string().optional(),
+    venueAddress: z.string().optional(),
+    venueLocality: z.string().optional(),
+    venueRegion: z.string().optional(),
+    venuePostalCode: z.string().optional(),
+    venueCountry: z.string().optional(),
+    venueMapUrl: z.string().optional()
   })
 });
 

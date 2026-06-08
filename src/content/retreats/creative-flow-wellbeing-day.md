@@ -1,32 +1,41 @@
 ---
 title: "Creative Flow Wellbeing Day"
-description: "An uplifting wellbeing day with dance, yoga and art therapy to help you express, release and reconnect at Shambala."
-startDate: 2026-06-28
-endDate: 2026-06-28
+description: "A creative wellbeing day with journaling, mandala workshop, forest bathing, chakra dancing, Yin Reiki Yoga and vegetarian lunch."
+startDate: 2026-07-26
+endDate: 2026-07-26
 price: 40
 currency: GBP
 priceEUR: 48
-includes: ["Dance", "Yoga", "Art therapy", "Mindful presence", "Vegetarian lunch"]
+includes: ["Journaling", "Mandala workshop", "Forest bathing", "Chakra Dancing", "Yin Reiki Yoga", "Vegetarian lunch"]
 facilitators: ["Sukhada Smith-Repass"]
 slug: "creative-flow-wellbeing-day"
-posterImage: "/retreat-posters/wellbeing-day-creative-flow.jpeg"
+posterImage: "/retreat-schedules/schedule-creative-flow-well-being day.JPG"
 posterAlt: "Creative Flow Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
 
-An uplifting afternoon of dance, yoga and art therapy to help you express, release and reconnect.
+Creative Flow is a restorative well-being day with journaling, mandala workshop, forest bathing, Chakra Dancing and Yin Reiki Yoga.
 
-Through movement, creativity and mindful presence, you will tap into your inner flow, awaken your creativity and leave feeling lighter, aligned and inspired.
+The day offers gentle space for creativity, reflection, movement and reconnection, with vegetarian lunch included.
 
 ## Time
 
-12.30 pm-4.30 pm on Sunday 28 June.
+12.30 pm-4.30 pm on Sunday 26 July.
 
 ## Pricing
 
 £40 / €48 with vegetarian lunch included.
 
+## Schedule
+
+- 12.30 pm: Arrival
+- 1.00 pm: Journaling and mandala workshop
+- 2.00 pm: Lunch
+- 2.30 pm: Forest bathing
+- 3.00 pm: Chakra Dancing
+- 4.00 pm: Yin Reiki Yoga
+
 ## Notes
 
-Option to stay Saturday or Sunday night at additional cost, subject to availability.
+Arrival from 12.15 pm please. Option to stay Saturday or Sunday night at additional cost, subject to availability.
