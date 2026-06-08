@@ -11,13 +11,15 @@ facilitators: ["Sukhada Smith-Repass"]
 slug: "relax-rewind-reset"
 posterImage: "/retreat-posters/autumn-reset-wellbeing-day.jpeg"
 posterAlt: "Autumn Reset Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-autumn-reset.JPG"
+scheduleAlt: "Autumn Reset Wellbeing Day schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
 
 Autumn Reset Wellbeing Day is a nourishing afternoon at Shambala created to help you slow down, restore your energy and reconnect in a peaceful and supportive setting.
 
-The day brings together mindfulness, EFT tapping, CBT, guided meditation, Restorative Reiki Yoga and sound bath, with vegetarian lunch included.
+The day brings together an Autumn Reset workshop, grounding and earthing walk, Chakra Dancing and sound bath, with vegetarian lunch included.
 
 ## Time
 
@@ -29,10 +31,10 @@ The day brings together mindfulness, EFT tapping, CBT, guided meditation, Restor
 
 ## Schedule
 
-- 12.30 pm: Arrival and welcome
-- 1.00 pm: Mindfulness, EFT Tapping and CBT workshop
+- 12.30 pm: Tea and coffee
+- 1.00 pm: Autumn Reset Workshop
 - 2.00 pm: Lunch break
-- 2.30 pm: Guided meditation
-- 3.00 pm: Restorative Reiki Yoga
+- 2.30 pm: Grounding and Earthing Walk
+- 3.15 pm: Chakra Dancing
 - 4.00 pm: Sound Bath
 - 4.30 pm: Close

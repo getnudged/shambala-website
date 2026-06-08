@@ -13,6 +13,8 @@ cardImage: "shambala-retreat-samhain-shamanism-fermanagh.png"
 cardImageAlt: "Samhain and Shamanism Weekend Retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/samhain-and-shamanism-weekend-retreat.jpeg"
 posterAlt: "Samhain and Shamanism Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-samhain-and-shamanism.JPG"
+scheduleAlt: "Samhain and Shamanism Weekend Retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

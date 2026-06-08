@@ -10,6 +10,8 @@ facilitators: ["Sukhada Smith-Repass", "Celine"]
 slug: "touching-the-earth-half-day"
 posterImage: "/retreat-posters/touching-the-earth-one-day-retreat.jpeg"
 posterAlt: "Touching the Earth one-day retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-touching-the-earth-27-june.JPG"
+scheduleAlt: "Touching the Earth half day retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

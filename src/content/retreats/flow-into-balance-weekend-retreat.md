@@ -13,6 +13,8 @@ cardImage: "shambala-retreat-flow-into-balance-fermanagh.png"
 cardImageAlt: "Flow Into Balance Weekend Retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/flow-into-balance-weekend-retreat.jpeg"
 posterAlt: "Flow Into Balance Weekend Retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-flow-into-balance.JPG"
+scheduleAlt: "Flow Into Balance Weekend Retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

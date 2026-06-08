@@ -18,6 +18,8 @@ cardImage: "shambala-retreat-touching-the-earth-fermanagh.png"
 cardImageAlt: "Touching the Earth retreat at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 posterImage: "/retreat-posters/touching-the-earth-retreat.jpeg"
 posterAlt: "Touching the Earth grounding retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-touching-the-earth-weekend-retreat.JPG"
+scheduleAlt: "Touching the Earth weekend retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview

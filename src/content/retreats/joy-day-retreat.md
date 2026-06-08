@@ -22,7 +22,3 @@ Joy offers a calm, nurturing space to release what feels heavy, learn grounding 
 ## Pricing
 
 £40 / €48 with vegetarian lunch included.
-
-## Note
-
-TODO: Confirm the full Saturday day retreat description and schedule for Joy.
