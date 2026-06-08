@@ -11,6 +11,8 @@ facilitators: ["Sukhada Smith-Repass"]
 slug: "walking-nature-adventure-wellness-day"
 posterImage: "/retreat-posters/wellbeing-day-yoga-walking-and-adventure.jpeg"
 posterAlt: "Yoga Walking and Adventure Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleImage: "/retreat-schedules/schedule-yoga-walk-and-adventure.jpeg"
+scheduleAlt: "Yoga Walking and Adventure Wellbeing Day schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
@@ -21,7 +23,7 @@ A beautiful way to breathe deeply, restore your energy and enjoy a sense of ligh
 
 ## Time
 
-11.00 am-3.00 pm on Sunday 23 August.
+Please arrive by 11.45 am. The day runs from 12.00 pm-4.30 pm on Sunday 23 August, meeting at Florencecourt Estate.
 
 ## Pricing
 
