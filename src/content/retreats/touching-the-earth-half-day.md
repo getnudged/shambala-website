@@ -1,22 +1,22 @@
 ---
 title: "Touching the Earth Half Day"
-description: "A grounding one-day retreat with Hatha Yoga, Touching the Earth workshop, guided relaxation, lunch, forest bathing and barefoot grounding."
+description: "A grounding half-day retreat with Chakra Dance, Touching the Earth workshop, lunch, barefoot grounding and forest bathing."
 startDate: 2026-06-27
 endDate: 2026-06-27
 price: 40
 currency: GBP
-includes: ["Hatha Yoga", "Touching the Earth workshop", "Hypnotherapy-inspired guided relaxation", "Lunch", "Barefoot grounding", "Forest Bathing"]
+includes: ["Chakra Dance", "Touching the Earth workshop", "Lunch", "Barefoot grounding", "Forest Bathing", "Crystals for grounding"]
 facilitators: ["Sukhada Smith-Repass", "Celine"]
 slug: "touching-the-earth-half-day"
 posterImage: "/retreat-posters/touching-the-earth-one-day-retreat.jpeg"
 posterAlt: "Touching the Earth one-day retreat poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
-scheduleImage: "/retreat-schedules/schedule-touching-the-earth-27-june.JPG"
+scheduleImage: "/retreat-schedules/touching-the-earth-half-day.jpeg"
 scheduleAlt: "Touching the Earth half day retreat schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 ---
 
 ## Overview
 
-A grounding one-day retreat to reconnect with nature, quiet the mind and return to the present moment.
+A grounding half-day retreat to reconnect with nature, quiet the mind and return to the present moment.
 
 ## Time
 
@@ -28,8 +28,11 @@ A grounding one-day retreat to reconnect with nature, quiet the mind and return 
 
 ## Schedule
 
-- Hatha Yoga with Sukhada
-- Touching the Earth workshop with Sukhada
-- Hypnotherapy-inspired guided relaxation with Celine
-- Lunch
-- Walk, barefoot grounding and Forest Bathing
+- 11.00 am: Chakra Dance with Celine
+- 12.00 pm: Touching the Earth workshop with Celine and Sukhada
+- 1.00 pm: Lunch
+- 2.00 pm: Walk, barefoot grounding and forest bathing
+
+## Notes
+
+Arrival from 10.45 am please. Option to stay Saturday evening at additional cost, subject to availability.
