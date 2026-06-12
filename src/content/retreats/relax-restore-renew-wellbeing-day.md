@@ -1,6 +1,7 @@
 ---
 title: "Relax, Restore & Renew Wellbeing Day"
 description: "A nourishing January wellbeing day to slow down, restore your energy and begin the new year feeling grounded, refreshed and renewed."
+eventType: "wellbeing-day"
 startDate: 2027-01-17
 endDate: 2027-01-17
 price: 40

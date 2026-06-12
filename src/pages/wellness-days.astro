@@ -1,5 +1,7 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEventDateLabel, getEventDayName, getEventSlug, getEventYear, isUpcomingEvent, isWellnessDayEvent, sortEventsByStartDate } from '../lib/events';
 import '../styles/components/inner-pages.css';
 
 const meta = {
@@ -8,34 +10,35 @@ const meta = {
   canonical: 'https://shambalaholisticandretreatcentre.com/wellness-days/'
 };
 
-const cavanWellbeingDays = [
-  ['Sun 23 August', 'Open to Joy', '/retreats/open-to-joy-wellbeing-day/'],
-  ['Sat 12 September', 'Rooted & Radiant', '/retreats/rooted-and-radiant-wellbeing-day/'],
-  ['Sat 17 October', 'Flow Within', '/retreats/flow-within-wellbeing-day/'],
-  ['Sat 22 November', 'Soft Reset', '/retreats/soft-reset-wellbeing-day/']
-];
+const allEvents = await getCollection('retreats');
+const wellnessEvents = sortEventsByStartDate(allEvents.filter((event) => isUpcomingEvent(event) && isWellnessDayEvent(event)));
+const assignedIds = new Set<string>();
 
-const halfDayRetreats = [
-  ['Sun 28 June', 'Energy in Motion', '/retreats/energy-in-motion-wellbeing-day/'],
-  ['Sun 26 July', 'Creative Flow', '/retreats/creative-flow-wellbeing-day/'],
-  ['Sun 23 August', 'Yoga, Walking & Adventure', '/retreats/walking-nature-adventure-wellness-day/'],
-  ['Sun 13 September', 'Journey Within', '/retreats/journey-within-silent-retreat/'],
-  ['Sun 11 October', 'The Power of Manifestation', '/retreats/power-of-manifestation-wellbeing-day/'],
-  ['Sun 15 November', 'Autumn Reset Wellbeing Day', '/retreats/relax-rewind-reset/']
-];
+const takeEvents = (events: typeof wellnessEvents) => {
+  events.forEach((event) => assignedIds.add(event.id));
+  return events;
+};
 
-const wellbeingDays2027 = [
-  ['Sun 17 January 2027', 'Relax, Restore & Renew', '/retreats/relax-restore-renew-wellbeing-day/'],
-  ['Sun 14 February 2027', 'Heart Awakening', '/retreats/heart-awakening-wellbeing-day/']
-];
+const cavanWellbeingDays = takeEvents(
+  wellnessEvents.filter((event) => event.data.venueRegion?.toLowerCase().includes('cavan'))
+);
 
-const dayRetreats = [
-  ['Sat 27 June', 'Touching the Earth', '/retreats/touching-the-earth-half-day/'],
-  ['Sat 29 August', 'Yoga Warrior', '/retreats/yoga-warrior-half-day/'],
-  ['Sat 26 September', 'Life Purpose', '/retreats/ikigai-life-purpose-half-day/'],
-  ['Sat 3 October', 'Joy', '/retreats/joy-day-retreat/'],
-  ['Sat 31 October', 'Samhain & Shamanism', '/retreats/samhain-shamanism-half-day/']
-];
+const wellbeingDays2027 = takeEvents(
+  wellnessEvents.filter((event) => !assignedIds.has(event.id) && (getEventYear(event) ?? 0) >= 2027)
+);
+
+const halfDayRetreats = takeEvents(
+  wellnessEvents.filter((event) => !assignedIds.has(event.id) && getEventDayName(event) === 'Sunday')
+);
+
+const dayRetreats = takeEvents(
+  wellnessEvents.filter((event) => !assignedIds.has(event.id) && getEventDayName(event) === 'Saturday')
+);
+
+const otherUpcomingDays = wellnessEvents.filter((event) => !assignedIds.has(event.id));
+
+const renderEventRows = (events: typeof wellnessEvents) =>
+  events.map((event) => [getEventDateLabel(event, (getEventYear(event) ?? 0) >= 2027), event.data.title, `/retreats/${getEventSlug(event)}/`]);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -66,116 +69,152 @@ const schema = {
       </div>
       <div class="copy-flow">
         <p>Wellness days with Shambala give you the feel of retreat without committing to a full residential weekend. They may include meditation, forest bathing, grounding practice, sound, gentle movement, lunch and quiet time.</p>
-        <p>The current programme includes Sunday half-day retreats and Saturday day retreats, commonly running from either 12.30 pm-4.30 pm or 11.00 am-3.00 pm depending on the event.</p>
+        <p>The current programme is managed through the event content, so new published wellbeing days, workshops and short retreats can appear here automatically while past dates are removed from the public listing.</p>
         <p>Most Shambala formats are listed at £40 with vegetarian lunch included. Energy in Motion and the Cavan wellbeing days are poster-listed at €50. Staying Saturday or Sunday night may be possible for Shambala-based dates at additional cost, subject to availability.</p>
         <p>Dates and availability change seasonally, so contact Sukhada before travelling.</p>
       </div>
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Cavan Wellbeing Days · The Lab</p>
-      <h2>Open to Joy, Rooted & Radiant, Flow Within and Soft Reset</h2>
-      <p>Collaborative wellbeing days with Shambala and Zensational Wellbeing at The Lab, 65 Main St, Townparks, Cavan, H12 XC79. Vegetarian lunch included. €50 per person.</p>
-    </div>
-    <div class="programme-table-wrap">
-      <table class="programme-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Theme</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cavanWellbeingDays.map(([date, theme, href]) => (
+  {cavanWellbeingDays.length > 0 && (
+    <section class="page-section">
+      <div class="section-heading section-heading--simple">
+        <p class="label">Cavan Wellbeing Days · The Lab</p>
+        <h2>Open to Joy, Rooted & Radiant, Flow Within and Soft Reset</h2>
+        <p>Collaborative wellbeing days with Shambala and Zensational Wellbeing at The Lab, 65 Main St, Townparks, Cavan, H12 XC79. Vegetarian lunch included.</p>
+      </div>
+      <div class="programme-table-wrap">
+        <table class="programme-table">
+          <thead>
             <tr>
-              <td>{date}</td>
-              <td><a href={href}>{theme}</a></td>
+              <th>Date</th>
+              <th>Theme</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </thead>
+          <tbody>
+            {renderEventRows(cavanWellbeingDays).map(([date, theme, href]) => (
+              <tr>
+                <td>{date}</td>
+                <td><a href={href}>{theme}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
 
-  <section class="page-section page-section--mist">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Half-Day Retreats · Sundays</p>
-      <h2>Sunday Wellbeing Days</h2>
-      <p>Vegetarian lunch included. Most Sunday events run either 12.30 pm-4.30 pm or 11.00 am-3.00 pm; check each event page before travelling.</p>
-    </div>
-    <div class="programme-table-wrap">
-      <table class="programme-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Theme</th>
-          </tr>
-        </thead>
-        <tbody>
-          {halfDayRetreats.map(([date, theme, href]) => (
+  {halfDayRetreats.length > 0 && (
+    <section class="page-section page-section--mist">
+      <div class="section-heading section-heading--simple">
+        <p class="label">Half-Day Retreats · Sundays</p>
+        <h2>Sunday Wellbeing Days</h2>
+        <p>Vegetarian lunch included. Most Sunday events run either 12.30 pm-4.30 pm or 11.00 am-3.00 pm; check each event page before travelling.</p>
+      </div>
+      <div class="programme-table-wrap">
+        <table class="programme-table">
+          <thead>
             <tr>
-              <td>{date}</td>
-              <td><a href={href}>{theme}</a></td>
+              <th>Date</th>
+              <th>Theme</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </thead>
+          <tbody>
+            {renderEventRows(halfDayRetreats).map(([date, theme, href]) => (
+              <tr>
+                <td>{date}</td>
+                <td><a href={href}>{theme}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
 
-  <section class="page-section">
-    <div class="section-heading section-heading--simple">
-      <p class="label">2027 Wellbeing Days</p>
-      <h2>New Year and Heart-Centred Retreat Days</h2>
-      <p>Poster-backed 2027 wellbeing dates currently listed by Shambala.</p>
-    </div>
-    <div class="programme-table-wrap">
-      <table class="programme-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Theme</th>
-          </tr>
-        </thead>
-        <tbody>
-          {wellbeingDays2027.map(([date, theme, href]) => (
+  {wellbeingDays2027.length > 0 && (
+    <section class="page-section">
+      <div class="section-heading section-heading--simple">
+        <p class="label">2027 Wellbeing Days</p>
+        <h2>New Year and Heart-Centred Retreat Days</h2>
+        <p>Upcoming 2027 wellbeing dates currently listed by Shambala.</p>
+      </div>
+      <div class="programme-table-wrap">
+        <table class="programme-table">
+          <thead>
             <tr>
-              <td>{date}</td>
-              <td><a href={href}>{theme}</a></td>
+              <th>Date</th>
+              <th>Theme</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </thead>
+          <tbody>
+            {renderEventRows(wellbeingDays2027).map(([date, theme, href]) => (
+              <tr>
+                <td>{date}</td>
+                <td><a href={href}>{theme}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
 
-  <section class="page-section">
-    <div class="section-heading section-heading--simple">
-      <p class="label">Day Retreats · Saturdays</p>
-      <h2>11.00 am-3.00 pm · £40 / €48</h2>
-      <p>Vegetarian lunch included. Option to stay Saturday or Sunday night at additional cost, subject to availability.</p>
-    </div>
-    <div class="programme-table-wrap">
-      <table class="programme-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Theme</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dayRetreats.map(([date, theme, href]) => (
+  {dayRetreats.length > 0 && (
+    <section class="page-section">
+      <div class="section-heading section-heading--simple">
+        <p class="label">Day Retreats · Saturdays</p>
+        <h2>11.00 am-3.00 pm · £40 / €48</h2>
+        <p>Vegetarian lunch included. Option to stay Saturday or Sunday night at additional cost, subject to availability.</p>
+      </div>
+      <div class="programme-table-wrap">
+        <table class="programme-table">
+          <thead>
             <tr>
-              <td>{date}</td>
-              <td><a href={href}>{theme}</a></td>
+              <th>Date</th>
+              <th>Theme</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </thead>
+          <tbody>
+            {renderEventRows(dayRetreats).map(([date, theme, href]) => (
+              <tr>
+                <td>{date}</td>
+                <td><a href={href}>{theme}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {otherUpcomingDays.length > 0 && (
+    <section class="page-section page-section--mist">
+      <div class="section-heading section-heading--simple">
+        <p class="label">Other Upcoming Days</p>
+        <h2>Workshops, Sound and Yoga Events</h2>
+        <p>Additional non-residential events that are available to book.</p>
+      </div>
+      <div class="programme-table-wrap">
+        <table class="programme-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Theme</th>
+            </tr>
+          </thead>
+          <tbody>
+            {renderEventRows(otherUpcomingDays).map(([date, theme, href]) => (
+              <tr>
+                <td>{date}</td>
+                <td><a href={href}>{theme}</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
 
   <section class="page-section page-section--mist">
     <div class="section-heading section-heading--simple">

@@ -1,6 +1,7 @@
 ---
 title: "Autumn Reset Wellbeing Day"
 description: "A nourishing autumn wellbeing day at Shambala to slow down, restore your energy and reconnect in a peaceful Fermanagh setting."
+eventType: "wellbeing-day"
 startDate: 2026-11-15
 endDate: 2026-11-15
 price: 40
@@ -13,6 +14,29 @@ posterImage: "/retreat-posters/autumn-reset-wellbeing-day.jpeg"
 posterAlt: "Autumn Reset Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
 scheduleImage: "/retreat-schedules/schedule-autumn-reset.JPG"
 scheduleAlt: "Autumn Reset Wellbeing Day schedule at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+scheduleOutline:
+  - day: "Sunday 15 November"
+    time: "12.30 pm"
+    activity: "Tea and coffee"
+  - day: "Sunday 15 November"
+    time: "1.00 pm"
+    activity: "Autumn Reset Workshop"
+  - day: "Sunday 15 November"
+    time: "2.00 pm"
+    activity: "Lunch break"
+  - day: "Sunday 15 November"
+    time: "2.30 pm"
+    activity: "Grounding and Earthing Walk"
+  - day: "Sunday 15 November"
+    time: "3.15 pm"
+    activity: "Chakra Dancing"
+  - day: "Sunday 15 November"
+    time: "4.00 pm"
+    activity: "Sound Bath"
+  - day: "Sunday 15 November"
+    time: "4.30 pm"
+    activity: "Close"
+bookingNote: "Guests may be able to stay Saturday or Sunday night at additional cost, subject to availability."
 ---
 
 ## Overview

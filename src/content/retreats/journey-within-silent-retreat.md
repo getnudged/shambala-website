@@ -1,6 +1,7 @@
 ---
 title: "Journey Within Silent Retreat"
 description: "A quiet half-day silent retreat for gentle presence, mindful meditation, reflective practices and nourishing silence."
+eventType: "half-day-retreat"
 startDate: 2026-09-13
 endDate: 2026-09-13
 price: 40

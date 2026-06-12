@@ -1,6 +1,7 @@
 ---
 title: "Energy in Motion Wellbeing Day"
 description: "A half-day wellbeing experience with mindful presence, gentle movement and meditation to soothe stress and reconnect with inner flow."
+eventType: "wellbeing-day"
 startDate: 2026-06-28
 endDate: 2026-06-28
 price: 50

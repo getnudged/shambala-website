@@ -1,6 +1,7 @@
 ---
 title: "Flow Into Balance Weekend Retreat"
 description: "A nurturing weekend retreat to ground, align and restore with yoga, Chakra Dancing, guided relaxation, EFT, meditation and sound bath."
+eventType: "weekend-retreat"
 startDate: 2026-10-02
 endDate: 2026-10-04
 price: 260

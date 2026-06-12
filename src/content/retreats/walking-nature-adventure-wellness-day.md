@@ -1,6 +1,7 @@
 ---
 title: "Yoga, Walking & Adventure Wellbeing Day"
 description: "A refreshing half-day wellbeing experience with mindful movement, gentle yoga, scenic walking and reconnection with nature."
+eventType: "wellbeing-day"
 startDate: 2026-08-23
 endDate: 2026-08-23
 price: 40

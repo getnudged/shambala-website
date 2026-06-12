@@ -1,6 +1,7 @@
 ---
 title: "Yoga Warrior Weekend Retreat"
 description: "A weekend retreat with yoga, mindfulness, nature walks, meditation, therapies and sound healing by Upper Lough Erne."
+eventType: "weekend-retreat"
 startDate: 2026-08-28
 endDate: 2026-08-30
 price: 250

@@ -1,6 +1,7 @@
 ---
 title: "Heart Awakening Wellbeing Day"
 description: "A gentle February wellbeing day to open the heart, nurture self-love and reconnect with warmth, compassion and inner calm."
+eventType: "wellbeing-day"
 startDate: 2027-02-14
 endDate: 2027-02-14
 price: 40

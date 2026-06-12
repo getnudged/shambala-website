@@ -1,6 +1,7 @@
 ---
 title: "Samhain & Shamanism Half-Day Retreat"
 description: "A Samhain and shamanism half-day retreat with shamanic workshop, lunch, Fairy Woods walk and cacao ceremony."
+eventType: "half-day-retreat"
 startDate: 2026-10-31
 endDate: 2026-10-31
 price: 40

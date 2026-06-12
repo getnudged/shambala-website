@@ -1,6 +1,7 @@
 ---
 title: "Yoga Warrior Half-Day Retreat"
 description: "A half-day Yoga Warrior retreat for strength, focus, confidence and mindful movement with Fiona and Sukhada at Shambala."
+eventType: "half-day-retreat"
 startDate: 2026-08-29
 endDate: 2026-08-29
 price: 40

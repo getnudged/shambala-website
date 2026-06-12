@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEventSlug, getEventTypeLabel, getPriceLabel, isResidentialRetreat, isUpcomingEvent, sortEventsByStartDate } from '../lib/events';
 import '../styles/components/home.css';
 import heroImage from '../images/shambala-house.jpeg';
 import upperLoughErneImage from '../images/upper-lough-ern.jpeg';
@@ -14,8 +15,6 @@ const meta = {
 };
 
 const imageModules = import.meta.glob('../images/*.{jpeg,jpg,png,webp}', { eager: true });
-const today = new Date();
-today.setHours(0, 0, 0, 0);
 const retreats = await getCollection('retreats');
 
 const formatDateBadge = (startDate: Date, endDate?: Date) => {
@@ -26,21 +25,12 @@ const formatDateBadge = (startDate: Date, endDate?: Date) => {
   return `${month} ${year} · ${isWeekend ? 'Weekend' : 'Day'}`;
 };
 
-const priceLabel = (price: number, priceEUR?: number, currency = 'GBP') => {
-  if (currency === 'GBP' && priceEUR) return `£${price} / €${priceEUR} per person`;
-  return `${currency === 'EUR' ? '€' : '£'}${price} per person`;
-};
-
-const homepageRetreats = retreats
-  .filter((retreat) => {
-    const start = retreat.data.startDate;
-    const end = retreat.data.endDate ?? start;
-    return Boolean(start && end && end >= today && retreat.data.cardImage && retreat.data.price >= 200);
-  })
-  .sort((a, b) => (a.data.startDate?.valueOf() ?? 0) - (b.data.startDate?.valueOf() ?? 0))
+const homepageRetreats = sortEventsByStartDate(
+  retreats.filter((retreat) => isUpcomingEvent(retreat) && isResidentialRetreat(retreat) && retreat.data.cardImage)
+)
   .slice(0, 3)
   .map((retreat) => {
-    const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
+    const slug = getEventSlug(retreat);
     const imagePath = `../images/${retreat.data.cardImage}`;
     const image = imageModules[imagePath] as { default: ImageMetadata } | undefined;
 
@@ -49,8 +39,8 @@ const homepageRetreats = retreats
       title: retreat.data.title,
       description: retreat.data.description,
       badge: retreat.data.startDate ? formatDateBadge(retreat.data.startDate, retreat.data.endDate) : 'Date to confirm',
-      price: priceLabel(retreat.data.price, retreat.data.priceEUR, retreat.data.currency),
-      label: retreat.data.includes.slice(0, 3).join(' · '),
+      price: `${getPriceLabel(retreat)} per person`,
+      label: retreat.data.includes.slice(0, 3).join(' · ') || getEventTypeLabel(retreat),
       image: image?.default,
       imageAlt: retreat.data.cardImageAlt ?? `${retreat.data.title} at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`
     };

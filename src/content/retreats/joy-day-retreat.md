@@ -1,6 +1,7 @@
 ---
 title: "Joy Day Retreat"
 description: "A Saturday day retreat at Shambala with vegetarian lunch included, created around the theme of Joy."
+eventType: "half-day-retreat"
 startDate: 2026-10-03
 endDate: 2026-10-03
 price: 40
