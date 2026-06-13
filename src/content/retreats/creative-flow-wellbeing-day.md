@@ -1,6 +1,6 @@
 ---
 type: RetreatEvent
-title: Creative Flow Wellbeing
+title: Creative Flow Wellbeing Day
 description: >-
   A creative wellbeing day with journaling, mandala workshop, forest bathing,
   chakra dancing, Yin Reiki Yoga and vegetarian lunch.
