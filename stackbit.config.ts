@@ -1,9 +1,5 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { GitContentSource } from '@stackbit/cms-git';
 import { defineStackbitConfig } from '@stackbit/types';
-
-const projectDir = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
@@ -24,7 +20,7 @@ export default defineStackbitConfig({
   },
   contentSources: [
     new GitContentSource({
-      rootPath: projectDir,
+      rootPath: __dirname,
       contentDirs: ['src/content'],
       assetsConfig: {
         referenceType: 'static',
