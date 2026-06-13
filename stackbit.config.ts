@@ -15,7 +15,7 @@ export default defineStackbitConfig({
       directRoutes: {
         'socket.io': 'socket.io'
       },
-      passthrough: ['/vite-hmr/**']
+      passthrough: ['/_stackbit/**', '/vite-hmr/**']
     }
   },
   contentSources: [
