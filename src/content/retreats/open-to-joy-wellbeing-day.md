@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Open to Joy Wellbeing Day"
 description: "A Cavan wellbeing day with mindful practices, soothing meditation, gentle movement, restorative sound bath and vegetarian lunch."
 eventType: "wellbeing-day"

@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Rooted & Radiant Wellbeing Day"
 description: "A Cavan wellbeing day with grounding techniques, mindfulness, meditation, Chakra Dancing and vegetarian lunch."
 eventType: "wellbeing-day"

@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Joy Day Retreat"
 description: "A Saturday day retreat at Shambala with vegetarian lunch included, created around the theme of Joy."
 eventType: "half-day-retreat"

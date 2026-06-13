@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Life Purpose Day Retreat"
 description: "A day retreat introduction to Ikigai with workshop practices, goal setting, CBT, guided meditation and visualisation."
 eventType: "half-day-retreat"

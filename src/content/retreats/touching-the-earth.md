@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Touching the Earth: A Grounding Retreat"
 description: "Spend a relaxing weekend grounding and reconnecting with nature through Yoga, Tai Chi, Qigong, Meditation and Forest Bathing at Shambala."
 eventType: "weekend-retreat"

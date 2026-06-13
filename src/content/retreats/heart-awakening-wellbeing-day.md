@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Heart Awakening Wellbeing Day"
 description: "A gentle February wellbeing day to open the heart, nurture self-love and reconnect with warmth, compassion and inner calm."
 eventType: "wellbeing-day"

@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Autumn Reset Wellbeing Day"
 description: "A nourishing autumn wellbeing day at Shambala to slow down, restore your energy and reconnect in a peaceful Fermanagh setting."
 eventType: "wellbeing-day"

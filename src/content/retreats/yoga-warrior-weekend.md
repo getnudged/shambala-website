@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Yoga Warrior Weekend Retreat"
 description: "A weekend retreat with yoga, mindfulness, nature walks, meditation, therapies and sound healing by Upper Lough Erne."
 eventType: "weekend-retreat"

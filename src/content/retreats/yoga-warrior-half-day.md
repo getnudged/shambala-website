@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Yoga Warrior Half-Day Retreat"
 description: "A half-day Yoga Warrior retreat for strength, focus, confidence and mindful movement with Fiona and Sukhada at Shambala."
 eventType: "half-day-retreat"

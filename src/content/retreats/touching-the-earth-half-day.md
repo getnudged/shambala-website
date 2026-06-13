@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Touching the Earth Half Day"
 description: "A grounding half-day retreat with Chakra Dance, Touching the Earth workshop, lunch, barefoot grounding and forest bathing."
 eventType: "half-day-retreat"

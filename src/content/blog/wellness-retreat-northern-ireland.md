@@ -1,4 +1,5 @@
 ---
+type: BlogPost
 title: "5 Reasons to Book a Wellness Retreat in Northern Ireland"
 seoTitle: "Retreat Guide | Shambala Holistic Retreat Centre | Fermanagh"
 description: "Explore why a wellness retreat in Northern Ireland can support rest, clarity and reconnection beside Upper Lough Erne in Derrylin, Co. Fermanagh, Ireland."

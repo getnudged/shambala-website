@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Samhain & Shamanism Weekend Retreat"
 description: "A Samhain weekend retreat with yoga, Chakra Dancing, shamanic practices, Cacao Ceremony, Fire Ceremony, sound bath and nature connection."
 eventType: "weekend-retreat"

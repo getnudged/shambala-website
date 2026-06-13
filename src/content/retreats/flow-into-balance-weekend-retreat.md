@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Flow Into Balance Weekend Retreat"
 description: "A nurturing weekend retreat to ground, align and restore with yoga, Chakra Dancing, guided relaxation, EFT, meditation and sound bath."
 eventType: "weekend-retreat"

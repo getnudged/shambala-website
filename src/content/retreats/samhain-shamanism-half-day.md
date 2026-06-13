@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Samhain & Shamanism Half-Day Retreat"
 description: "A Samhain and shamanism half-day retreat with shamanic workshop, lunch, Fairy Woods walk and cacao ceremony."
 eventType: "half-day-retreat"

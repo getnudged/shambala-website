@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Life Purpose Weekend Retreat"
 description: "A weekend of introspection, meditation and relaxation with Ikigai, Wabi-Sabi, Kaizen, workshops, Tai Chi, Qigong, Yoga and Sound Bath."
 eventType: "weekend-retreat"

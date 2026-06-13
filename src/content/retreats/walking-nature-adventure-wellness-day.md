@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Yoga, Walking & Adventure Wellbeing Day"
 description: "A refreshing half-day wellbeing experience with mindful movement, gentle yoga, scenic walking and reconnection with nature."
 eventType: "wellbeing-day"

@@ -4,6 +4,7 @@ import { glob } from 'astro/loaders';
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
+    type: z.string().optional(),
     title: z.string(),
     seoTitle: z.string().optional(),
     description: z.string(),
@@ -17,6 +18,7 @@ const blog = defineCollection({
 const retreats = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/retreats' }),
   schema: z.object({
+    type: z.string().optional(),
     title: z.string(),
     description: z.string(),
     eventType: z.string().optional(),

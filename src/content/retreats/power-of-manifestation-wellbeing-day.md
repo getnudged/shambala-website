@@ -1,4 +1,5 @@
 ---
+type: RetreatEvent
 title: "Power of Manifestation Wellbeing Day"
 description: "A half-day wellbeing experience for mindful presence, meditation, reflection and intention-setting practices at Shambala."
 eventType: "wellbeing-day"
