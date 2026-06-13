@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEventSlug, getPriceLabel, isUpcomingEvent, sortEventsByStartDate } from '../../lib/events';
 import '../../styles/components/inner-pages.css';
 
 export async function getStaticPaths() {
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 
 const { retreat } = Astro.props;
 const { Content } = await render(retreat);
-const slug = retreat.data.slug ?? retreat.id.replace(/\.md$/, '');
+const slug = getEventSlug(retreat);
 const canonical = `https://shambalaholisticandretreatcentre.com/retreats/${slug}/`;
 const allRetreats = await getCollection('retreats');
 const retreatLocation = {
@@ -30,6 +31,7 @@ const locationAddress = `${retreatLocation.streetAddress}, ${retreatLocation.loc
 const mapsUrl = retreat.data.venueMapUrl ?? `https://maps.google.com/?q=${encodeURIComponent(locationAddress)}`;
 const hasCustomVenue = Boolean(retreat.data.venueName);
 const hasPoster = Boolean(retreat.data.posterImage || retreat.data.posterPdf);
+const hasStructuredSchedule = retreat.data.scheduleOutline.length > 0;
 const hasSchedule = Boolean(retreat.data.scheduleImage);
 const posterPreviewTarget = `retreat-poster-${slug}`;
 const posterAlt = retreat.data.posterAlt ?? `${retreat.data.title} poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh`;
@@ -52,10 +54,7 @@ const dateLabel = retreat.data.startDate
     : formatDate(retreat.data.startDate)
   : retreat.data.dateNote ?? (retreat.data.year ? `${retreat.data.year} date to confirm` : 'Date to confirm');
 
-const primaryCurrencySymbol = retreat.data.currency === 'EUR' ? '€' : '£';
-const priceLabel = retreat.data.currency === 'GBP' && retreat.data.priceEUR
-  ? `£${retreat.data.price} / €${retreat.data.priceEUR}`
-  : `${primaryCurrencySymbol}${retreat.data.price}`;
+const priceLabel = getPriceLabel(retreat);
 
 const depositLabel = retreat.data.price >= 200
   ? retreat.data.priceEUR
@@ -67,14 +66,9 @@ const depositLabel = retreat.data.price >= 200
     ? 'Typical half-day retreat deposit: £20 / €23'
     : 'Typical half-day retreat deposit: £20';
 
-const relatedRetreats = allRetreats
-  .filter((item) => (item.data.slug ?? item.id.replace(/\.md$/, '')) !== slug)
-  .sort((a, b) => {
-    const aTime = a.data.startDate?.valueOf() ?? Number.MAX_SAFE_INTEGER;
-    const bTime = b.data.startDate?.valueOf() ?? Number.MAX_SAFE_INTEGER;
-    return aTime - bTime;
-  })
-  .slice(0, 2);
+const relatedRetreats = sortEventsByStartDate(
+  allRetreats.filter((item) => getEventSlug(item) !== slug && isUpcomingEvent(item))
+).slice(0, 2);
 
 const buildDescription = (description: string) => {
   const suffix = hasCustomVenue
@@ -203,8 +197,43 @@ const eventSchema = retreat.data.startDate
           <p>Audit notes say deposits are fully refundable up to 14 days before the retreat, then transferable to a future retreat.</p>
         </article>
       </div>
+      {retreat.data.bookingNote && <p class="small-note">{retreat.data.bookingNote}</p>}
       {!retreat.data.startDate && <p class="small-note">Placeholder: exact date-dependent booking terms should be reviewed once dates are confirmed.</p>}
     </section>
+
+    {hasStructuredSchedule && (
+      <section class="page-section">
+        <div class="section-heading section-heading--simple">
+          <p class="label">Schedule Outline</p>
+          <h2>Retreat Schedule</h2>
+          <p>This is the website schedule for {retreat.data.title}. Contact Shambala before travelling in case seasonal timings change.</p>
+        </div>
+        <div class="programme-table-wrap">
+          <table class="programme-table programme-table--schedule">
+            <thead>
+              <tr>
+                <th>Day / Date</th>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Facilitator</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {retreat.data.scheduleOutline.map((item) => (
+                <tr>
+                  <td>{item.day ?? dateLabel}</td>
+                  <td>{item.time ?? 'Time to confirm'}</td>
+                  <td>{item.activity}</td>
+                  <td>{item.facilitator ?? displayFacilitators.join(', ')}</td>
+                  <td>{item.notes ?? ''}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
 
     {hasPoster && (
       <section class="page-section">
@@ -250,9 +279,9 @@ const eventSchema = retreat.data.startDate
       <section class="page-section page-section--mist">
         <div class="split-layout">
           <div>
-            <p class="label">Retreat Schedule</p>
-            <h2>Preview the Retreat Schedule</h2>
-            <p>Open the schedule for the current timetable, arrival notes and retreat flow.</p>
+            <p class="label">Supporting Schedule Image</p>
+            <h2>Preview the Uploaded Schedule Image</h2>
+            <p>Open the uploaded image as a visual reference. The schedule outline on this page should be treated as the main website content.</p>
           </div>
           <div class="poster-preview-card">
             <a class="poster-preview-card__image" href={`#${schedulePreviewTarget}`} aria-label={`Preview schedule for ${retreat.data.title}`}>
@@ -374,14 +403,11 @@ const eventSchema = retreat.data.startDate
       </div>
       <div class="related-retreats-grid">
         {relatedRetreats.map((item) => {
-          const relatedSlug = item.data.slug ?? item.id.replace(/\.md$/, '');
+          const relatedSlug = getEventSlug(item);
           const relatedDate = item.data.startDate
             ? formatDate(item.data.startDate)
             : item.data.dateNote ?? (item.data.year ? `${item.data.year} date to confirm` : 'Date to confirm');
-          const relatedCurrencySymbol = item.data.currency === 'EUR' ? '€' : '£';
-          const relatedPrice = item.data.currency === 'GBP' && item.data.priceEUR
-            ? `£${item.data.price} / €${item.data.priceEUR}`
-            : `${relatedCurrencySymbol}${item.data.price}`;
+          const relatedPrice = getPriceLabel(item);
           return (
             <a class="related-retreat-card" href={`/retreats/${relatedSlug}/`}>
               <p class="label">{relatedDate} · {relatedPrice}</p>

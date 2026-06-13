@@ -1,6 +1,8 @@
 ---
+type: RetreatEvent
 title: "Samhain & Shamanism Weekend Retreat"
 description: "A Samhain weekend retreat with yoga, Chakra Dancing, shamanic practices, Cacao Ceremony, Fire Ceremony, sound bath and nature connection."
+eventType: "weekend-retreat"
 startDate: 2026-10-30
 endDate: 2026-11-01
 price: 250

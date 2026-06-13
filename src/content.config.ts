@@ -4,6 +4,7 @@ import { glob } from 'astro/loaders';
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
+    type: z.string().optional(),
     title: z.string(),
     seoTitle: z.string().optional(),
     description: z.string(),
@@ -17,8 +18,10 @@ const blog = defineCollection({
 const retreats = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/retreats' }),
   schema: z.object({
+    type: z.string().optional(),
     title: z.string(),
     description: z.string(),
+    eventType: z.string().optional(),
     startDate: z.date().optional(),
     endDate: z.date().optional(),
     year: z.number().optional(),
@@ -36,6 +39,14 @@ const retreats = defineCollection({
     posterAlt: z.string().optional(),
     scheduleImage: z.string().optional(),
     scheduleAlt: z.string().optional(),
+    scheduleOutline: z.array(z.object({
+      day: z.string().optional(),
+      time: z.string().optional(),
+      activity: z.string(),
+      facilitator: z.string().optional(),
+      notes: z.string().optional()
+    })).default([]),
+    bookingNote: z.string().optional(),
     venueName: z.string().optional(),
     venueAddress: z.string().optional(),
     venueLocality: z.string().optional(),

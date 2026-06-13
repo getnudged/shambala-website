@@ -1,4 +1,5 @@
 ---
+type: BlogPost
 title: "The Benefits of Reiki: What to Expect at Your First Session"
 seoTitle: "Reiki | Shambala Holistic Retreat Centre | Fermanagh"
 description: "Learn what Reiki is, what happens in a first Reiki session, and how this gentle holistic therapy supports relaxation and balance at Shambala Fermanagh."

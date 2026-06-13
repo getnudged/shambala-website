@@ -1,4 +1,5 @@
 ---
+type: BlogPost
 title: "What Is a Sound Bath? Everything You Need to Know"
 seoTitle: "Sound Baths | Shambala Holistic Retreat Centre | Fermanagh"
 description: "Sound bath guide for beginners: what to expect, how to prepare, and how sound healing supports deep relaxation at Shambala in Derrylin, Co. Fermanagh, Ireland."

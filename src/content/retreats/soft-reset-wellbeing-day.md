@@ -1,6 +1,8 @@
 ---
+type: RetreatEvent
 title: "Soft Reset Wellbeing Day"
 description: "A Cavan wellbeing day with tea and coffee, mindfulness workshop, mindfulness walking, Chakra Dancing and vegetarian lunch."
+eventType: "wellbeing-day"
 startDate: 2026-11-22
 endDate: 2026-11-22
 price: 50

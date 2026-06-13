@@ -1,6 +1,8 @@
 ---
+type: RetreatEvent
 title: "Flow Within Wellbeing Day"
 description: "A calming Cavan wellbeing day with meditation, gentle movement, restorative sound bath and vegetarian lunch."
+eventType: "wellbeing-day"
 startDate: 2026-10-17
 endDate: 2026-10-17
 price: 50
