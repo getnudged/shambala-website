@@ -9,7 +9,7 @@ export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
   ssgName: 'custom',
   nodeVersion: '22',
-  devCommand: 'npm run dev -- --host 127.0.0.1 --port {PORT}',
+  devCommand: 'npm run dev -- --host 0.0.0.0 --port {PORT}',
   experimental: {
     ssg: {
       name: 'Astro',
