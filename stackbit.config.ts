@@ -9,12 +9,12 @@ export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
   ssgName: 'custom',
   nodeVersion: '22',
-  devCommand: 'npm run dev -- --host 0.0.0.0 --port {PORT}',
+  devCommand: 'node_modules/.bin/astro dev --port {PORT} --hostname {HOSTNAME}',
   experimental: {
     ssg: {
       name: 'Astro',
       logPatterns: {
-        up: ['is ready', 'astro']
+        up: ['ready in']
       },
       directRoutes: {
         'socket.io': 'socket.io'
