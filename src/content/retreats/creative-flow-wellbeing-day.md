@@ -1,38 +1,51 @@
 ---
 type: RetreatEvent
-title: "Creative Flow Wellbeing Day"
-description: "A creative wellbeing day with journaling, mandala workshop, forest bathing, chakra dancing, Yin Reiki Yoga and vegetarian lunch."
-eventType: "wellbeing-day"
-startDate: 2026-07-26
-endDate: 2026-07-26
+title: Creative Flow Wellbeing
+description: >-
+  A creative wellbeing day with journaling, mandala workshop, forest bathing,
+  chakra dancing, Yin Reiki Yoga and vegetarian lunch.
+eventType: wellbeing-day
+startDate: '2026-07-26'
+endDate: '2026-07-26'
 price: 40
 currency: GBP
 priceEUR: 48
-includes: ["Journaling", "Mandala workshop", "Forest bathing", "Chakra Dancing", "Yin Reiki Yoga", "Vegetarian lunch"]
-facilitators: ["Sukhada Smith-Repass"]
-slug: "creative-flow-wellbeing-day"
-posterImage: "/retreat-schedules/schedule-creative-flow-well-being day.JPG"
-posterAlt: "Creative Flow Wellbeing Day poster at Shambala Holistic Retreat Centre, Derrylin, Co. Fermanagh"
+includes:
+  - Journaling
+  - Mandala workshop
+  - Forest bathing
+  - Chakra Dancing
+  - Yin Reiki Yoga
+  - Vegetarian lunch
+facilitators:
+  - Sukhada Smith-Repass
+slug: creative-flow-wellbeing-day
+posterImage: /retreat-schedules/schedule-creative-flow-well-being day.JPG
+posterAlt: >-
+  Creative Flow Wellbeing Day poster at Shambala Holistic Retreat Centre,
+  Derrylin, Co. Fermanagh
 scheduleOutline:
-  - day: "Sunday 26 July"
-    time: "12.30 pm"
-    activity: "Arrival"
-  - day: "Sunday 26 July"
-    time: "1.00 pm"
-    activity: "Journaling and mandala workshop"
-  - day: "Sunday 26 July"
-    time: "2.00 pm"
-    activity: "Lunch"
-  - day: "Sunday 26 July"
-    time: "2.30 pm"
-    activity: "Forest bathing"
-  - day: "Sunday 26 July"
-    time: "3.00 pm"
-    activity: "Chakra Dancing"
-  - day: "Sunday 26 July"
-    time: "4.00 pm"
-    activity: "Yin Reiki Yoga"
-bookingNote: "Arrival from 12.15 pm please. Option to stay Saturday or Sunday night at additional cost, subject to availability."
+  - day: Sunday 26 July
+    time: 12.30 pm
+    activity: Arrival
+  - day: Sunday 26 July
+    time: 1.00 pm
+    activity: Journaling and mandala workshop
+  - day: Sunday 26 July
+    time: 2.00 pm
+    activity: Lunch
+  - day: Sunday 26 July
+    time: 2.30 pm
+    activity: Forest bathing
+  - day: Sunday 26 July
+    time: 3.00 pm
+    activity: Chakra Dancing
+  - day: Sunday 26 July
+    time: 4.00 pm
+    activity: Yin Reiki Yoga
+bookingNote: >-
+  Arrival from 12.15 pm please. Option to stay Saturday or Sunday night at
+  additional cost, subject to availability.
 ---
 
 ## Overview
