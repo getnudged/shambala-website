@@ -7,7 +7,7 @@ description: >-
 eventType: half-day-retreat
 startDate: '2026-10-03'
 endDate: '2026-10-03'
-price: 50
+price: 40
 currency: GBP
 priceEUR: 48
 includes:
