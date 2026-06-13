@@ -1,14 +1,21 @@
 ---
-title: "Joy Day Retreat"
-description: "A Saturday day retreat at Shambala with vegetarian lunch included, created around the theme of Joy."
-startDate: 2026-10-03
-endDate: 2026-10-03
-price: 40
+type: RetreatEvent
+title: Joy Day Retreat
+description: >-
+  A Saturday day retreat at Shambala with vegetarian lunch included, created
+  around the theme of Joy.
+eventType: half-day-retreat
+startDate: '2026-10-03'
+endDate: '2026-10-03'
+price: 50
 currency: GBP
 priceEUR: 48
-includes: ["Vegetarian lunch", "Day retreat activities"]
-facilitators: ["Sukhada Smith-Repass"]
-slug: "joy-day-retreat"
+includes:
+  - Vegetarian lunch
+  - Day retreat activities
+facilitators:
+  - Sukhada Smith-Repass
+slug: joy-day-retreat
 ---
 
 ## Overview
